@@ -1,0 +1,71 @@
+### Git / GitHub
+
+---
+
+#### creating a new repository
+
+- create a repository online
+
+- **if copying from online**
+
+    2. `$ git clone <url_of_online_repository>`
+
+- **if files existing locally**
+
+    1. go inside the folder to be uploaded
+    2. `$ git init`
+    4. `$ git add <...>`
+    5. `$ git commit -m “<explanatory texts about this change>”`
+    6. `$ git remote add <name> <url_of_online_repository>`
+    7. `$ git push -u <name> master`
+
+- generate README file (locally)
+    1. `$ echo “# <repository name>” >> README.md`
+
+- create .gitignore file (locally)
+    1. go to the folder which contains .git folder
+    2. `$ touch .gitignore`
+    3. `$ open .gitignore`
+    4. add the files / directories to be ignored
+
+---
+
+#### update changes
+
+- from remote
+    1. `$ git pull <name> master`
+    2. may need to
+        3. `$ i`
+        4. write the merge message
+        5. press "esc"
+        6. `$ :wq`
+        7. press "enter"
+
+- from local
+    1. `$ git add <...>`
+    2. `$ git commit -m `
+    3. `$ git push -u <name> master`
+
+- rename a repository
+    1. rename online
+    2. local: `$ git remote set-url <name> <new url>`
+
+---
+
+#### git add
+
+* `git add <file / directory>`
+* `git add '*.<filetype>'`
+* `git add -A` ALL
+* `git add .` new & modified; without deleted files
+* `git add -u` modified & deleted; without new files
+
+#### git status
+
+---
+
+#### branches
+
+* `$ git branch`: show the local branches
+* `$ git branch -d <branch>`: delete
+* `$ git checkout <branch>`: go to the branch
