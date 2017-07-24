@@ -31,7 +31,7 @@ or `$ django-admin(.py) startproject --template=https://github.com/heroku/heroku
 2. edit settings.py for the project: `Installed_apps = [..., '<app_name>,']`
 3. edit views.py for the app
 4. create \templates folder under app; create <templates>.html (name should match that in views.py)
-5. `urlpatterns = [..., url(r'<>', include('<app_name>.urls')), ]`
+5. edit urls.py for the project: `urlpatterns = [..., url(r'<>', include('<app_name>.urls')), ]`
 5. `$ heroku local web` or open local:5000 in the browser
 
 #### Deply to Heroku
@@ -48,11 +48,6 @@ or `$ django-admin(.py) startproject --template=https://github.com/heroku/heroku
 5. `$ heroku run(:detached) python manage.py collectstatic`
 
 #### New Django app
-1. python manage.py startapp <app_name>
-2. edit settings.py for the project: `Installed_apps = [..., '<app_name>,']`
-3. edit views.py for the app
-4. create \templates folder under app; create <template>.html file (the name should match that in views.py)
-5. edit urls.py for the project: `urlpatterns = [..., url(r'<>', include('<app_name>.urls')), ]`
 6. create urls.py for the app
 ```
 from django.conf.urls import url
