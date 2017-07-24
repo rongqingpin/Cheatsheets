@@ -39,18 +39,6 @@ or `$ django-admin(.py) startproject --template=https://github.com/heroku/heroku
 
 5. `$ heroku run(:detached) python manage.py collectstatic`
 
-#### Installation
-[link](https://devcenter.heroku.com/articles/getting-started-with-python#introduction)
-
-* install Postgres
-* Postgres configuration:
-
-    1. `$ export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"`: the directory of psql file
-    2. install the command line tool for psql - [link](http://postgresapp.com/documentation/install.html)
-    3. may need: command line tool for Xcode - [link](https://developer.apple.com/download/more/)
-
-* install Heroku command line tool
-
 #### New Django app
 1. python manage.py startapp <app_name>
 2. edit settings.py for the project: `Installed_apps = [..., '<app_name>,']`
@@ -65,4 +53,16 @@ urlpatterns = [
     url(r'<app_name>$', views.<app_name>, name = 'url_name'),
 ]
 ```
+
+#### Installation
+[link](https://devcenter.heroku.com/articles/getting-started-with-python#introduction)
+
+* install Postgres
+* Postgres configuration:
+
+    1. `$ export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"`: the directory of psql file
+    2. install the command line tool for psql - [link](http://postgresapp.com/documentation/install.html)
+    3. may need: command line tool for Xcode - [link](https://developer.apple.com/download/more/)
+
+* install Heroku command line tool
 
