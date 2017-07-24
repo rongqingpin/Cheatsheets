@@ -27,12 +27,12 @@ or `$ django-admin(.py) startproject --template=https://github.com/heroku/heroku
 5. `$ heroku local web` or open local:5000 in the browser
 
 #### Setup and run the project locally
-1. go inside the project directory, `$ virtualenv <env>`
-2. `$ source <env>/bin/activate`
-3. edit .gitignore file
-4. `$ pip install -r requirements.txt`: run the app locally
-5. `$ python manage.py collectstatic`
-5. `$ heroku local web` or open local:5000 in the browser
+1. `python manage.py startapp <app_name>`
+2. edit settings.py for the project: `Installed_apps = [..., '<app_name>,']`
+3. edit views.py for the app
+4. create \templates folder under app; create <template>.html file (the name should match that in views.py)
+5. edit urls.py for the project: `urlpatterns = [..., url(r'<>', include('<app_name>.urls')), ]`
+5. create urls.py for the app
 
 #### Deply to Heroku
 1. `$ git add .`
