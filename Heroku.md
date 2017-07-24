@@ -32,7 +32,7 @@ or `$ django-admin(.py) startproject --template=https://github.com/heroku/heroku
 3. edit views.py for the app
 4. create \templates folder under app; create <templates>.html (name should match that in views.py)
 5. edit urls.py for the project: `urlpatterns = [..., url(r'<>', include('<app_name>.urls')), ]`
-5. `$ heroku local web` or open local:5000 in the browser
+5. create urls.py for the app
 
 #### Deply to Heroku
 1. `$ git add .`
