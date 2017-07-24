@@ -26,6 +26,14 @@ or `$ django-admin(.py) startproject --template=https://github.com/heroku/heroku
 5. `$ python manage.py collectstatic`
 5. `$ heroku local web` or open local:5000 in the browser
 
+#### Setup and run the project locally
+1. go inside the project directory, `$ virtualenv <env>`
+2. `$ source <env>/bin/activate`
+3. edit .gitignore file
+4. `$ pip install -r requirements.txt`: run the app locally
+5. `$ python manage.py collectstatic`
+5. `$ heroku local web` or open local:5000 in the browser
+
 #### Deply to Heroku
 1. `$ git add .`
 2. `$ git commit -m "<message>"`
