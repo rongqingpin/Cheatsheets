@@ -33,15 +33,14 @@ or `$ django-admin(.py) startproject --template=https://github.com/heroku/heroku
 4. create \templates folder under app; create <template>.html file (the name should match that in views.py)
 5. edit urls.py for the project: `urlpatterns = [..., url(r'<>', include('<app_name>.urls')), ]`
 6. create urls.py for the app
-    ```
-    from django.conf.urls import url
-    from . import views
-    urlpatterns = [
-        url(r'<app_name>$', views.<app_name>, name = 'url_name'),
-    ]
-    ```
+```
+from django.conf.urls import url
+from . import views
+urlpatterns = [
+    url(r'<app_name>$', views.<app_name>, name = 'url_name'),
+]
+```
 
-   
 #### Deply to Heroku
 1. `$ git add .`
 2. `$ git commit -m "<message>"`
