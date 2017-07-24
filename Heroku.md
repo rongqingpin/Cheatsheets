@@ -45,9 +45,7 @@ or `$ django-admin(.py) startproject --template=https://github.com/heroku/heroku
 3. edit views.py for the app
 4. create \templates folder under app; create <template>.html file (the name should match that in views.py)
 5. edit urls.py for the project: `urlpatterns = [..., url(r'<>', include('<app_name>.urls')), ]`
-6. create urls.py for the app   
-
-`
+6. create urls.py for the app `
 from django.conf.urls import url
 from . import views
 urlpatterns = [
