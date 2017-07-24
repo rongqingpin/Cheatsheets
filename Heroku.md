@@ -39,7 +39,7 @@ from . import views
 urlpatterns = [
     url(r'<app_name>$', views.<app_name>, name = 'url_name'),
 ]
-```
+```   
 
 #### Deply to Heroku
 1. `$ git add .`
