@@ -54,9 +54,6 @@ urlpatterns = [
 
 5. `$ heroku run(:detached) python manage.py collectstatic`
 
-#### New Django app
-6. create urls.py for the app
-
 #### Installation
 [link](https://devcenter.heroku.com/articles/getting-started-with-python#introduction)
 
