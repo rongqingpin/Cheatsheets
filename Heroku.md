@@ -27,8 +27,8 @@ or `$ django-admin(.py) startproject --template=https://github.com/heroku/heroku
 5. `$ heroku local web` or open local:5000 in the browser
 
 #### New Django app
-1. `python manage.py startapp <app_name>`
-2. `$ source <env>/bin/activate`
+1. `$ python manage.py startapp <app_name>`
+2. edit settings.py for the project: `Installed_apps = [..., '<app_name>,']`
 3. edit .gitignore file
 4. `$ pip install -r requirements.txt`: run the app locally
 5. `$ python manage.py collectstatic`
