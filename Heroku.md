@@ -41,6 +41,7 @@ or `$ django-admin(.py) startproject --template=https://github.com/heroku/heroku
     ]
     ```
 
+   
 #### Deply to Heroku
 1. `$ git add .`
 2. `$ git commit -m "<message>"`
