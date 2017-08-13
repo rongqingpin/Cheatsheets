@@ -67,5 +67,7 @@
 #### branches
 
 * `$ git branch`: show the local branches
-* `$ git branch -d <branch>`: delete
+* `$ git branch <branch_name>`: create new branch
 * `$ git checkout <branch>`: go to the branch
+    * or `git checkout -b <branch>`: create and checkout
+* `$ git branch -d <branch>`: delete
