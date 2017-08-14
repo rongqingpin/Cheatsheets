@@ -66,3 +66,6 @@ urlpatterns = [
 
 * install Heroku command line tool
 
+#### Update
+
+`$ heroku update`
