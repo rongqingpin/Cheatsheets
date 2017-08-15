@@ -60,8 +60,6 @@
 * `git add .` new & modified; without deleted files
 * `git add -u` modified & deleted; without new files
 
-#### git status
-
 ---
 
 #### branches
@@ -71,3 +69,5 @@
 * `$ git checkout <branch>`: go to the branch
     * or `git checkout -b <branch>`: create and checkout
 * `$ git branch -d <branch>`: delete
+
+* `$ git gui browser <branch>`: view all the files and directories
