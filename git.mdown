@@ -1,7 +1,8 @@
 ### Git / GitHub
 
 `$ git status`  
-`$ git log`
+`$ git log`  
+`$ git diff HEAD`: shwo the difference with the last local commit
 
 ---
 
