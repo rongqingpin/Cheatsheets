@@ -48,6 +48,7 @@
 - from local
     1. `$ git add <...>`
     2. `$ git commit -m <'...'>`
+        1. to unstage files: `git reset <...>`
     3. `$ git push -u <name> master`
 
 - rename a repository
