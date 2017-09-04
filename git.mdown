@@ -74,6 +74,8 @@
 * `$ git branch <branch_name>`: create new branch
 * `$ git checkout <branch>`: go to the branch
     * or `git checkout -b <branch>`: create and checkout
-* `$ git branch -d <branch>`: delete
+* `$ git branch -d <branch>`: delete  
 
-* `$ git gui browser <branch>`: view all the files and directories
+* `$ git gui browser <branch>`: view all the files and directories  
+
+* `$ git merge <branch>`: currently in master, merge with branch
