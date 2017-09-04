@@ -50,7 +50,7 @@
         1. to undo: `$ git checkout -- <...>`
     2. `$ git commit -m <'...'>`
         1. to unstage files: `git reset <...>`
-    3. `$ git push -u <name> master`
+    3. `$ git push`
 
 - rename a repository
     1. rename online
