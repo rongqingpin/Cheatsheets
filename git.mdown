@@ -1,6 +1,7 @@
 ### Git / GitHub
 
-`$ git status`
+`$ git status`  
+`$ git log`
 
 ---
 
