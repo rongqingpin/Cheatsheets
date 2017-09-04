@@ -1,5 +1,7 @@
 ### Git / GitHub
 
+`$ git status`
+
 ---
 
 #### creating a new repository
