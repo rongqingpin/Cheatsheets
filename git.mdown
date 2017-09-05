@@ -3,7 +3,6 @@
 `$ git status`  
 `$ git log`  
 `$ git diff HEAD`: shwo the difference with the most recent commit  
-place `^` after branch name / HEAD / hash to move HEAD 1 level up
 
 ---
 
@@ -42,15 +41,15 @@ place `^` after branch name / HEAD / hash to move HEAD 1 level up
     2. may need to
         3. `$ i`
         4. write the merge message
-        5. press "esc"
+        5. press **esc**
         6. `$ :wq`
-        7. press "enter"
+        7. press **enter**
 
 - from local
     1. `$ git add <...>`
         1. to undo: `$ git checkout -- <...>`
     2. `$ git commit -m <'...'>`
-        1. to unstage files: `git reset <...>`
+        1. to unstage files: `$ git reset <...>`
     3. `$ git push`
 
 - rename a repository
@@ -61,11 +60,11 @@ place `^` after branch name / HEAD / hash to move HEAD 1 level up
 
 #### git add
 
-* `git add <file / directory>`
-* `git add '*.<filetype>'`
-* `git add -A` ALL
-* `git add .` new & modified; without deleted files
-* `git add -u` modified & deleted; without new files
+* `$ git add <file / directory>`
+* `$ git add '*.<filetype>'`
+* `$ git add -A` ALL
+* `$ git add .` new & modified; without deleted files
+* `$ git add -u` modified & deleted; without new files
 
 ---
 
@@ -73,8 +72,15 @@ place `^` after branch name / HEAD / hash to move HEAD 1 level up
 
 * `$ git branch`: show the local branches
 * `$ git branch <branch_name>`: create new branch
-* `$ git checkout <branch>`: go to the branch / move HEAD
-    * or `git checkout -b <branch>`: create and checkout
+
+* move commit (HEAD) or branch:
+    * `$ git branch -f <branch> <location>`
+    * `$ git checkout <location>`: go to the branch / move HEAD
+        * `$ git checkout -b <branch>`: create and checkout
+    * location can be branch name / HEAD / hash (see git log)
+        * add `^` right after to move 1 level up
+        * add `~N` to move N levels up
+
 * `$ git branch -d <branch>`: delete  
 
 * `$ git gui browser <branch>`: view all the files and directories  
