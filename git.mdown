@@ -1,4 +1,4 @@
-### Git / GitHub
+## Git / GitHub
 
 `$ git status`  
 `$ git log`  
@@ -6,7 +6,7 @@
 
 ---
 
-#### creating a new repository
+### creating a new repository
 
 - create a repository online
 
@@ -34,7 +34,7 @@
 
 ---
 
-#### update changes
+### update changes
 
 - from remote
     1. `$ git pull <name> master`
@@ -47,16 +47,23 @@
 
 - from local
     1. `$ git add <...>`
-        1. to undo: `$ git checkout -- <...>`
+        * to undo: `$ git checkout -- <...>`
     2. `$ git commit -m <'...'>`
-        1. to unstage files: `$ git reset <...>`
+        * to unstage files: `$ git reset <...>`
     3. `$ git push`
 
 - rename a repository
     1. rename online
     2. local: `$ git remote set-url <name> <new url>`
 
----
+- to remove changes
+    * `$ git reset <location>`: move back
+    * `$ git revert HEAD`: new commit that reverses the most recent commit
+
+- to select certain commits as new commits
+    * `$ git cherry-pick x y ...`: copy commits (can be from any OTHER branch) and paste in HEAD
+    * `$ git rebase <location>`: move HEAD to <location> & move / copy current branch to <location>
+    * `$ git rebase -i <location>`: a UI shows up which enables select & reorder commits; new branch with selected commits starting from location
 
 #### git add
 
@@ -68,14 +75,14 @@
 
 ---
 
-#### branches
+### branches
 
 * `$ git branch`: show the local branches
 * `$ git branch <branch_name>`: create new branch
 
 * move commit (HEAD) or branch:
     * `$ git branch -f <branch> <location>`
-    * `$ git checkout <location>`: go to the branch / move HEAD
+    * `$ git checkout <location>`: go to the branch / move HEAD (if location is not branch name, HEAD is detached)
         * `$ git checkout -b <branch>`: create and checkout
     * location can be branch name / HEAD / hash (see git log)
         * add `^` right after to move 1 level up
@@ -86,3 +93,11 @@
 * `$ git gui browser <branch>`: view all the files and directories  
 
 * `$ git merge <branch>`: currently in master, merge with branch
+
+---
+
+### tags
+
+`$ git tag <tag> <location>`: tag cannot be moved / changed
+
+`$ git describe <location>`: compare location with its closest ancestor tag
