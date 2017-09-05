@@ -2,7 +2,8 @@
 
 `$ git status`  
 `$ git log`  
-`$ git diff HEAD`: shwo the difference with the last local commit
+`$ git diff HEAD`: shwo the difference with the most recent commit  
+place `^` after branch name / HEAD / hash to move HEAD 1 level up
 
 ---
 
@@ -72,7 +73,7 @@
 
 * `$ git branch`: show the local branches
 * `$ git branch <branch_name>`: create new branch
-* `$ git checkout <branch>`: go to the branch
+* `$ git checkout <branch>`: go to the branch / move HEAD
     * or `git checkout -b <branch>`: create and checkout
 * `$ git branch -d <branch>`: delete  
 
