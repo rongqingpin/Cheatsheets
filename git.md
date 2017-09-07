@@ -2,7 +2,8 @@
 
 `$ git status`  
 `$ git log`  
-`$ git diff HEAD`: show the difference with the most recent commit
+`$ git diff HEAD`: show the difference with the most recent commit  
+`$ git remote -v`: check which remote directory is connected
 
 ---
 
@@ -21,6 +22,7 @@
     4. `$ git add <...>`
     5. `$ git commit -m “<explanatory texts about this change>”`
     6. `$ git remote add <name> <url_of_online_repository>`
+        * if copied from another online repositories, may need to reset url (see `make changes / rename a repository`)
     7. `$ git push -u <name> master` (`-u`: git remembers the name and branch; next time can be omitted)
 
 - generate README file (locally)
