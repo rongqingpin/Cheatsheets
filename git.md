@@ -45,13 +45,6 @@
         4. `$ :wq`
         5. press **enter**
         
-    2. may need to.
-        3. `$ i`
-        4. write the merge message
-        5. press **esc**
-        6. `$ :wq`
-        7. press **enter**
-
 - from local to remote
     1. `$ git add <...>`
         * to undo: `$ git checkout -- <...>`
