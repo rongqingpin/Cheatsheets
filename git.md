@@ -2,7 +2,7 @@
 
 `$ git status`  
 `$ git log`  
-`$ git diff HEAD`: shwo the difference with the most recent commit
+`$ git diff HEAD`: show the difference with the most recent commit
 
 ---
 
@@ -38,6 +38,13 @@
 
 - from remote to local
     1. `$ git pull origin master`: should be at a local commit that is present in remote; pull combines fetch and merge
+    2. may need to:
+        1. `$ i`
+        2. write the merge message
+        3. press **esc**
+        4. `$ :wq`
+        5. press **enter**
+        
     2. may need to.
         3. `$ i`
         4. write the merge message
