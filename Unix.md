@@ -97,7 +97,7 @@ users: `u`, `g` (group), `o` (other than group or owner), `a` (all)
   * type **/<keyword>** to find and highlight
   * type **n** to find the next
 
-`$ grep <option> <'keywords'> f`: default - case sensitive; option as
+`$ grep <option> <'keywords'> f`: print the line containing keywords; default - case sensitive; option as
   * `-i`: ignore upper / lower case
   * `-v`: lines that do not match
   * `-n`: show line with line number
