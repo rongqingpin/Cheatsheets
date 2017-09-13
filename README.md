@@ -1,11 +1,11 @@
 # Cheatsheets
-my go-to-place whenever forgetting something...
+my go-to-place whenever forgetting something... _some_ still being updated
 
 * programming languages, esp. scientific computing, machine learning, data scraping and analysis
   - matlab
-  - python, and some packages
-    package | numpy
-    usage   | scientific computing
+  - python, and some packages  
+    usage   | scientific computing | texts, patterns         | web scraping
+    package | numpy, _scipy_       | regular expression (re) | urllib, bs4.beautifulSoup
     * numpy
     * pandas (TBC)
     * scikit-learn (TBC)
