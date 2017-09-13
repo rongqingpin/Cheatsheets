@@ -1,47 +1,41 @@
-
 # Cheatsheets
 my go-to-place whenever forgetting something... _some_ still being updated
 
-* programming languages, esp. scientific computing, machine learning, data scraping and analysis
-  - matlab
-  - python, and some packages  
+#### programming languages
+esp. scientific computing, machine learning, data scraping and analysis:
+- matlab
+- python, and some packages  
 
 | package  | numpy, _scipy_       | _pandas_   | _scikit-learn_   | _matplotlib_, _bokeh_, _plotly_ | regular expression (_re_) | _urllib_, _bs4.beautifulSoup_ |
 |----------|:---------------------|:-----------|:-----------------|:--------------------------------|:---------------------------|:------------------------------|
 | used for | scientific computing | dataframes | machine learning | visualization                   | texts, patterns           | web scraping                  |
 
-* numpy
-    * pandas (TBC)
-    * scikit-learn (TBC)
-    * visualization
-    * regular expressions (TBC)
-    * web-scraping & beautifulSoup (TBC)
-  - fortran (TBC)
-  - C (TBC)
-  - R (TBC)
-  - C++ (TBC)
+- _fortran_
+- _C_
+- _R_
+- _C++_
 
-* operating systems
+#### operating systems
   - Unix (Linux)
-  - Mac (TBC)
+  - _Mac_
 
-* database
-  - SQL (TBC)
-  - PostgreSQL (TBC)
+#### database
+  - _SQL_
+  - _PostgreSQL_
 
-* web development
-  - html & css (TBC)
-  - Django (TBC)
+#### web development
+  - _html & css_
+  - _Django_
   - Heroku (web application deployment)
 
-* distributed computing
-  - PySpark (TBC)
+#### distributed computing
+  - _PySpark_
 
-* version control
+#### version control
   - Git
 
-* editting tools
+#### editting tools
   - Latex
-    * Latex
-    * Latex for presentations
+    * for reports, paper, thesis
+    * for presentations
   - MarkDown
