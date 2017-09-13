@@ -4,9 +4,9 @@ my go-to-place whenever forgetting something... _some_ still being updated
 * programming languages, esp. scientific computing, machine learning, data scraping and analysis
   - matlab
   - python, and some packages  
-    | package  | numpy, _scipy_       | _pandas_   | _scikit-learn_   | _matplotlib_, _bokeh_, _plotly_ | regular expression (_re_) | _urllib_, _bs4.beautifulSoup_ |
-    |----------|:---------------------|:-----------|:-----------------|:--------------------------------|:---------------------------|:------------------------------|
-    | used for | scientific computing | dataframes | machine learning | visualization                   | texts, patterns           | web scraping                  |  
+| package  | numpy, _scipy_       | _pandas_   | _scikit-learn_   | _matplotlib_, _bokeh_, _plotly_ | regular expression (_re_) | _urllib_, _bs4.beautifulSoup_ |
+|----------|:---------------------|:-----------|:-----------------|:--------------------------------|:---------------------------|:------------------------------|
+| used for | scientific computing | dataframes | machine learning | visualization                   | texts, patterns           | web scraping                  |
     * numpy
     * pandas (TBC)
     * scikit-learn (TBC)
