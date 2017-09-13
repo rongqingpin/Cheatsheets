@@ -3,10 +3,12 @@ my go-to-place whenever forgetting something...
 
 * programming languages, esp. scientific computing, machine learning, data scraping and analysis
   - matlab
-  - python
-    * python
+  - python, and some packages
+    package | numpy
+    usage   | scientific computing
     * numpy
     * pandas (TBC)
+    * scikit-learn (TBC)
     * visualization
     * regular expressions (TBC)
     * web-scraping & beautifulSoup (TBC)
