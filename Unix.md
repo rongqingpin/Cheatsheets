@@ -10,7 +10,8 @@
 options of commands start with `-`; to use more than 1 options: `-xyz`
 
 `*`: 0 or more characters  
-`?`: 1 character
+`?`: 1 character  
+`'.. ..'`: if file name contains space, enclose by `''`
 
 variables start with `$`  
 [environment & shell variables](http://www.ee.surrey.ac.uk/Teaching/Unix/unix8.html)
