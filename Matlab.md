@@ -1,0 +1,202 @@
+# Matlab Manual
+
+`edit <fname>`: create new file as 'fname.m' and open it  
+`$ fname`: run 'fname.m' in command line  
+`whos`: show the variables in the workspace  
+`ans`: most recent result  
+`clear`: clear all variables  
+`clc`: clear command window  
+`%`: comments
+
+`doc <func>`  
+`help <func>`
+
+
+---
+
+`rand(Nrow, Ncol)`
+
+`[..., ...; ..., ...]`: concaternation; ',' - attach new columns; ';' - attach new rows
+
+### Structure
+
+[structure](https://www.mathworks.com/help/matlab/structures.html)
+
+```matlab
+X.y = ...     % create a scalar structure with field y
+X(N).y = ...  % create a structure array with N elements
+```
+
+
+### Strings
+
+`num2str(N)`  
+`fnumber = sprintf(‘%0Nd’,number);`: fnumber has N characters, if number is too short, add 0 to the front
+
+`isspace(x)`: return indices where the character is a whitespace, e.g. `x(~isspace(x))` removes all white  
+`strtrim(x)`: remove whitespace in the beginning & the end
+
+`lower(x)`: return lower cases
+
+`strcmp(x, y)`: True if x = y
+
+
+---
+
+```matlab
+if ...
+    ...
+elseif ...
+else
+end
+```
+
+```matlab
+for i = i1:di:i2
+    ...
+end
+```
+
+
+---
+
+### plots
+
+```matlab
+surf(<x>, <y>, z)
+mesh(<x>, <y>, z)
+```
+
+`histogram(y,N,'Normalization','cdf');`: N - no. of bins; 'cdf' - cumulative distribution from 0 to 1
+
+```matlab
+clr1 = [...]; clr2 = [...];
+dclr = clr2-clr1;
+...
+cnt = 0;
+for loop % nn points in total
+    clr = clr1+cnt/(nn-1)*dclr;
+    cnt = cnt+1;
+    plot(..., 'Color',clr); % line colors varying from clr1 to clr2
+end
+```
+
+```matlab
+contourf(x, y, z, [-aa, linspace(-a,b,N), bb]); % no white spots
+caxis([-a b]);
+```
+
+```matlab
+h = subplot(a,b,i);
+p = get(h,'pos'); % [left, bottom, width, height] in percentage of window size
+change p value
+set(h, 'pos', p);
+```
+
+```matlab
+axes('Position',[left, bottom, width, height],'Visible','off'); % this is to start a new axis outside the current range
+text(x,y,'text'); % text outside the range of the figure
+```
+
+```matlab
+hp3 = get(subplot(3,1,3),'Position');
+colorbar('Position',... % one colorbar for all subplots
+         [hp3(1)+hp3(3)+0.01  hp3(2)  0.03  hp3(2)+hp3(4)*3]);
+```
+
+```matlab
+fttl = ['$',fttl,'$']; 	% fttl is the string containing Latex
+h = title(fttl,'FontSize',14); 	% title / xlabel / ylabel
+set(h,'interpreter','latex')
+```
+
+
+---
+
+### Input & Output
+
+`fprintf('format', x, y, …)`: output to screen  
+`disp('...')`: show texts in command window
+
+```matlab
+save <fname>
+load <fname>
+```
+
+```matlab
+prompt = 'text on screen';
+n = input(prompt); % read input from the screen
+```
+
+```matlab
+fid = fopen(fname); % read from text or dat file
+data = textscan(fid,'%f', 'HeaderLines',a, ... % skip a lines of headline
+                'delimiter','\t'); % '\t' separates each data entry
+fclose(fid);
+data = data{1};
+```
+
+```matlab
+fileID = fopen(name,'a'); % 'a' to appendix to existing files
+fprintf(fileID,'%.8e\n',x); % write x to the file
+fclose(fileID);
+```
+
+```matlab
+handle = figure;
+print(handle,'format',filename) % 'format':	'-depsc' (eps color), '-djpeg' (jpeg file)
+% or
+saveas(gcf,name,'epsc'); % no need to put file extension
+```
+
+```matlab
+for imov = 1:n;
+		mov(imov) = getframe(gcf);
+end
+movie2avi(mov,'fname.avi','fps',m,'compression','None');
+% or
+writerObj = VideoWriter(fname,'MPEG-4'); % fname is the name of the video
+writerObj.FrameRate = 2;
+open(writerObj);
+for i = 1:n;
+    h = figure;
+    % configure your plot
+    frame = getframe(h);
+    writeVideo(writerObj,frame);
+    pause(1); % this line is only necessary when you want to view the movie as it produces
+    close(h);
+end
+close(writerObj);
+```
+
+
+---
+
+### Database
+
+```matlab
+Conn = database('database_name', 'username', 'password', …
+                'Vendor', 'database_type', …        % 'MySQL', 'PostgreSQL', …
+                'Server', 'server_name_or_address') ```
+
+To setup connection to MySQL database:  
+- Download JDBC driver for MySQL
+- Unzip and move the .jar file to matlab folder (`…\MATLAB\R2016b\java\jarext\`)
+- `>> prefdir` in matlab, open the path, close Matlab
+- Create `javaclasspath.txt` file in the preferred path
+- Write the full path of .jar file (with file name), save
+- Restart Matlab
+
+
+---
+
+### Deploy Applications
+
+To compile Matlab app:
+- Go to APPS and click 'Production Server Compiler'
+- Select 'Deployable Archive (.ctf)'
+- Use '+' to add all files needed
+- Edit archive name
+- Save
+- Package
+- The .ctf file in 'for redistribution' can be pushed to server
