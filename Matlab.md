@@ -177,7 +177,8 @@ close(writerObj);
 ```matlab
 Conn = database('database_name', 'username', 'password', …
                 'Vendor', 'database_type', …        % 'MySQL', 'PostgreSQL', …
-                'Server', 'server_name_or_address') ```
+                'Server', 'server_name_or_address')
+```
 
 To setup connection to MySQL database:  
 - Download JDBC driver for MySQL
