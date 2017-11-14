@@ -20,6 +20,8 @@
 
 `[..., ...; ..., ...]`: concaternation; ',' - attach new columns; ';' - attach new rows
 
+`fix(x)`, `ceil(x)`, `floor(x)`, `round(x, N)`
+
 ### Structure
 
 [structure](https://www.mathworks.com/help/matlab/structures.html)
