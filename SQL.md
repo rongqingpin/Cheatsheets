@@ -4,6 +4,20 @@ comment: `-- ...`
 
 ---
 
+creation:  
+
+```SQL
+DROP TABLE IF EXISTS t1;
+CREATE TABLE t1 (
+    c1, <TYPE>,          -- int, real, varchar(N), ...
+    ...
+    PRIMARY KEY (...)    -- all unique values
+);
+INSERT INTO t1 (c1, c2, ...) VALUES (x1, NULL, '...', ...);
+```
+
+---
+
 ```SQL
 select C <as ...>, P(...) <as ...>, *, ...
             -- C: column name
@@ -84,6 +98,11 @@ select <C1> from <table> group by <C1> having count(*) ? ...
 
 `'year-0m-0d'`: ISO date format
 
+
+
+## MySQL
+
+``... ...``: one variable (string) with blanks
 
 
 ## PostgreSQL
