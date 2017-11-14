@@ -11,6 +11,8 @@
 `doc <func>`  
 `help <func>`
 
+`x = dir('...\...\');`: `x.name` are the files inside the directory
+
 
 ---
 
@@ -137,7 +139,12 @@ data = data{1};
 ```
 
 ```matlab
-fileID = fopen(name,'a'); % 'a' to appendix to existing files
+t = readtable(fname, 'delimiter', '...');
+columns = t.Properties.VariableNames;
+```
+
+```matlab
+fileID = fopen(name,'a'); % 'w'; 'a' to appendix to existing files
 fprintf(fileID,'%.8e\n',x); % write x to the file
 fclose(fileID);
 ```
@@ -175,9 +182,25 @@ close(writerObj);
 ### Database
 
 ```matlab
-Conn = database('database_name', 'username', 'password', …
+conn = database('database_name', 'username', 'password', …
                 'Vendor', 'database_type', …        % 'MySQL', 'PostgreSQL', …
                 'Server', 'server_name_or_address')
+...
+close(conn)
+```
+
+`files = catalogs(conn);`: all existing database
+
+`ts = tables(conn, 'file');`: all tables in the catalog
+
+`cols = columns(conn, 'file');`: all columns in the catalog
+
+`results = runsqlscript(conn, fname);`: `fname` is a sql file
+
+```matlab
+data = exec(conn, selectquery); % selectquery is a string
+data = fetch(data);
+data = data.Data;
 ```
 
 To setup connection to MySQL database:  
