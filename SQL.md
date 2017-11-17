@@ -7,32 +7,37 @@ comment: `-- ...`
 creation:  
 
 ```SQL
+CREATE DATABASE db DEFAULT CHARACTER SET utf8; -- non Latin characters allowed
+
 DROP TABLE IF EXISTS t1;
 CREATE TABLE t1 (
-    c1, <TYPE>,          -- int, real, varchar(N), ...
+    c1, <TYPE>,          -- int, real, double, varchar(N), text, blob ...
     ...
     PRIMARY KEY (...)    -- all unique values
 );
 INSERT INTO t1 (c1, c2, ...) VALUES (x1, NULL, '...', ...);
 ```
 
+`DELECT FROM t1 WHERE ...`
+
+`UPDATE t1 SET c1 = ... WHERE ...`
+
 ---
 
 ```SQL
-select C <as ...>, P(...) <as ...>, *, ...
-            -- C: column name
-            -- P: some function / variable of C
-            -- *: all columns
-from X                          -- X is table name
-where C ? ..., ...              -- ? is some operator
-group by ..., ...
-having P(...) ? ..., ...
-order by ..., ...
-limit N
+SELECT c1 <as ...>, f(...) <AS ...>, *, ...
+                -- f: some function / variable of C
+                -- *: all columns
+FROM t1
+WHERE c1 ? ..., ...              -- ? is some operator
+GROUP BY ..., ...
+HAVING P(...) ? ..., ...
+ORDER BY ..., ...
+LIMIT n;
 ```
 
 ```SQL
-select ... from X1 join X2 on X1.C1 = X2.C2 where ...
+SELECT ... FROM t1 JOIN t2 ON t1.c1 = t2.c2 WHERE ...
 ```
 
 ---
@@ -54,8 +59,8 @@ note integers produce integers
 `is not null`
 
 **pattern** comparison:  
-`<C1> like '...'`  
-`<C1> not like '...'`  
+`<c1> LIKE '...'`  
+`<C1> NOT LIKE '...'`  
 `'%'`: any number of characters  
 `'_'`: one character  
 
@@ -102,15 +107,25 @@ select <C1> from <table> group by <C1> having count(*) ? ...
 
 ## MySQL
 
-``... ...``: one variable (string) with blanks
+`$ /<path>/mysql -u <username> -p <password>`: using MAMP, path is `/Applications/MAMP/Library/bin/`
+
+after entering, command line starts with `mysql>`, enter after this
+
+`> show databases;`
+
+`> use db;`
+
+`> describe t1;`
+
+```... ...```: one variable (string) with blanks
 
 
 ## PostgreSQL
 
-`psql -h localhost`: start the command line tool  
-`psql postgres -U ...`: enter the user
+`$ psql -h localhost`: start the command line tool  
+`$ psql postgres -U ...`: enter the user
 
-after entering, the command line starts with `postgres=#`, enter after this:
+after entering, the command line starts with `postgres=#`
 
 `\du`: list all current users  
 `\list`: list all databases
