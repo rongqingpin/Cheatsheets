@@ -9,18 +9,21 @@ creation:
 ```SQL
 CREATE DATABASE db DEFAULT CHARACTER SET utf8; -- non Latin characters allowed
 
-DROP TABLE IF EXISTS t1;
+DROP TABLE <IF EXISTS> t1;
 CREATE TABLE t1 (
-    c1, <TYPE>,          -- int, real, double, varchar(N), text, blob ...
+    c1 <TYPE>,           -- int, real, double, varchar(N), text, blob ...
+    c2 INT UNSIGNED NOT NULL AUTO_INCREMENT,   -- auto-filled if not provided
     ...
-    PRIMARY KEY (...)    -- all unique values
+    PRIMARY KEY (...),   -- all unique values
+    INDEX (...)          -- much faster scanned
 );
 INSERT INTO t1 (c1, c2, ...) VALUES (x1, NULL, '...', ...);
 ```
 
-`DELECT FROM t1 WHERE ...`
+`DELECT FROM t1 WHERE ...`  
 
-`UPDATE t1 SET c1 = ... WHERE ...`
+`UPDATE t1 SET c1 = ... WHERE ...`  
+`ALTER TABLE t1 ADD INDEX (c1) <USING BTREE>`
 
 ---
 
