@@ -20,7 +20,7 @@ CREATE TABLE t1 (
 INSERT INTO t1 (c1, c2, ...) VALUES (x1, NULL, '...', ...);
 ```
 
-`DELECT FROM t1 WHERE ...`  
+`DELECT FROM t1 <WHERE ...>`: if not condition, then empty the table  
 
 `UPDATE t1 SET c1 = ... WHERE ...`  
 `ALTER TABLE t1 ADD INDEX (c1) <USING BTREE>`
@@ -84,6 +84,8 @@ note integers produce integers
 
 `length(...)`: the number of characters; applied to each element in `...`  
 `left(..., N)`: output the first N character
+
+`CONCAT(c1, c2)`
 
 ---
 
