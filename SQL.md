@@ -11,12 +11,12 @@ CREATE DATABASE db DEFAULT CHARACTER SET utf8; -- non Latin characters allowed
 
 DROP TABLE <IF EXISTS> t1;
 CREATE TABLE t1 (
-    c1 <TYPE>,           -- int, real, double, varchar(N), text, blob ...
-    c2 INT UNSIGNED NOT NULL AUTO_INCREMENT,   -- auto-filled if not provided
+    t1_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    c1 <TYPE>,             -- int, real, double, varchar(N), text, blob ...
     ...
-    PRIMARY KEY (...),   -- all unique values
-    INDEX (...)          -- much faster scanned
-);
+    PRIMARY KEY (t1_id),   -- all unique values
+    <INDEX (...)>          -- much faster scanned
+) <ENGINE = InnoDB>;
 INSERT INTO t1 (c1, c2, ...) VALUES (x1, NULL, '...', ...);
 ```
 
