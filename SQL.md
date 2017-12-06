@@ -10,6 +10,7 @@ creation:
 CREATE DATABASE db DEFAULT CHARACTER SET utf8; -- non Latin characters allowed
 
 DROP TABLE <IF EXISTS> t1;
+
 CREATE TABLE t1 (
     t1_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     c1 <TYPE>,             -- int, real, double, varchar(N), text, blob ...
@@ -17,20 +18,27 @@ CREATE TABLE t1 (
     PRIMARY KEY (t1_id),   -- all unique values
     <INDEX (...)>          -- much faster scanned
 ) <ENGINE = InnoDB>;
-INSERT INTO t1 (c1, c2, ...) VALUES (x1, NULL, '...', ...);
 ```
 
-`DELECT FROM t1 <WHERE ...>`: if not condition, then empty the table  
+update:
 
-`UPDATE t1 SET c1 = ... WHERE ...`  
-`ALTER TABLE t1 ADD INDEX (c1) <USING BTREE>`
+```SQL
+INSERT INTO t1 (c1, c2, ...) VALUES (x1, NULL, '...', ...);
+
+DELECT FROM t1 <WHERE ...>     -- if not condition, then empty the table  
+
+UPDATE t1 SET c1 = ... WHERE ...
+
+ALTER TABLE t1 ADD INDEX (c1) <USING BTREE>
+```
 
 ---
 
 ```SQL
-SELECT c1 <as ...>, f(...) <AS ...>, *, ...
+SELECT c1 <as ...>, f(...), *, ...
                 -- f: some function / variable of C
                 -- *: all columns
+AS ...
 FROM t1
 WHERE c1 ? ..., ...              -- ? is some operator
 GROUP BY ..., ...
