@@ -61,6 +61,24 @@ for i = i1:di:i2
 end
 ```
 
+---
+
+### functions
+
+solution optimization:
+```matlab
+y = ...;
+f = @(x) func_name(x, y, ...);         % x will be optimized; y is fixed; func_name defined in another file
+
+options = optimset('Display','iter', ...           % display to command window (iter - each iteration)
+                   'PlotFcns',@optimplotfval, ...  % plot history
+                   'TolX', 1e-N, ...               % dx < TolX
+		   'TolFun', 1e-N, 'MaxIter', N);  % df < TolFun; only for fminsearch
+
+[x, fval, exitflag, output] = fminsearch(f, x0, options); % stops when df < TolFun && dx < TolX
+
+[x, fval, exitflag, output] = fzero(f, x0, options);
+```
 
 ---
 
