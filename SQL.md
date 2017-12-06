@@ -29,7 +29,7 @@ update:
 ```SQL
 INSERT INTO t1 (c1, c2, ...) VALUES (x1, NULL, '...', ...);
 
-DELECT FROM t1 <WHERE ...>     -- if not condition, then empty the table  
+DELETE FROM t1 <WHERE ...>     -- if not condition, then empty the table  
 
 UPDATE t1 SET c1 = ... WHERE ...
 
