@@ -20,7 +20,7 @@ CREATE TABLE t1 (
     
   CONSTRAINT FOREIGN KEY (t2_id)
     REFERENCES t2 (t2_id)
-    ON DELETE CASCADE ON UPDATE CASCADE
+    ON DELETE CASCADE ON UPDATE CASCADE  -- default - RESTRICT / SET NULL
 ) <ENGINE = InnoDB>;
 ```
 
@@ -38,6 +38,8 @@ ALTER TABLE t1 ADD INDEX (c1) <USING BTREE>
 
 ---
 
+access:
+
 ```SQL
 SELECT c1, f(...), *, ...
                 -- f: some function / variable of C
@@ -51,8 +53,10 @@ SELECT c1, f(...), *, ...
   LIMIT n;
 ```
 
+combine tables:
+
 ```SQL
-SELECT ... FROM t1 JOIN t2 ON t1.c1 = t2.c2 WHERE ...
+SELECT t1.c1, t2.c2, ... FROM t1 JOIN t2 <JOIN ...> <ON t1.c1 = t2.c2 AND ...>  -- no 'ON' then show all combinations
 ```
 
 ---
