@@ -20,14 +20,14 @@ CREATE TABLE t1 (
     
   CONSTRAINT FOREIGN KEY (t2_id)
     REFERENCES t2 (t2_id)
-    ON DELETE CASCADE ON UPDATE CASCADE  -- default - RESTRICT / SET NULL
+    ON DELETE <CASCADE> ON UPDATE <CASCADE>    -- RESTRICT (default) / SET NULL
 ) <ENGINE = InnoDB>;
 ```
 
 update:
 
 ```SQL
-INSERT INTO t1 (c1, c2, ...) VALUES (x1, NULL, '...', ...);
+INSERT INTO t1 (c1, c2, ...) VALUES (x1, NULL, '...', ...); -- t1_id auto-filled
 
 DELETE FROM t1 <WHERE ...>     -- if not condition, then empty the table  
 
@@ -102,6 +102,8 @@ note integers produce integers
 `left(..., N)`: output the first N character
 
 `CONCAT(c1, c2)`
+
+`NOW()`: current date & time
 
 ---
 
