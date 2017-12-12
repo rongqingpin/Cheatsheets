@@ -34,6 +34,10 @@ DELETE FROM t1 <WHERE ...>     -- if not condition, then empty the table
 UPDATE t1 SET c1 = ... WHERE ...
 
 ALTER TABLE t1 ADD INDEX (c1) <USING BTREE>
+
+ALTER TABLE t1 DROP FOREIGN CONSTRAINT ...
+
+ALTER TABLE t1 DROP COLUMN c1
 ```
 
 ---
@@ -57,6 +61,12 @@ combine tables:
 
 ```SQL
 SELECT t1.c1, t2.c2, ... FROM t1 JOIN t2 <JOIN ...> <ON t1.c1 = t2.c2 AND ...>  -- no 'ON' then show all combinations
+```
+
+access table info:
+
+```SQL
+SHOW CREATE TABLE t1          -- can view foreign key constraint, etc.
 ```
 
 ---
