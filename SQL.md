@@ -50,17 +50,17 @@ SELECT c1, f(...), *, ...
                 -- *: all columns
   AS ...
   FROM t1
-  WHERE c1 ? ..., ...              -- ? is some operator
+  WHERE c1 ? ..., ...          -- ? is some operator
   GROUP BY ..., ...
   HAVING P(...) ? ..., ...
-  ORDER BY ..., ...
+  ORDER BY ..., ...            -- default ascending (e.g. a-z), or add desc; if multiple columns, start from the first
   LIMIT n;
 ```
 
 combine tables:
 
 ```SQL
-SELECT t1.c1, t2.c2, ... FROM t1 JOIN t2 <JOIN ...> <ON t1.c1 = t2.c2 AND ...>  -- no 'ON' then show all combinations
+SELECT t1.c1, t2.c2, ... FROM t1 JOIN t2 <JOIN ...> <ON t1.c2 = t3.c1 AND ...>  -- no 'ON' then show all combinations
 ```
 
 access table info:
@@ -114,23 +114,6 @@ note integers produce integers
 `CONCAT(c1, c2)`
 
 `NOW()`: current date & time
-
----
-
-### more on `select`
-
-```SQL
-select * from <table> limit N;
-
-select <C1> from <table> order by <C1, C2, ...> ...
-        -- order, default ascending (e.g. a-z), or add desc
-        -- if sort by multiple columns, start from the first
-
-select <C1>, count(*) from <table> group by <C1, ...>
-select <C1>, count(*) from <table> group by <C1> order by count
-select <C1>, avg(C2) from <table> group by <C1>
-select <C1> from <table> group by <C1> having count(*) ? ...
-```
 
 ---
 
