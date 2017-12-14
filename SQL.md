@@ -129,7 +129,7 @@ note integers produce integers
 
 ## MySQL
 
-`$ /<path>/mysql -u <username> -p <password>`: using MAMP, path is `/Applications/MAMP/Library/bin/`
+`$ /<path_mysql> -u <username> -p <password> -h <link>`: using MAMP, path is `/Applications/MAMP/Library/bin/mysql` on Mac, `\MAMP\bin\mysql\bin\mysql.exe` on Windows
 
 after entering, command line starts with `mysql>`, enter after this
 
