@@ -7,22 +7,28 @@ comment: `-- ...`
 creation:  
 
 ```SQL
-CREATE DATABASE db DEFAULT CHARACTER SET utf8; -- non Latin characters allowed
+CREATE DATABASE db DEFAULT CHARACTER SET utf8;    -- non Latin characters allowed
 
 DROP TABLE <IF EXISTS> t1;
 
 CREATE TABLE t1 (
-  t1_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  c1 <TYPE>,             -- int, real, double, varchar(N), text, blob ...
+  t1_id <PROPERTY_TYPE> <PROPERTY_VALUE>,
+  c1 <TYPE> <VALUE>,
   ...
-  PRIMARY KEY (t1_id),   -- all unique values
-  <INDEX (...)>          -- much faster scanned
     
-  CONSTRAINT FOREIGN KEY (t2_id)
-    REFERENCES t2 (t2_id)
-    ON DELETE <CASCADE> ON UPDATE <CASCADE>    -- RESTRICT (default) / SET NULL
+  CONSTRAINT FOREIGN KEY (t2_id) REFERENCES t2 (t2_id)
+    ON DELETE <CASCADE> ON UPDATE <CASCADE>,      -- RESTRICT (default) / SET NULL
+    
+  PRIMARY KEY (t1_id, ...),   -- all unique values; if multiple, many-to-many connection table
+  INDEX (...).                -- much faster scanned
 ) <ENGINE = InnoDB>;
 ```
+
+possible properties of columns:  
+data type: `INT <UNSIGNED>`, `REAL`, `DOUBLE`, `VARCHAR(N)`, `TEXT`, `BLOB`, ...  
+data values: `NOT NULL`, `AUTO_INCREMENT` (must be primary key, no need for insert), `UNIQUE`
+
+---
 
 update:
 
@@ -53,7 +59,7 @@ SELECT c1, f(...), *, ...
   WHERE c1 ? ..., ...          -- ? is some operator
   GROUP BY ..., ...
   HAVING P(...) ? ..., ...
-  ORDER BY ..., ...            -- default ascending (e.g. a-z), or add desc; if multiple columns, start from the first
+  ORDER BY c1, c2 DESC, ...    -- start from the first
   LIMIT n;
 ```
 
