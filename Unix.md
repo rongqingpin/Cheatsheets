@@ -120,3 +120,4 @@ users: `u`, `g` (group), `o` (other than group or owner), `a` (all)
 `latex <file.tex>`: will display 'Output written on file.dvi' if successful  
 `xdvi <file.dvi> &`: view dvi file  
 `pdflatex file.tex`: convert to pdf
+`X`: force execute
