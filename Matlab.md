@@ -223,7 +223,7 @@ data = fetch(data);
 data = data.Data;
 ```
 
-To setup connection to MySQL database:  
+To setup connection to [MySQL database](https://www.mathworks.com/help/database/ug/mysql-jdbc-windows.html#bt8knx3-3):  
 - Download JDBC driver for MySQL
 - Unzip and move the .jar file to matlab folder (`…\MATLAB\R2016b\java\jarext\`)
 - `>> prefdir` in matlab, open the path, close Matlab
