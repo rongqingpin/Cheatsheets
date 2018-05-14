@@ -1,0 +1,55 @@
+### Python Regular Expression
+
+`import re`
+
+---
+
+#### Functions
+
+`match = re.search(pattern, string, <options>)`: the first match; returns an object / None
+
+```python
+if match:
+    match.group()   # the whole match
+    match.group(i)  # group i (see Pattern/group)
+```
+
+`re.sub(p1, p2, string)`: in string, replace p1 by p2
+* in p2, use `\i` to refer to group i in p1  
+
+`allmatch = re.findall(p, s, <options>)`: if p contains only one group, returns a list of strings; otherwise return a list of tuples
+
+possible options:
+* `re.IGNORECASE`
+* `re.DOTALL`: `.` matches a newline also
+* `re.MULTILINE`: `^` and `$` match the start and end of each line
+
+---
+
+#### Pattern
+
+`r'...'`: raw
+
+`\`: inhibit special character `. ^ $ * + ? { [ ] \ | ( )`
+
+`\w`: a letter / digit / `_`  
+`\W`: the rest  
+`\s`: a whitespace (space / `\n` / `\r` return / `\t` tab / `\f` form)  
+`\S`: the rest  
+`\d`: 0 to 9  
+`.`: any character except new line
+
+`^`: start  
+`$`: end
+
+`[xy]`: a set of chars that can be x or y; note:
+  * `.` is a period
+  * `x-y` indicates the range, `x-` just a dash
+  * `^xy` any except x & y
+
+`x+`: ≥ 1 x  
+`x*`: ≥ 0 x  
+`x?`: 0 / 1 x  
+the matching goes as far as possible (greedy); to inhibit (stop as soon as possible), use `x+?` and `x*?`
+
+`(...)`: a group of matching text

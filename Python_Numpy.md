@@ -82,7 +82,7 @@ element-wise:
 `np.ogrid()`  
 
 `np.zeros( N )`: 1D array  
-`np.zeros( (i, j, ...) )`  
+`np.zeros( (i, j, ...), dtype = ... )`  
 `Z = np.zeros(N, [('type', [('name', float, N1), (...), ...]), (...), ...])`: an array of size `N * Ntype * sum(Ni)`, can use `Z['type']['name']` to reference   
 `np.ones()`  
 `np.eye(N)`: 2D diagonal  
