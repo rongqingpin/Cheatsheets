@@ -15,9 +15,9 @@ X.head(N) # slice 1st N rows, display to screen by default
 X.columns
 Nrow, Ncol = X.shape
 Y.unique()
-Y.values
-Y.value_counts()
 ```
+`Y.index`, `Y.values`
+`Y.value_counts()`
 
 #### Data Slicing
 ```python
@@ -44,7 +44,8 @@ X.iloc[:, [ic1, ic2, ...] ]
 
 `Y.isnull()`: a Series of True/False  
 `Y.isnull().sum()`: No. of True (NaN)  
-`pd.isnull(x)`: x can be an array
+`pd.isnull(x)`: x can be an array  
+`Y.notnull()`
 
 `X.drop(labels = ['...', '...'], axis = ...)`: 1 for column, 0 for row  
 `X.dropna(axis = ..., thresh = N, how = 'all')`: thresh - at N non-NaNs; how - all entries as NaN, or 'any'
