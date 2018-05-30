@@ -113,7 +113,8 @@
     `X.find('a')`  
     `X.lower()`: lowercase; `X.upper()`  
     `X.strip()`: remove whitespace from start and end  
-    `X.split('delimiter')`: split X into a list of strings, separated by the delimiter (should exist in X), if omitted, separate by whitespace; `'delimiter'.join(X)`: X is a list, return a string; if `''`, concatenate directly
+    `X.split('delimiter')`: split X into a list of strings, separated by the delimiter (should exist in X), if omitted, separate by whitespace  
+    `'delimiter'.join(X)`: X is a list, return a string; if `''`, concatenate directly
 * unordered  
   * set  
     `X.union(Y)`, `X.intersect(Y)`, `X.difference(Y)`, `X.issubset(Y)`: see operations  
