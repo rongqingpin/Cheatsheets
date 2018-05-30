@@ -58,7 +58,8 @@
       def __eq__(...): # default shallow equality: must point to same object
           ...          # deep equality is when values are the same
   X = ClassName(<x1>, ...) # creates an object instance
-  X.MethodName(<y1>, ...)```
+  X.MethodName(<y1>, ...)
+```
 
 ---
 
@@ -151,7 +152,8 @@
 ```python
 X, Y = [a, b, c], [i, j, k]
 Z = zip(X, Y) # Z = [(a, i), (b, j), (c, k)]; e.g. for i, j in zip(X, Y):
-X, Y = zip(*Z)```
+X, Y = zip(*Z)
+```
 
 ---
 
@@ -199,7 +201,8 @@ except ErrorType:
 except (Type1, ...):
     ...
 finally:              # always executed even if error
-    ...```
+    ...
+```
 
 `raise ErrorType<'description'>`: e.g. ImportError, IndexError, NameError, SyntaxError, TypeError, ValueError
 
