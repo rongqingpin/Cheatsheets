@@ -19,7 +19,7 @@
 `help("modules")`: list all the installed packages  
 `help(<function/module/object/...>)`  
 `help(<module/object>.<function>)`  
-`dir(<...>)`: list of defined symbols
+`dir(<...>)`: list of defined symbols; `globals()`; `locals()`
 
 `%reset`: clear all
 
@@ -100,7 +100,7 @@
 
 #### collections
 `X.remove(x)`: delete x's first appearance  
-`del X[i]`: for ordered, delete the ith element; for dictionary, i is a key  
+`del X[i]`: for ordered, delete the ith element; for dictionary, i is a key; `del X`: clear up  
 * ordered  
   `N = X.index(x)`: N is the index of x's first appearance in X  
   `N = X.count(x)`  
