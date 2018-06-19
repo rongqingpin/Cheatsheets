@@ -9,7 +9,7 @@
 X.dtypes
 X.info()
 ```
-`X.describe()`: percentiles = [..., ...]; include = ['O'], objects
+`X.describe()`: percentiles = [..., ...]; include = ['O'] for objects, or 'all' for all columns
 ```python
 X.head(N) # slice 1st N rows, display to screen by default
 X.columns
