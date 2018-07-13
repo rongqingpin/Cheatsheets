@@ -47,7 +47,7 @@ X.iloc[:, [ic1, ic2, ...] ]
 `pd.isnull(x)`: x can be an array  
 `Y.notnull()`
 
-`X.drop(labels = ['...', '...'], axis = ...)`: 1 for column, 0 for row  
+`X = X.drop([..., ...], axis = ...)`: `...` are the indices / column names; 1 for column, 0 for row  
 `X.dropna(axis = ..., thresh = N, how = 'all')`: thresh - at N non-NaNs; how - all entries as NaN, or 'any'
 
 `X2 = X.drop_duplicates()`
