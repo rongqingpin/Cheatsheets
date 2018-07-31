@@ -40,7 +40,8 @@ X.iloc[:, [ic1, ic2, ...] ]
 #### Initial Processing
 `X.columns = ['C1', 'C2', ...]`: change column title  
 `X.index`  
-`Y.sort_index()`: sort by index
+`Y.sort_index()`: sort by index  
+`X = X.reset_index(drop = True)`
 
 `Y.isnull()`: a Series of True/False  
 `Y.isnull().sum()`: No. of True (NaN)  
@@ -94,7 +95,7 @@ Y.map( {values[i]: i for i in range(len(values))} ) # texts into numbers
 `X = Y.to_frame(name = 'C')`  
 `Y.astype(float)`  
 `Y2 = pd.to_datetime(Y1, format = '...')`: format see [link](https://docs.python.org/2/library/datetime.html#strftime-and-strptime-behavior)  
-`X2 = X.as_matrix()`
+`X2 = X.values`: to numpy array
 
 #### Plots
 default plots using `matplotlib.pyplot`
