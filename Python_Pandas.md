@@ -17,7 +17,7 @@ X.columns
 Nrow, Ncol = X.shape
 Y.unique()
 ```
-`Y.index`, `Y.values`
+`Y.index`, `Y.values`  
 `Y.value_counts()`
 
 #### Data Slicing
