@@ -2,7 +2,8 @@
 `import pandas as pd`
 
 #### Data Import
-`X = pd.read_csv(fname, index_col = N, sep = '...', header = None, names = [columns], skiprows = N)` [more](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html)
+`X = pd.read_csv(fname, index_col = N, sep = '...', header = None, names = [columns], skiprows = N)`  
+    `sep = '\s+' single or more white space` [more](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html)
 
 #### Take a Peak
 ```python
@@ -93,7 +94,7 @@ Y.map( {values[i]: i for i in range(len(values))} ) # texts into numbers
 
 `X = pd.DataFrame(Y, columns = ['C1', 'C2', ...], index = [...])`: if only 1 row of data, Y should be `[[..., ...]]`  
 `X = Y.to_frame(name = 'C')`  
-`Y.astype(float)`  
+`Y = Y.astype(float)`  
 `Y2 = pd.to_datetime(Y1, format = '...')`: format see [link](https://docs.python.org/2/library/datetime.html#strftime-and-strptime-behavior)  
 `X2 = X.values`: to numpy array
 
