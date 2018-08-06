@@ -100,6 +100,25 @@ advanced graphs:
 
 ---
 
+### Seaborn
+
+`import seaborn as sns`
+
+```python
+sns.pairplot(X) # pairwise scatter plot + histograms of each feature
+```
+
+```python
+# Generate a mask for the upper triangle
+mask = np.zeros_like(Y, dtype=np.bool) # Y is the correlation matrix
+mask[np.triu_indices_from(mask)] = True
+# Generate a custom diverging colormap
+cmap = sns.diverging_palette(220, 10, as_cmap=True)
+sns.heatmap(Y, mask=mask, cmap=cmap, vmax=.5, vmin = -.5, linewidths=.5, square=True, cbar_kws={"shrink": .5})
+```
+
+---
+
 ### Python Bokeh
 
 ```python
