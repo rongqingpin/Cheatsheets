@@ -3,7 +3,7 @@
 
 #### Data Import
 `X = pd.read_csv(fname, index_col = N, sep = '...', header = None, names = [columns], skiprows = N)`  
-&nbsp;&nbsp;`sep = '\s+' single or more white space` [more](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html)
+&nbsp;&nbsp;&nbsp;&nbsp;`sep = '\s+' single or more white space` [more](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html)
 
 #### Take a Peak
 ```python
