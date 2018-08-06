@@ -4,7 +4,9 @@
 ## Header2
 #### Header4, etc.
 
-new line: two spaces + enter at the end of the line
+new line: two spaces + enter at the end of the line  
+
+&nbsp;&nbsp;&nbsp;&nbsp;a line that's indented
 
 * bullet or
 - bullet
