@@ -38,7 +38,8 @@ font<sub>subscript</sub> or<sup>superscript</sup>
 
 clickable: <user@gmail.com> or <http://homepage.com>
 
-insert image: ![(image name)](link)
+insert image: ![(image name)](link)  
+or: <img src="image_name" alt="figname" width="350px"/>
 
 math: <math> <mn>1</mn> <mo>+</mo> <mi>a</mi> </math>
 
