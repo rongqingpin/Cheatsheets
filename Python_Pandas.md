@@ -30,6 +30,7 @@ X.iloc[:, [ic1, ic2, ...] ]
 ```
 
 `X[condition_of_y]`: row slicing  
+`X.loc[condition_of_x, condition of y]`  
 `Y.isin([a, b, ...])`: returns a boolean series
 
 `X.sample(N)`: random sampling as representative of the whole
