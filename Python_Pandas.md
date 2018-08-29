@@ -114,6 +114,12 @@ X2.plot.bar(stacked = True)
 X2.plot.area()
 X2.plot.line()
 ```
+```python
+from pandas.plotting import parallel_coordinates as parcor
+parcor(X, 'column_class', color = ('#556270', '#4ECDC4'))
+from pandas.plotting import andrews_curves as adrcur
+adrcur(X, 'column_class')
+```
 
 #### Output
 `X.to_<filetype>('fname', index = False)`: filetype can be sql, excel, json, csv
