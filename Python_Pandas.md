@@ -1,3 +1,5 @@
+notation conventions: `X` - dataframe; `Y` - series; `x` / `y` - objects that can be referenced similarly to lists
+
 ### Python Pandas
 `import pandas as pd`
 
@@ -6,19 +8,15 @@
 &nbsp;&nbsp;&nbsp;&nbsp;`sep = '\s+' single or more white space` [more](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html)
 
 #### Take a Peak
-```python
-X.dtypes
-X.info()
-```
-`X.describe()`: `percentiles = [..., ...]`, default 25, 50, 75; `include = ['O']` for objects, or `'all'` for all columns
-```python
-X.head(N) # slice 1st N rows, display to screen by default
-X.columns
-Nrow, Ncol = X.shape
-Y.unique()
-```
-`Y.index`, `Y.values`  
-`Y.value_counts()`
+`Y = X.dtypes`  
+`X.info()`: counts and data types  
+`X.describe()`: `percentiles = [..., ...]`, default 25, 50, 75; `include = ['O']` for objects, or `'all'` for all columns  
+`X.head(N)`: slice 1st N rows, display to screen by default  
+`y = X.columns`: Index()  
+`Nrow, Ncol = X.shape`  
+`y = Y.unique()`  
+`ind = Y.index`, `y = Y.values`  
+`Y2 = Y.value_counts()`: indices are the values, values are the counts
 
 #### Data Slicing
 ```python
