@@ -107,6 +107,7 @@ advanced graphs:
 ```python
 sns.pairplot(X) # pairwise scatter plot + histograms of each feature
 sns.regplot(x = '...', y = '...', data = X, fig_reg = False) # fig_reg default True - regression
+sns.boxplot(x = '...', y = '...', data = X)
 ```
 
 ```python
