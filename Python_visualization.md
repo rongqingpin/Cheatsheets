@@ -102,7 +102,8 @@ advanced graphs:
 
 ### Seaborn
 
-`import seaborn as sns`
+`import seaborn as sns`  
+[seaborn palette options](https://seaborn.pydata.org/generated/seaborn.color_palette.html#seaborn.color_palette)
 
 ```python
 sns.pairplot(X) # pairwise scatter plot + histograms of each feature
