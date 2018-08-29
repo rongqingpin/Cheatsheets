@@ -205,32 +205,3 @@ finally:              # always executed even if error
 ```
 
 `raise ErrorType<'description'>`: e.g. ImportError, IndexError, NameError, SyntaxError, TypeError, ValueError
-
----
-
-### some modules
-
-```python
-import math
-x2 = math.floor(x)
-```
-
-```python
-import sys
-... # for debugging purpose; stop the code at exit()
-sys.exit()
-```
-
-```python
-import time
-t0 = time.time()
-# here goes some codes
-print(time.time() - t0) # execution time
-```
-
-```python
-import os
-dir_path = os.path.dirname(os.path.realpath(__file__)) # current working directory (without /)
-for filename in os.listdir(dir_path):
-    # loop through all files in folder
-```
