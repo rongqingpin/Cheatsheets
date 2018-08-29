@@ -1,0 +1,36 @@
+```python
+import math
+x2 = math.floor(x)
+```
+
+```python
+import sys
+... # for debugging purpose; stop the code at exit()
+sys.exit()
+```
+
+```python
+import time
+t0 = time.time()
+# here goes some codes
+print(time.time() - t0) # execution time
+```
+
+```python
+import os
+dir_path = os.path.dirname(os.path.realpath(__file__)) # current working directory (without /)
+for filename in os.listdir(dir_path):
+    # loop through all files in folder
+```
+
+```python
+import sklearn.preprocessing as prep
+X2 = prep.StandardScaler().fit_transform(X)
+
+from sklearn.decomposition import PCA
+pca = PCA(n_components = ..., svd_solver = 'full')
+pca.fit(X)
+PCA(copy = True, n_components = ..., whiten = False)
+Y = pca.transform(X) # these are the scores for each PC
+lamda = pca.explained_variance_ratio_
+```
