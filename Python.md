@@ -211,6 +211,11 @@ finally:              # always executed even if error
 ### some modules
 
 ```python
+import math
+x2 = math.floor(x)
+```
+
+```python
 import sys
 ... # for debugging purpose; stop the code at exit()
 sys.exit()
