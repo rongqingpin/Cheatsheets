@@ -52,7 +52,7 @@ XconfInterval = results.conf_int(alpha = 0.05) # no header: cols = None
 residuals = results.resid
 
 # diagnostic plots
-fig = sm.qqplot(results.resid_pearson) # QQ plot
+fig = sm.qqplot(results.resid_pearson) # QQ plot. if add to existing plot: ax = ax1 (see matplotlib for ax)
 plt.show()
 infl = results.get_influence()
 resd_std = infl.resid_studentized_internal # outliers > +/- 3
