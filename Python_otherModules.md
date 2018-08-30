@@ -42,7 +42,7 @@ x = sm.add_constant(x) # add intercept - no included by default
 results = sm.OLS(y, x).fit()
 
 # or fit from formula:
-fformula = 'y ~ 1 + x + np.power(x, 2) + np.log(...)' # y & x should be columns of dataframe X
+fformula = 'np.function(y) ~ 1 + x + np.power(x, 2) + np.log(...)' # y & x should be columns of dataframe X
 results = sm.OLS.from_formula(formula = fformula, data = X).fit()
 
 print(results.summary())
