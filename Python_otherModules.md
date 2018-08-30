@@ -38,7 +38,7 @@ lamda = pca.explained_variance_ratio_
 ```python
 import statsmodels.api as sm
 
-x = sm.add_constant(x) # add intercept
+x = sm.add_constant(x) # add intercept - no included by default
 results = sm.OLS(y, x).fit()
 
 # or fit from formula:
@@ -47,5 +47,14 @@ results = sm.OLS.from_formula(formula = fformula, data = X).fit()
 
 print(results.summary())
 y2 = results.fittedvalues # least square line
+ynew = results.predict(xnew)
 XconfInterval = results.conf_int(alpha = 0.05) # no header: cols = None
+residuals = results.resid
+
+# diagnostic plots
+fig = sm.qqplot(results.resid_pearson) # QQ plot
+plt.show()
+infl = results.get_influence()
+resd_std = infl.resid_studentized_internal # outliers > +/- 3
+hatDiag  = infl.hat_diag_factor            # high leverage points > (Ncol + 1) / Nrow
 ```
