@@ -56,6 +56,7 @@ plt.xlabel('text')
 plt.ylabel('text')
 plt.axis([xmin, xmax, ymin, ymax])
 plt.ylim(ymin, xmin)
+plt.axis('equal')
 plt.xscale('log') # or 'linear' by defaut
 plt.xticks(x0, rotation = '') # x0 can be a list / array
         # rotation can be N (angle) / 'vertical'
