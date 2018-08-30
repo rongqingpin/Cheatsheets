@@ -111,6 +111,10 @@ element-wise:
 
 `function.outer(x, y)`: apply function to all pairs of xi and yi
 
+`np.random.seed(N)`
+
+`x = np.random.normal(loc = mu, scale = sigma, size = n)`: Gaussian (default: normal) distribution
+
 ---
 
 #### input / output
