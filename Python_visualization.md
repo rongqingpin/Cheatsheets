@@ -3,10 +3,12 @@
 `import matplotlib.pyplot as plt`  
 `help(function)`
 
+set the canvas:
 ```python
 <h> = plt.figure(N) # plot in the Nth figure; default 1
-plt.figure(figsize = (Nw, Nh))
+plt.figure(figsize = (Nwidth, Nheight))
 plt.subplot(nrow, ncol, N)
+fig, (ax1, ax2, ...) = plt.subplots(N1, N2, figsize = (Nw, Nh))
 plt.subplot2grid((nrow, ncol), (N1, N2), colspan = Nc, rowspan = Nr)
         # (N1, N2) specifies location in the grid; Nc, Nr default to 1
 <ax> = plt.axes([left, bottom, width, height], <facecolor = '...'>)
@@ -15,9 +17,11 @@ plt.subplots_adjust(top = ..., botom = ..., left = ..., right = ..., hspace = ..
         # all between [0, 1]
 ```
 
+styles:
 `plt.style.use('style')`: e.g., 'ggplot', 'searborn-pastel', etc.  
 [style gallery](https://tonysyu.github.io/raw_content/matplotlib-style-gallery/gallery.html)
 
+plot:
 ```python
 ax.plot or plt.plot(x, y, <'format'>, <label = '...'>, <properties ...>) # label for legend;
         # format for line style, default 'b-'; other markers 's' (square), '^' (triangle), 'o'...
