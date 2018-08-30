@@ -50,6 +50,14 @@ y2 = results.fittedvalues # least square line
 ynew = results.predict(xnew)
 XconfInterval = results.conf_int(alpha = 0.05) # no header: cols = None
 residuals = results.resid
+rsquare   = results.rsquared
+tvals     = results.tvalues
+pvals     = results.pvalues
+betas     = results.params
+betaStds  = results.bse
+
+from statsmodels.stats import outliers_influence
+VIF_i = outliers_influence.variance_inflation_factor(X.values, icol)
 
 # diagnostic plots
 fig = sm.qqplot(results.resid_pearson) # QQ plot. if add to existing plot: ax = ax1 (see matplotlib for ax)
@@ -57,4 +65,10 @@ plt.show()
 infl = results.get_influence()
 resd_std = infl.resid_studentized_internal # outliers > +/- 3
 hatDiag  = infl.hat_diag_factor            # high leverage points > (Ncol + 1) / Nrow
+# or use 
+fig, ax = plt.subplots(figsize = (Nw, Nh))
+fig = sm.graphics.influence_plot(results, ax = ax)
+
+from statsmodels.stats import anova
+anova.anova_lm(results1, results2)
 ```
