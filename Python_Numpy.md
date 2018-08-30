@@ -114,6 +114,7 @@ element-wise:
 `np.random.seed(N)`
 
 `x = np.random.normal(loc = mu, scale = sigma, size = n)`: Gaussian (default: normal) distribution
+`x = np.random.uniform(size = n)`
 
 ---
 
