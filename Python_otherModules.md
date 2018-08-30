@@ -34,3 +34,18 @@ PCA(copy = True, n_components = ..., whiten = False)
 Y = pca.transform(X) # these are the scores for each PC
 lamda = pca.explained_variance_ratio_
 ```
+
+```python
+import statsmodels.api as sm
+
+x = sm.add_constant(x) # add intercept
+results = sm.OLS(y, x).fit()
+
+# or fit from formula:
+fformula = 'y ~ 1 + x + np.power(x, 2)' # y & x should be columns of dataframe X
+results = sm.OLS.from_formula(formula = fformula, data = X).fit()
+
+print(results.summary())
+y2 = results.fittedvalues # least square line
+XconfInterval = results.conf_int(alpha = 0.05) # no header: cols = None
+```
