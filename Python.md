@@ -23,7 +23,12 @@
 
 `%reset`: clear all
 
-`\`: continue and start new line; or enclose by `()` / `[]` / `{}` and can start new line directly
+`\`: continue and start new line; or enclose by `()` / `[]` / `{}` and can start new line directly  
+
+`_`: result of previous expression  
+`a, _, b = function() / values`: one value ignored; `a, *_, b = ...`: multiple values ignored, `*variable`: asign multiple values to a variable as list  
+`1_000_000` same as `1000000`  
+[underscore in naming conventions](https://www.datacamp.com/community/tutorials/role-underscore-python#name)
 
 #### collections
 1. ordered:
