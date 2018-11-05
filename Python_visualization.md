@@ -82,7 +82,7 @@ fig = plt.figure()
 ax = fig.add_subplot(111, projection = '3d')
 # or
 ax = Axes3D(fig)
-ax.set_xlabel('...')
+ax.set_xlabel('...'); ax.set_title('...')
 ax.plot_surface(x, y, z) # 2D surface
 ```
 [more on 3D plot](http://www.scipy-lectures.org/packages/3d_plotting/index.html#mayavi-label)
@@ -213,6 +213,8 @@ note: x & y needs to be 1D arrays / lists
 data = [Scatter(x = [...], y = [...], name = '...')]        # line plot. name for legend
 data = [Scatter(x = [...], y = [...], mode = 'markers')]    # scatter plot
 data = [Scatter(x = [...], y = [...], mode = 'text', text = [...], textposition = 'bottom']
+data = [Scatter3d(x = [...], y = [...], z = [...], name = '...', mode = '...',
+                  marker = dict(colorscale = 'Viridis', opacity = 0.8))]
 ```
 
 ```
@@ -243,6 +245,13 @@ layout = Layout(title = '...',
                 autosize = False,
                 width = 700, height = 400,
                 xaxis = dict(range = [min, max], title = '...'), yaxis = dict(range = [min, max]))
+layout = Layout(scene = dict( # 3D plots
+                             xaxis = dict(title = 'xlabel', titlefont = dict(size = N), 
+                                          range = [xmin, xmax], tickfont = dict(dict(size = N))),
+                             yaxis = dict(...), zaxis = dict(...)
+                                          ),
+                margin = dict(l = N, b = N, l = N, t = N),
+                showlegend = True, legend = dict(x=posX, y=posY, traceorder='normal', font=dict(size=N)))
 ```
 
 #### show
