@@ -5,7 +5,8 @@ notation conventions: `X` - dataframe; `Y` - series; `x` / `y` - objects that ca
 
 #### Data Import
 `X = pd.read_csv(fname, index_col = N, sep = '...', header = None, names = [columns], skiprows = N)`  
-&nbsp;&nbsp;&nbsp;&nbsp;`sep = '\s+' single or more white space` [more](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html)
+&nbsp;&nbsp;&nbsp;&nbsp;`sep = '\s+' single or more white space` [more](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html)  
+`X = pd.read_excel(fname, sheet_name = '...')`
 
 #### Take a Peak
 `Y = X.dtypes`  
