@@ -1,7 +1,4 @@
-```python
-import math
-x2 = math.floor(x)
-```
+### System
 
 ```python
 import sys
@@ -21,6 +18,13 @@ import os
 dir_path = os.path.dirname(os.path.realpath(__file__)) # current working directory (without /)
 for filename in os.listdir(dir_path):
     # loop through all files in folder
+```
+
+### Math & Stats Related
+
+```python
+import math
+x2 = math.floor(x)
 ```
 
 ```python
@@ -71,4 +75,25 @@ fig = sm.graphics.influence_plot(results, ax = ax)
 
 from statsmodels.stats import anova
 anova.anova_lm(results1, results2)
+```
+
+### Database Related
+
+```python
+# MySQL
+import MySQLdb
+conn = MySQLdb.connect(host=<'host'>, user=<'user'>, passwd=<'password'>, db=<'database'>)
+```
+
+[pyodbc](https://github.com/mkleehammer/pyodbc/wiki/Getting-started)
+```python
+# MS Access
+import pyodbc
+fdriver = 'DRIVER={Microsoft Access Driver (*.mdb, *.accdb)};'
+fDB = 'DBQ=' + <'path'> + <'filename'> + ';'
+conn = pyodbc.connect(fdriver + fDB)
+cursor = conn.cursor()
+cursor.execute(query_string) # query_string: the gramma of MS Access is very similar to SQL
+X = cursor.fetchone() # return one line as row objects, can access through X[index] or X.columnName; if no data, None returned
+X = cursor.fetchall()
 ```
