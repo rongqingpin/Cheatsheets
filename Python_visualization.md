@@ -25,6 +25,7 @@ plot:
 ```python
 ax.plot or plt.plot(x, y, <'format'>, <label = '...'>, <properties ...>) # label for legend;
         # format for line style, default 'b-'; other markers 's' (square), '^' (triangle), 'o'...
+        # properties: markersize = N, markeredgewidth = N
 pdfs, edges, patches = plt.hist(x, density = True)
 plt.scatter(x, y)
 plt.bar(x, y, <facecolor = '...', edgecolor = '...'>)
@@ -51,7 +52,7 @@ use `cmap = 'cmap_r'` to reverse the color; [built-in colomaps](https://matplotl
 
 ```python
 plt.legend(<loc = 'upper left'>) # default 'upper right'
-plt.title('text')
+plt.title('text') # or ax.set_title('...')
 plt.xlabel('text')
 plt.ylabel('text')
 plt.axis([xmin, xmax, ymin, ymax])
