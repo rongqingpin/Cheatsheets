@@ -2,6 +2,7 @@
 
 ```python
 import sys
+sys.path.append('otherDirectories') # add other paths to current directory
 ... # for debugging purpose; stop the code at exit()
 sys.exit()
 ```
