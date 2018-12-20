@@ -6,3 +6,5 @@ None of the instructions found online about setting trusted sites and certificat
 3. open terminal and go into the unzipped directory (`packageName-Version\`)
 4. type `python setup.py install` and press enter 
   - usually some other package need to be installed as prerequisites, in which case go back to step 1 and repeat
+
+`pip show <package_name>`: info including version & directory
