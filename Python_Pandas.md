@@ -123,4 +123,9 @@ adrcur(X, 'column_class')
 ```
 
 #### Output
-`X.to_<filetype>('fname', index = False)`: filetype can be sql, excel, json, csv
+`X.to_<filetype>('fname', index = False)`: filetype can be sql, excel, json, csv  
+```python
+with open(filename, 'a') as f: # append to file along the way
+    df.to_<filetype>(f, header = False)
+```
+```
