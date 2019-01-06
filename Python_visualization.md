@@ -18,7 +18,7 @@ plt.subplots_adjust(top = ..., botom = ..., left = ..., right = ..., hspace = ..
 ```
 
 styles:
-`plt.style.use('style')`: e.g., 'ggplot', 'searborn-pastel', etc.  
+`plt.style.use('style')`: e.g., 'ggplot', 'seaborn-pastel', etc.  
 [style gallery](https://tonysyu.github.io/raw_content/matplotlib-style-gallery/gallery.html)
 
 plot:
