@@ -40,6 +40,13 @@ plt.annotate('text', xy = (x1, y1), xytext = (x2, y2), arrowprops = dict(facecol
         # (x1, y1) arrow tip location; (x2, y2) text location
 ```
 
+```python
+import matplotlib.patches as mpatches
+ell = mpatches.Ellipse([x0, y0], rlong, rshort, angle_degree, facecolor = '...', edgecolor = '...', linewidth = N, ...)
+ell.set_alpha(alpha0)
+ax.add_artist(ell) # ellipse
+```
+
 alternative way of specifying properties:  
 ```python
 h = plt.plot()
@@ -51,7 +58,7 @@ list of available properties: [2D lines](https://matplotlib.org/api/_as_gen/matp
 [more on annotation](http://matplotlib.org/users/annotations_guide.html)  
 [built-in colors & names (1D)](http://matplotlib.org/2.0.0b4/examples/color/named_colors.html)  
 [built-in colomaps](https://matplotlib.org/examples/color/colormaps_reference.html), also [link](http://matplotlib.org/users/colormaps.html)  
-* e.g.: `plt.cm.Blues`
+* e.g.: `plt.cm.Blues`, `'bwr'`
 * use `cmap = 'cmap_r'` to reverse the color
 
 ```python
