@@ -29,9 +29,11 @@ ax.plot or plt.plot(x, y, <'format'>, <label = '...'>, <properties ...>) # label
 pdfs, edges, patches = plt.hist(x, density = True)
 plt.scatter(x, y)
 plt.bar(x, y, <facecolor = '...', edgecolor = '...'>)
+
 plt.contourf(x, y, z, <cmap = '...'>) # default no lines; can use x, y = np.meshgrid(x0, y0) for easy grid generation
 plt.contour(x, y, z)
 plt.imshow(z)
+
 plt.text(x, y, r'text') # in text, use `$ \symbol $` for latex style notations
         # to interpret text as raw string, use r'text'
 plt.annotate('text', xy = (x1, y1), xytext = (x2, y2), arrowprops = dict(facecolor = '', shrink = N%))
@@ -48,7 +50,9 @@ list of available properties: [2D lines](https://matplotlib.org/api/_as_gen/matp
 [more on text in Latex style](http://matplotlib.org/users/usetex.html#usetex-tutorial)  
 [more on annotation](http://matplotlib.org/users/annotations_guide.html)  
 [built-in colors & names (1D)](http://matplotlib.org/2.0.0b4/examples/color/named_colors.html)  
-use `cmap = 'cmap_r'` to reverse the color; [built-in colomaps](https://matplotlib.org/examples/color/colormaps_reference.html), also [link](http://matplotlib.org/users/colormaps.html)
+[built-in colomaps](https://matplotlib.org/examples/color/colormaps_reference.html), also [link](http://matplotlib.org/users/colormaps.html)  
+* e.g.: `plt.cm.Blues`
+* use `cmap = 'cmap_r'` to reverse the color
 
 ```python
 plt.legend(<loc = 'upper left'>) # default 'upper right'
