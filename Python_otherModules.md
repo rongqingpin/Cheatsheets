@@ -38,6 +38,12 @@ pca.fit(X)
 PCA(copy = True, n_components = ..., whiten = False)
 Y = pca.transform(X) # these are the scores for each PC
 lamda = pca.explained_variance_ratio_
+
+from sklearn import feature_selection
+F, pval = feature_selection.f_regression(x, y) # F value and p value
+
+from sklearn.metrics import confusion_matrix
+metricC = confusion_matrix(y, y2) # [0, 0] T.N. [1, 0] F.N., [0, 1] F.P., [1, 1] T.P.
 ```
 
 ```python
