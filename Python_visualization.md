@@ -31,8 +31,9 @@ plt.scatter(x, y)
 plt.bar(x, y, <facecolor = '...', edgecolor = '...'>)
 
 plt.contourf(x, y, z, <cmap = '...'>) # default no lines; can use x, y = np.meshgrid(x0, y0) for easy grid generation
-plt.contour(x, y, z)
+plt.contour(x, y, z, <[z0]>) # show lines at z = z0
 plt.imshow(z)
+plt.colormesh(x, y, z) # pseudocolor plot with a non-regular rectangular grid
 
 plt.text(x, y, r'text') # in text, use `$ \symbol $` for latex style notations
         # to interpret text as raw string, use r'text'
