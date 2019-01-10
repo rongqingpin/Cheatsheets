@@ -45,6 +45,7 @@ F, pval = feature_selection.f_regression(x, y) # F value and p value
 from sklearn.metrics import confusion_matrix
 metricC = confusion_matrix(y, y2) # [0, 0] T.N. [1, 0] F.N., [0, 1] F.P., [1, 1] T.P.
 ```
+[2D visualization of classification result](https://github.com/rongqingpin/ISLR7/blob/master/chap4_smarket_lab_LDA.ipynb)
 
 ```python
 import statsmodels.api as sm
