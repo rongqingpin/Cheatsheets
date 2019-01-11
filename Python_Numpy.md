@@ -102,7 +102,8 @@ element-wise:
 
 #### advanced
 
-`np.corrcoef(x)`
+`np.corrcoef(x)`  
+`corr0 = np.corrcoef(x, y)[0, 1] # diagonal is 1`
 
 `hist, bin_edges = np.histogram(x, bins = ..., density = )`: bins can be N / sequence (bin edges); if density = True, produce density function
 
