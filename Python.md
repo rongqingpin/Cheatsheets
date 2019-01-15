@@ -14,6 +14,8 @@
 
 `def funcName():`
 
+`from fileName import *`: import all functions saved in `fileName.py`
+
 [time complexity of python operations](https://wiki.python.org/moin/TimeComplexity)
 
 `help("modules")`: list all the installed packages  
