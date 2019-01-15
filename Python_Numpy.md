@@ -29,7 +29,8 @@
 
 `x.dtype`  
 `y = x.astype(...)`: can be `str`, `int`, numpy types, etc.  
-`y = isnan(x)`: an erray of True / False
+`y = isnan(x)`: an erray of True / False  
+`np.asarray()`
 
 `x.size`: Ncol * Nrow  
 `Nrow, Ncol = x.shape`  
@@ -72,7 +73,7 @@ element-wise:
 
 `np.fromfunction(function, (nrow, ncol, ...), dtype = ...)`: function can be `lambda ...`, `f` (f defined from a subroutine)
 
-`np.array([...], dtype = ...)`: e.g. dtype = complex
+`np.array([...], dtype = ...)`: e.g. dtype = complex  
 
 `np.arange( [x1], x2, [dx] )`: x2 not included  
 `np.linspace( x1, x2, nx, <endpoint = ...> )`  
