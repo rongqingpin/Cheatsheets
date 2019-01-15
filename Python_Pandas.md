@@ -31,6 +31,7 @@ X.iloc[:, [ic1, ic2, ...] ]
 ```
 
 `X[condition_of_y]`: row slicing  
+`X[(condition1) & (cond2)]`, `X[(condition1) | (cond2)]`  
 `X.loc[condition_of_x, condition of y]`  
 `Y.isin([a, b, ...])`: returns a boolean series
 
@@ -42,7 +43,8 @@ X.iloc[:, [ic1, ic2, ...] ]
 `X.columns = ['C1', 'C2', ...]`: change column title  
 `X.index`  
 `Y.sort_index()`: sort by index  
-`X = X.reset_index(drop = True)`
+`X = X.reset_index(drop = True)`  
+`X = X.rename({oldName: newName}, axis = 'columns')`
 
 `Y.isnull()`: a Series of True/False  
 `Y.isnull().sum()`: No. of True (NaN)  
@@ -83,6 +85,7 @@ X.apply(funcName)
 Y.map( {A:a, B:b, ...} )
 Y.map( {values[i]: i for i in range(len(values))} ) # texts into numbers
 ```
+`Y2 = pd.get_dummies(Y)`: 0 and 1 for each value in Y
 
 `X.replace([A, ...], [a, ...])`  
 `X.replace({'C': {A: a}})`
@@ -128,4 +131,6 @@ adrcur(X, 'column_class')
 with open(filename, 'a') as f: # append to file along the way
     df.to_<filetype>(f, header = False)
 ```
-```
+
+#### Others
+`Xcors = X.corr()`
