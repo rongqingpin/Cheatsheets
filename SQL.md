@@ -123,6 +123,8 @@ note integers produce integers
 
 `NOW()`: current date & time
 
+`IIF(condition, trueVal, falseVal)`
+
 ---
 
 `'year-0m-0d'`: ISO date format
