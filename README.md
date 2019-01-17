@@ -14,6 +14,7 @@ esp. scientific computing, machine learning, data scraping and analysis:
 - _C_
 - _R_
 - _C++_
+- _Visual Basic for Applications (VBA)_
 
 #### operating systems
   - Unix (Linux)
@@ -21,7 +22,8 @@ esp. scientific computing, machine learning, data scraping and analysis:
 
 #### database
   - _SQL_
-  - _PostgreSQL_
+  - _PostgreSQL_ 
+  - _MS Access SQL_
 
 #### web development
   - _html & css_
@@ -34,7 +36,7 @@ esp. scientific computing, machine learning, data scraping and analysis:
 #### version control
   - Git
 
-#### editting tools
+#### editing tools
   - Latex
     * for reports, paper, thesis
     * for presentations
