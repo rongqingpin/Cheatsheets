@@ -69,6 +69,7 @@ Me.x.RowSource = fx ' update combo box source using value of field
 Me.x.Requery
 Me.x = Me.x.ItemData(0) ' default display 1st item in list
 ```
+Note: to use DAO, make sure `DAO object library` is selected in VBA console - Tools - References
 ```
 Dim rst As DAO.Recordset 
 Dim fx As String 
