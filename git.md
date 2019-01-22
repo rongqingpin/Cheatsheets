@@ -32,7 +32,7 @@
     1. go to the folder which contains .git folder
     2. `$ touch .gitignore`
     3. `$ open .gitignore`
-    4. add the files / directories to be ignored
+    4. add the files / directories to be ignored ('directory_in_home_folder/sub_directory/.../')
 
 ---
 
