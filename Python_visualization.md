@@ -29,6 +29,7 @@ ax.plot or plt.plot(x, y, <'format'>, <label = '...'>, <properties ...>) # label
 pdfs, edges, patches = plt.hist(x, density = True)
 plt.scatter(x, y)
 plt.bar(x, y, <facecolor = '...', edgecolor = '...'>)
+plt.axvline(x0) # vertical line at x0
 
 plt.contourf(x, y, z, <cmap = '...'>) # default no lines; can use x, y = np.meshgrid(x0, y0) for easy grid generation
 plt.contour(x, y, z, <[z0]>) # show lines at z = z0
