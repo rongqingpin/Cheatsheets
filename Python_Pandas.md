@@ -90,7 +90,11 @@ Y.map( {values[i]: i for i in range(len(values))} ) # texts into numbers
 `X.replace([A, ...], [a, ...])`  
 `X.replace({'C': {A: a}})`
 
-`Y2, bins = pd.cut(Y, bins, retbins = True)`: bins can be N, or array of size N+1 (edges of the bins)
+`Y2, bins = pd.cut(Y, bins, retbins = True)`: bins can be N, or array of size N+1 (edges of the bins)  
+
+quantile binning  
+`Y2 = Y.quantile(pct0s)`: pct0s specifies which quantiles to divide. `len(Y2) = len(pct0s)`  
+`Y2 = pd.qcut(Y, N, labels = False)`: map the values into their respective bins, by dividing data into N bins. Y2 values are the bins from 0 to N - 1. If labels as True, has range info
 
 #### Data Combination & Type Conversion
 `pd.concat([X1, X2], axis = ..., ignore_index = True)`: 1 for column, 0 for row  
