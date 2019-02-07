@@ -29,8 +29,15 @@ x2 = math.floor(x)
 ```
 
 ```python
+from scipy import stats
+y2, lamda = stats.boxcox(y) # by default, param lmbda = None, then lamda maximizes the log-likelihood
+(quantiles, y_ordered) = stats.probplot(y, dist = stats.norm, plot = ax)
+```
+
+```python
 import sklearn.preprocessing as prep
 X2 = prep.StandardScaler().fit_transform(X)
+X2 = prep.PolynomialFeatures(include_bias = False).fit_transform(X) # include_bias - column of intercept
 
 from sklearn.decomposition import PCA
 pca = PCA(n_components = ..., svd_solver = 'full')
