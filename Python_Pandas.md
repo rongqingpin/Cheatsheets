@@ -85,7 +85,7 @@ X.apply(funcName)
 Y.map( {A:a, B:b, ...} )
 Y.map( {values[i]: i for i in range(len(values))} ) # texts into numbers
 ```
-`Y2 = pd.get_dummies(Y)`: 0 and 1 for each value in Y
+`Y2 = pd.get_dummies(Y, prefix = ['...'], drop_first = True)`: 0 and 1 for each value in Y; prefix names the new features as `..._values`; drop first to use dummy instead of one-hot encoding
 
 `X.replace([A, ...], [a, ...])`  
 `X.replace({'C': {A: a}})`
