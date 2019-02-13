@@ -17,6 +17,7 @@ print(time.time() - t0) # execution time
 ```python
 import os
 dir_path = os.path.dirname(os.path.realpath(__file__)) # current working directory (without /)
+flc = os.path.abspath('') # current working directory (without /)
 for filename in os.listdir(dir_path):
     # loop through all files in folder
 ```
