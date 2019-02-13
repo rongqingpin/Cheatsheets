@@ -35,7 +35,7 @@ default output: screen
 `whatis <command>`  
 `apropos <keyword>`: show commands that contain keywords  
 [macOS command line](https://ss64.com/osx/)  
-<cmd> + <shift> + <.>: show / hide hidden files [full list of methods](https://ianlunn.co.uk/articles/quickly-showhide-hidden-files-mac-os-x-mavericks/)
+`<cmd> + <shift> + <.>`: show / hide hidden files. [full list of methods listed here](https://ianlunn.co.uk/articles/quickly-showhide-hidden-files-mac-os-x-mavericks/)
 
 ---
 
