@@ -56,6 +56,8 @@ X.iloc[:, [ic1, ic2, ...] ]
 
 `X2 = X.drop_duplicates()`
 
+`X2 = X.fillna(N)`, `X.fillna(method = '...')` with `ffill`, `bfill`, `pad`
+
 `Y.mean()` or `X.mean(axis = ...)`  
 `Y.sum()`  
 `Y.median()`  
