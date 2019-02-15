@@ -40,6 +40,10 @@ import sklearn.preprocessing as prep
 X2 = prep.StandardScaler().fit_transform(X)
 X2 = prep.PolynomialFeatures(include_bias = False).fit_transform(X) # include_bias - column of intercept
 
+from sklearn.feature_extraction import FeatureHasher
+h = FeatureHasher(n_features = m, input_type = '...')
+f = h.transform(Y) # Y of type ...
+
 from sklearn.decomposition import PCA
 pca = PCA(n_components = ..., svd_solver = 'full')
 pca.fit(X)
