@@ -45,7 +45,7 @@ h = FeatureHasher(n_features = m, input_type = '...')
 f = h.transform(Y) # Y of type ...
 
 from sklearn.decomposition import PCA
-pca = PCA(n_components = ..., svd_solver = 'full')
+pca = PCA(n_components = ..., svd_solver = 'full') # n_components as N or percentage of variance
 pca.fit(X)
 PCA(copy = True, n_components = ..., whiten = False)
 Y = pca.transform(X) # these are the scores for each PC
