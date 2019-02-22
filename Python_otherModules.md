@@ -33,6 +33,9 @@ x2 = math.floor(x)
 from scipy import stats
 y2, lamda = stats.boxcox(y) # by default, param lmbda = None, then lamda maximizes the log-likelihood
 (quantiles, y_ordered) = stats.probplot(y, dist = stats.norm, plot = ax)
+from scipy.spatial import Voronoi, voronoi_plot_2d
+vor = Voronoi(centroids) # visualize spatial partitioning given centroids
+voronoi_plot_2d(vor, ax = ax, show_vertices = False)
 ```
 
 ```python
