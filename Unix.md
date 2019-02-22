@@ -121,5 +121,6 @@ users: `u`, `g` (group), `o` (other than group or owner), `a` (all)
 `latex <file.tex>`: will display 'Output written on file.dvi' if successful  
 `bibtex <file.aux>`: if 'bibliography' is used for references; then repeat the `latex` command twice  
 `xdvi <file.dvi> &`: view dvi file  
-`pdflatex file.tex`: convert to pdf
+`dvipd <file>`: convert to pdf  
+`pdflatex file.tex`: convert to pdf  
 `X`: force execute
