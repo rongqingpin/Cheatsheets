@@ -18,8 +18,12 @@ print(time.time() - t0) # execution time
 import os
 dir_path = os.path.dirname(os.path.realpath(__file__)) # current working directory (without /)
 flc = os.path.abspath('') # current working directory (without /)
+flc = os.getcwd() # current working directory (without /)
 for filename in os.listdir(dir_path):
     # loop through all files in folder
+for idirectory, list_folders, list_files in os.walk('location'):
+    # idirectory starts from 'location'
+    # then start with those in list_folders
 ```
 
 ### Math & Stats Related
