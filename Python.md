@@ -162,6 +162,8 @@ Z = zip(X, Y) # Z = [(a, i), (b, j), (c, k)]; e.g. for i, j in zip(X, Y):
 X, Y = zip(*Z)
 ```
 
+`hasattr(object, attributes)`: True if attribute exist for object
+
 ---
 
 ### input / output
