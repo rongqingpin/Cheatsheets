@@ -24,6 +24,16 @@ for filename in os.listdir(dir_path):
 for idirectory, list_folders, list_files in os.walk('location'):
     # idirectory starts from 'location'
     # then start with those in list_folders
+os.chdir('target_directory') # change working directory
+os.makedirs('new_directory') # create new directory
+os.remove('file_name') # delete. file only
+```
+
+```python
+import shutil
+shutil.copy2('source', 'destination')
+shutil.move('source', 'destimation')
+shutil.rmtree('directory') # delete directory and its content
 ```
 
 ### Math & Stats Related
