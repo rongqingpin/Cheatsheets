@@ -65,6 +65,11 @@ from sklearn.feature_extraction import FeatureHasher
 h = FeatureHasher(n_features = m, input_type = '...')
 f = h.transform(Y) # Y of type ...
 
+from sklearn.feature_extraction.text import TfidfVectorizer
+model = TfidfVectorizer(stop_words = 'english', max_df = pct, sublinear_tf=True) # fit & transform like a model
+from sklearn.feature_extraction import DictVectorizer
+model = DictVectorizer(sparse=False) # list / dict of features to vectors
+
 from sklearn.decomposition import PCA
 pca = PCA(n_components = ..., svd_solver = 'full') # n_components as N or percentage of variance
 pca.fit(X)
