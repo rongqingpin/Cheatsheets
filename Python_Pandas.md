@@ -28,6 +28,7 @@ X.loc[:, 'C']
 X.loc[:, ['C1', 'C2', ...] ]
 X.iloc[:, ic]   # ic is the index for column C; slightly faster than referencing by string; last row/column not included (same with Python default)
 X.iloc[:, [ic1, ic2, ...] ]
+N = X.index.get_loc(ii) # return iloc correpsonding to ii index
 ```
 
 `X[condition_of_y]`: row slicing  
