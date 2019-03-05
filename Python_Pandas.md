@@ -54,7 +54,7 @@ X.iloc[:, [ic1, ic2, ...] ]
 `X = X.drop([..., ...], axis = ...)`: `...` are the indices / column names; 1 for column, 0 for row  
 `X.dropna(axis = ..., thresh = N, how = 'all')`: thresh - at N non-NaNs; how - all entries as NaN, or 'any'
 
-`X2 = X.drop_duplicates()`
+`X2 = X.drop_duplicates()`: options like `subset = 'C1'` only consider column C1, `keep = 'first'`
 
 `X2 = X.fillna(N)`, `X.fillna(method = '...')` with `ffill`, `bfill`, `pad`
 
