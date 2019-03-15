@@ -1,5 +1,3 @@
-# Matlab Manual
-
 `edit <fname>`: create new file as 'fname.m' and open it  
 `$ fname`: run 'fname.m' in command line  
 `whos`: show the variables in the workspace  
@@ -12,38 +10,6 @@
 `help <func>`
 
 `x = dir('...\...\');`: `x.name` are the files inside the directory
-
-
----
-
-`rand(Nrow, Ncol)`
-
-`[..., ...; ..., ...]`: concaternation; ',' - attach new columns; ';' - attach new rows
-
-`fix(x)`, `ceil(x)`, `floor(x)`, `round(x, N)`
-
-### Structure
-
-[structure](https://www.mathworks.com/help/matlab/structures.html)
-
-```matlab
-X.y = ...     % create a scalar structure with field y
-X(N).y = ...  % create a structure array with N elements
-```
-
-
-### Strings
-
-`num2str(N)`  
-`fnumber = sprintf(‘%0Nd’,number);`: fnumber has N characters, if number is too short, add 0 to the front
-
-`isspace(x)`: return indices where the character is a whitespace, e.g. `x(~isspace(x))` removes all white  
-`strtrim(x)`: remove whitespace in the beginning & the end
-
-`lower(x)`: return lower cases
-
-`strcmp(x, y)`: True if x = y
-
 
 ---
 
@@ -63,7 +29,41 @@ end
 
 ---
 
+### Structure
+
+[structure](https://www.mathworks.com/help/matlab/structures.html)
+
+```matlab
+X.y = ...     % create a scalar structure with field y
+X(N).y = ...  % create a structure array with N elements
+```
+
+### Strings
+
+`num2str(N)`  
+`fnumber = sprintf(‘%0Nd’,number);`: fnumber has N characters, if number is too short, add 0 to the front
+
+`isspace(x)`: return indices where the character is a whitespace, e.g. `x(~isspace(x))` removes all white  
+`strtrim(x)`: remove whitespace in the beginning & the end
+
+`lower(x)`: return lower cases
+
+`strcmp(x, y)`: True if x = y
+
+### Cells
+
+`x = cell(N1, N2);`: initialize  
+`x{i, j} = ...;`
+
+---
+
 ### functions
+
+`rand(Nrow, Ncol)`
+
+`[..., ...; ..., ...]`: concaternation; ',' - attach new columns; ';' - attach new rows
+
+`fix(x)`, `ceil(x)`, `floor(x)`, `round(x, N)`
 
 solution optimization:
 ```matlab
@@ -110,8 +110,8 @@ caxis([-a b]);
 
 ```matlab
 h = subplot(a,b,i);
-p = get(h,'pos'); % [left, bottom, width, height] in percentage of window size
-change p value
+p = get(h,'pos'); % [left, bottom, width, height] in percentage of plot-box size
+# change p value
 set(h, 'pos', p);
 ```
 
