@@ -141,6 +141,7 @@ fDB = 'DBQ=' + <'path'> + <'filename'> + ';'
 conn = pyodbc.connect(fdriver + fDB)
 cursor = conn.cursor()
 cursor.execute(query_string) # query_string: the gramma of MS Access is very similar to SQL
+conn.commit()
 X = cursor.fetchone() # return one line as row objects, can access through X[index] or X.columnName; if no data, None returned
 X = cursor.fetchall()
 ```
