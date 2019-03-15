@@ -98,7 +98,7 @@ note integers produce integers
 **pattern** comparison:  
 `<c1> LIKE '...'`  
 `<C1> NOT LIKE '...'`  
-`'%'`: any number of characters  
+`'%'`: any number of characters; in MS access SQL, wildcard is `*`  
 `'_'`: one character  
 
 ---
@@ -168,3 +168,28 @@ after entering, the command line starts with `postgres=#`
 
 `create database ...;`  
 `grant all privileges on database ... to ...;`
+
+
+## MS Access SQL
+
+1 to many
+```SQL
+SELECT ...
+FROM (table1 INNER JOIN table2 ON table1.c1 = table2.c2) INNER JOIN table3 ON ...
+```
+
+`Int()`, `Str()`, `Val()`. `DateValue(string)`  
+`CDbl()`: string to double
+
+`Round(x, N)`
+
+`"..." & "..."`: concatenate strings  
+`LCase()`: to lower case  
+`InStrRev(string0, 'pattern')`: the location of matched pattern  
+`Mid(string0, i1, di)`: returns `string0[i1:i1+di]`  
+`Replace(string0, "a", "b")`: replace a by b  
+
+`Date()`: current datetime  
+`year(date1)`, `month()`: get the year / month  
+
+`IIf(condition, trueCase, falseCase)`
