@@ -261,10 +261,10 @@ layout = Layout(title = '...',
                 xaxis = dict(range = [min, max], title = '...'), yaxis = dict(range = [min, max]))
 layout = Layout(scene = dict( # 3D plots
                              xaxis = dict(title = 'xlabel', titlefont = dict(size = N), 
-                                          range = [xmin, xmax], tickfont = dict(dict(size = N))),
+                                          range = [xmin, xmax], tickvals = [...], tickfont = dict(dict(size = N))),
                              yaxis = dict(...), zaxis = dict(...)
                                           ),
-                margin = dict(l = N, b = N, l = N, t = N),
+                margin = dict(r = N, b = N, l = N, t = N),
                 showlegend = True, legend = dict(x=posX, y=posY, traceorder='normal', font=dict(size=N)))
 ```
 
