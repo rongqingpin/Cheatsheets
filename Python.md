@@ -33,7 +33,7 @@
 [underscore in naming conventions](https://www.datacamp.com/community/tutorials/role-underscore-python#name)
 
 #### collections
-1. ordered:
+1. ordered (sequence): empty is False
   * list  
   `[(f1(i, <j>), f2, ...) for i in x <for j in y> <if ...>]`: y can be a function of i; use `()` instead of `[]` leads to generator expression instead of list, more efficient if whole list isn't needed at once  
   `list(X)`: if x is a string, each letter becomes an element
