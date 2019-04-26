@@ -122,7 +122,8 @@
     `X.lower()`: lowercase; `X.upper()`  
     `X.strip()`: remove whitespace from start and end  
     `X.split('delimiter')`: split X into a list of strings, separated by the delimiter (should exist in X), if omitted, separate by whitespace  
-    `'delimiter'.join(X)`: X is a list, return a string; if `''`, concatenate directly
+    `'delimiter'.join(X)`: X is a list, return a string; if `''`, concatenate directly  
+    `X.startwith('...')`, `X.endwith('...')`
 * unordered  
   * set  
     `X.union(Y)`, `X.intersect(Y)`, `X.difference(Y)`, `X.issubset(Y)`: see operations  
@@ -147,7 +148,8 @@
 
 `ord('a')`: output the unicode for the letter; e.g. `range(ord('a'), ord('z')+1)`  
 `chr(i)`: output the corresponding letter  
-`int()`, `float()`
+`int()`, `float()`  
+`isinstance(x, <type>)`: check if `int`, `str`, etc.
 
 `y = sorted(x, reverse = ..., key = function)`: key can be `len`, `str.lower`, self-defined function, etc.; if x is a tuple, sort by first elements
 
