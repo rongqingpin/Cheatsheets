@@ -92,8 +92,8 @@ note integers produce integers
 
 **existence**: `<C1> in (a, <b, c, ...>)`  
 
-`is null`  
-`is not null`
+`is null`, MS access SQL has `IsNull()`  
+`is not null`, MS access SQL `Not IsNull()`
 
 **pattern** comparison:  
 `<c1> LIKE '...'`  
@@ -112,11 +112,13 @@ note integers produce integers
 `avg(...)`  
 `max(...)`  
 `min(...)`  
-`sum(...)`
+`sum(...)`  
+`last(...)`
 
-`round(..., N)`: round the value to N decimals
+`round(..., N)`: round the value to N decimals  
+`fix(...)`
 
-`length(...)`: the number of characters; applied to each element in `...`  
+`length(...)`: the number of characters; applied to each element in `...`. MS Access SQL uses `Len(x)`  
 `left(..., N)`: output the first N character
 
 `CONCAT(c1, c2)`
@@ -172,11 +174,18 @@ after entering, the command line starts with `postgres=#`
 
 ## MS Access SQL
 
-1 to many
 ```SQL
 SELECT ...
-FROM (table1 INNER JOIN table2 ON table1.c1 = table2.c2) INNER JOIN table3 ON ...
+FROM (table1 INNER JOIN table2 ON table1.c1 = table2.c2) INNER JOIN table3 ON ... -- 1 to many
+
+SELECT ... FROM (t1 LEFT JOIN t2 ON t1.c1 = t2.c1) -- all records in t1 maintained even if null
+
+SELECT ... FROM (SELECT ... FROM ...)
+
+SELECT (SELECT f1(...) FROM t1) AS c1, () AS c2, ... FROM ...
 ```
+
+`IIf(condition, trueCase, falseCase)`
 
 `Int()`, `Str()`, `Val()`. `DateValue(string)`  
 `CDbl()`: string to double
@@ -185,11 +194,13 @@ FROM (table1 INNER JOIN table2 ON table1.c1 = table2.c2) INNER JOIN table3 ON ..
 
 `"..." & "..."`: concatenate strings  
 `LCase()`: to lower case  
-`InStrRev(string0, 'pattern')`: the location of matched pattern  
+`InStr(string0, 'pattern')`: the location of matched pattern  
+`InStrRev(string0, 'pattern')`: the location of matched pattern, search back to start  
 `Mid(string0, i1, di)`: returns `string0[i1:i1+di]`  
+`Left(string0, n1)`: returns first n1 chars of string0  
+`Right(string0, n1)`: returns last n1 chars of string0  
 `Replace(string0, "a", "b")`: replace a by b  
 
 `Date()`: current datetime  
 `year(date1)`, `month()`: get the year / month  
-
-`IIf(condition, trueCase, falseCase)`
+`DateValue(`
