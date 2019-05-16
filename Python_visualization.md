@@ -7,6 +7,7 @@ set the canvas:
 ```python
 <h> = plt.figure(N) # plot in the Nth figure; default 1
 plt.figure(figsize = (Nwidth, Nheight))
+fig.set_size_inches(width, height)
 plt.subplot(nrow, ncol, N)
 fig, (ax1, ax2, ...) = plt.subplots(N1, N2, figsize = (Nw, Nh))
 plt.subplot2grid((nrow, ncol), (N1, N2), colspan = Nc, rowspan = Nr)
@@ -111,6 +112,7 @@ plt.pause(N)        # stop during loop and show the figure
 h.savefig(<fig_name>) # h is the handle to the figure
 # or
 plt.savefig('fig_name')
+ax.figure.savefig('...')
 plt.close(<h or N or 'all'>) # h as the handle, or N as figure number
 ```
 
