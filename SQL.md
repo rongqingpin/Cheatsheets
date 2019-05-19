@@ -118,14 +118,16 @@ note integers produce integers
 `round(..., N)`: round the value to N decimals  
 `fix(...)`
 
-`length(...)`: the number of characters; applied to each element in `...`. MS Access SQL uses `Len(x)`  
-`left(..., N)`: output the first N character
+`CAST(a AS type)`: convert to desired data type
 
-`CONCAT(c1, c2)`
+`length(...)`: the number of characters; applied to each element in `...`. MS Access SQL uses `Len(x)`  
+`left(..., N)`: output the first N character   
+`CONCAT(c1, c2)`  
+`LPAD(string1, N, '0')`: outputs string of length N, with 0 padding in the front
 
 `NOW()`: current date & time
 
-`IIF(condition, trueVal, falseVal)`
+`IF(condition, trueVal, falseVal)`, `IIF()` in MS Access
 
 ---
 
