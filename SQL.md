@@ -79,6 +79,16 @@ access table info:
 SHOW CREATE TABLE t1          -- can view foreign key constraint, etc.
 ```
 
+user-defined functions
+```SQL
+CREATE TEMPORARY FUNCTION F1(X TYPE, Y TYPE, ...) AS (...);
+CREATE TEMPORARY FUNCTION F1(...) RETURNS TYPE LANGUAGE js AS """
+  -- here goes javascript language
+  return ...;
+""";
+SELECT F1(X1, Y1) AS ... FROM ...
+```
+
 ---
 
 ### operators
@@ -125,11 +135,25 @@ note integers produce integers
 `length(...)`: the number of characters; applied to each element in `...`. MS Access SQL uses `Len(x)`  
 `left(..., N)`: output the first N character   
 `CONCAT(c1, c2)`  
-`LPAD(string1, N, '0')`: outputs string of length N, with 0 padding in the front
+`LPAD(string1, N, '0')`: outputs string of length N, with 0 padding in the front  
+`STARTS_WITH(c2, c1)`  
+`REGEXP_CONTAINS(c1, r'pattern')`: pattern is regular expression
 
-`NOW()`: current date & time
+`NOW()`: current date & time  
+`EXTRACT(DATE FROM timestamp)`
 
 `IF(condition, trueVal, falseVal)`, `IIF()` in MS Access
+
+`ARRAY_AGG(STRUCT(C1, C2)) AS F1`: if for each c3 value, multiple C1&C2 values exist, this aggregates the values into an array  
+```SQL
+WITH t1 AS (
+  SELECT ARRAY_AGG(STRUCT(C1, C2)) AS N1, C3 FROM ...)
+SELECT C3,
+  ARRAY(SELECT AS STRUCT C1, C2 FROM UNNEST(N1) ORDER BY C1 LIMIT ...) AS C4 -- this has the same structure with t1, but w/ selected elements
+FROM t1
+```
+
+`RANK() OVER (PARTITION BY C1 ORDER BY C2 DESC) C3`: for each value of C1, order by C2 and return the ranking as C3
 
 ---
 
