@@ -68,6 +68,8 @@ SELECT c1, f(...), *, ...
 combine tables:
 
 ```SQL
+WITH t1 AS (SELECT ... FROM ...)
+  SELECT t1.c1, ... FROM t1, ...
 SELECT t1.c1, t2.c2, ... FROM t1 JOIN t2 <JOIN ...> <ON t1.c2 = t3.c1 AND ...>  -- no 'ON' then show all combinations
 ```
 
