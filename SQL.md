@@ -162,7 +162,9 @@ FROM t1
 
 `'year-0m-0d'`: ISO date format
 
+---
 
+`SELECT ... WHERE _PARTITIONTIME BETWEEN TIMESTAMP("YYYYMMDD") AND TIMESTAMP("")`: partition by time to save time
 
 ## MySQL
 
