@@ -64,6 +64,7 @@ SELECT c1, f(...), *, ...
   ORDER BY c1, c2 DESC, ...    -- start from the first
   LIMIT n;
 ```
+`SELECT ... FROM `table*``
 
 combine tables:
 
