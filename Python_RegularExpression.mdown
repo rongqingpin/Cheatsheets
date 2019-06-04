@@ -44,12 +44,13 @@ possible options:
 
 `[xy]`: a set of chars that can be x or y; note:
   * `.` is a period
-  * `x-y` indicates the range, `x-` just a dash
+  * `x-y` indicates the range, `x-` just a dash. e.g. `[a-zA-Z]` all letters
   * `^xy` any except x & y
 
 `x+`: ≥ 1 x  
 `x*`: ≥ 0 x  
 `x?`: 0 / 1 x  
+`x{N1:N2}`: n1 to n2 occurrences, both ends included  
 the matching goes as far as possible (greedy); to inhibit (stop as soon as possible), use `x+?` and `x*?`
 
 `(...)`: a group of matching text
