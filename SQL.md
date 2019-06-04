@@ -101,7 +101,7 @@ note integers produce integers
 
 **comparison** operators: =, <> (not equal), <, >, <=, >=  
 
-**range**: `<C1> between a and b`; both edges included  
+**range**: `<C1> BETWEEN a AND b name`; both edges included, returned boolean column with name `name`   
 
 **condition** operator: `and` (no parenthesis necessary), `or`, `xor` (exclusive, not 'both')  
 
@@ -120,6 +120,8 @@ note integers produce integers
 
 ### more on functions
 
+`IF(condition, trueVal, falseVal)`, `IIF()` in MS Access
+
 `distinct C`: unique elements
 
 `count(...)`: `...` can be `*` (No. of rows), `C` (non-missing values), `P(C)`
@@ -136,16 +138,13 @@ note integers produce integers
 `CAST(a AS type)`: convert to desired data type
 
 `length(...)`: the number of characters; applied to each element in `...`. MS Access SQL uses `Len(x)`  
+`LOWER(...)`  
 `left(..., N)`: output the first N character   
 `CONCAT(c1, c2)`  
 `LPAD(string1, N, '0')`: outputs string of length N, with 0 padding in the front  
 `STARTS_WITH(c2, c1)`  
-`REGEXP_CONTAINS(c1, r'pattern')`: pattern is regular expression
-
-`NOW()`: current date & time  
-`EXTRACT(... FROM timestamp)`: can be `DATE`, `YEAR`, etc.
-
-`IF(condition, trueVal, falseVal)`, `IIF()` in MS Access
+`REGEXP_CONTAINS(c1, r'pattern')`: pattern is regular expression  
+`REGEXP_EXTRACT(c1, r'pattern')`
 
 `ARRAY_AGG(STRUCT(C1, C2)) AS F1`: if for each c3 value, multiple C1&C2 values exist, this aggregates the values into an array  
 ```SQL
@@ -161,9 +160,9 @@ FROM t1
 
 ---
 
+`NOW()`: current date & time  
+`EXTRACT(... FROM timestamp)`: can be `DATE`, `YEAR`, `DAYOFWEEK`, etc.  
 `'year-0m-0d'`: ISO date format
-
----
 
 `SELECT ... WHERE _PARTITIONTIME BETWEEN TIMESTAMP("YYYYMMDD") AND TIMESTAMP("")`: partition by time to save time
 
