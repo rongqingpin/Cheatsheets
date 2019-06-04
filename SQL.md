@@ -143,7 +143,7 @@ note integers produce integers
 `REGEXP_CONTAINS(c1, r'pattern')`: pattern is regular expression
 
 `NOW()`: current date & time  
-`EXTRACT(DATE FROM timestamp)`
+`EXTRACT(... FROM timestamp)`: can be `DATE`, `YEAR`, etc.
 
 `IF(condition, trueVal, falseVal)`, `IIF()` in MS Access
 
