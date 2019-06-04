@@ -155,6 +155,7 @@ SELECT C3,
   ARRAY(SELECT AS STRUCT C1, C2 FROM UNNEST(N1) ORDER BY C1 LIMIT ...) AS C4 -- this has the same structure with t1, but w/ selected elements
 FROM t1
 ```
+`x[OFFSET(N)]`: access elements in the array x
 
 `RANK() OVER (PARTITION BY C1 ORDER BY C2 DESC) C3`: for each value of C1, order by C2 and return the ranking as C3
 
