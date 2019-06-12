@@ -36,6 +36,10 @@ shutil.move('source', 'destimation')
 shutil.rmtree('directory') # delete directory and its content
 ```
 
+### Profiling
+
+`$ python -m cProfile <-o outputfile.cprof> <-s cumtime> code.py`: execution time profiling for code, sorted by descending cumulative time with `-s cumtime`
+
 ### Math & Stats Related
 
 ```python
