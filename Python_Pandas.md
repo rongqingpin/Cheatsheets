@@ -88,7 +88,7 @@ X.apply(funcName)
 Y.map( {A:a, B:b, ...} )
 Y.map( {values[i]: i for i in range(len(values))} ) # texts into numbers
 ```
-`Y2 = pd.get_dummies(Y, prefix = ['...'], drop_first = True)`: 0 and 1 for each value in Y; prefix names the new features as `..._values`; drop first to use dummy instead of one-hot encoding
+`Y2 = pd.get_dummies(Y, prefix = '...', drop_first = True)`: 0 and 1 for each value in Y; prefix names the new features as `..._values`; drop first to use dummy instead of one-hot encoding
 
 `X.replace([A, ...], [a, ...])`  
 `X.replace({'C': {A: a}})`
@@ -104,7 +104,7 @@ quantile binning
 
 `X = pd.DataFrame(Y, columns = ['C1', 'C2', ...], index = [...])`: if only 1 row of data, Y should be `[[..., ...]]`  
 `X = Y.to_frame(name = 'C')`  
-`Y = Y.astype(float)`  
+`Y = Y.astype(type)`: type conversion, `type` can be `float`, `int`, `str`, etc.  
 `Y2 = pd.to_datetime(Y1, format = '...')`: format see [link](https://docs.python.org/2/library/datetime.html#strftime-and-strptime-behavior)  
 `X2 = X.values`: to numpy array
 
