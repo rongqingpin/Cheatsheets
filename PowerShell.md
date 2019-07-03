@@ -53,7 +53,7 @@ $ Get-ExecutionPolicy -List
 $ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 $ Set-ExecutionPolicy -Scope CurrentUser
 
-# Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass # when the ps file is on network drive
+$ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass # when the ps file is on network drive
 
 $ filename.ps1 # run file
 ```
