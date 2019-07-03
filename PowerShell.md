@@ -45,7 +45,7 @@ for ($i=i1; $i -lt i2; $i++){ # looping from i1 to i2-1
 ### Windows command line
 
 ```bash
-$ powershell ' enters PS command line
+$ powershell # enters PS command line
 
 $ Get-ExecutionPolicy -scope CurrentUser
 $ Get-ExecutionPolicy -List
@@ -53,11 +53,11 @@ $ Get-ExecutionPolicy -List
 $ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 $ Set-ExecutionPolicy -Scope CurrentUser
 
-# Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass ' when the ps file is on network drive
+# Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass # when the ps file is on network drive
 
 $ filename.ps1 # run file
 ```
 
 ```bash
-$ powershell.exe -noexit -WindowStyle hidden -file filename.ps1 ' running in the background indefinitely
+$ powershell.exe -noexit -WindowStyle hidden -file filename.ps1 # running in the background indefinitely
 ```
