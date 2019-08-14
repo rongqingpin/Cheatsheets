@@ -67,15 +67,19 @@ N = X.index.get_loc(ii) # return iloc correpsonding to ii index
 
 `Y.str.extract(<regular_expression_pattern>, expand = False)`: False returns series, True returns Dataframe
 
+`X2 = pd.melt(X, id_vars=['...', '...', ...], value_vars=['...', '...', ...], value_name='...', var_name='...'`: values in *column names* of `value_vars` become 1 new column `var_name`; values in the columns of `value_vars` become 1 new column `value_name`; values in `id_vars` columns are maintained
+
 `X.groupby(['C1', 'C2', ...], as_index = False)`, `Y.groupby([X['C1'], ...])`: return groupby object, can apply most pandas methods, `list()` to view  
+`X.groupby(...).function()`: `.size()` for count, `.mean()`  
 `X.groupby(['C1', 'C2']).mean().unstack()`: displays the statistics in one table, with `C1` as row (index), `C2` as columns  
-`X.groupby(...).size()`: count
 
 #### Calculations & Functions
 ```python
 Y1.corr(Y2)     # correlations
 X.corr()
 ```
+
+`Y2 = Y.apply(lambda i: f(i))`
 ```Python
 def funcName(X):
   ...
