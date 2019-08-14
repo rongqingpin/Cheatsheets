@@ -1,21 +1,22 @@
+`help(function)`
+
 ### Matplotlib
 
 `import matplotlib.pyplot as plt`  
-`help(function)`
 
 set the canvas:
 ```python
 <h> = plt.figure(N) # plot in the Nth figure; default 1
 plt.figure(figsize = (Nwidth, Nheight))
-fig.set_size_inches(width, height)
 plt.subplot(nrow, ncol, N)
-fig, (ax1, ax2, ...) = plt.subplots(N1, N2, figsize = (Nw, Nh))
-plt.subplot2grid((nrow, ncol), (N1, N2), colspan = Nc, rowspan = Nr)
-        # (N1, N2) specifies location in the grid; Nc, Nr default to 1
-<ax> = plt.axes([left, bottom, width, height], <facecolor = '...'>)
-        # specify location & size of the frame (all variables between [0, 1])  
-plt.subplots_adjust(top = ..., botom = ..., left = ..., right = ..., hspace = ..., wspace = ...)
-        # all between [0, 1]
+fig, axs = plt.subplots(N1, N2, figsize = (Nw, Nh))                     # axs[irow][icol], if 1 row & col, just axs
+plt.subplot2grid((nrow, ncol), (N1, N2), colspan = Nc, rowspan = Nr)    # (N1, N2) specifies location in the grid; Nc, Nr default to 1
+```
+change plot size:
+```
+fig.set_size_inches(width, height)
+plt.subplots_adjust(top = ..., botom = ..., left = ..., right = ..., hspace = ..., wspace = ...) # all between [0, 1]
+<ax> = plt.axes([left, bottom, width, height], <facecolor = '...'>)     # specify location & size of the frame (all variables between [0, 1])  
 ```
 
 styles:
@@ -27,6 +28,7 @@ plot:
 ax.plot or plt.plot(x, y, <'format'>, <label = '...'>, <properties ...>) # label for legend;
         # format for line style, default 'b-'; other markers 's' (square), '^' (triangle), 'o'...
         # properties: markersize = N, markeredgewidth = N
+ax.semilogx(x, y)
 pdfs, edges, patches = plt.hist(x, density = True)
 plt.scatter(x, y)
 plt.bar(x, y, <facecolor = '...', edgecolor = '...'>)
@@ -79,6 +81,10 @@ plt.xtick(x0, x0_text)
         # x0 & x0_text should be of the same size; x0_text is a list / array of texts
 plt.grid(True) # False by default
 plt.colorbar()
+
+ax.set_xlabel('...')
+ax.set_title('...')
+ax.legend()
 ```
 
 to move the locations of the axes:
@@ -97,7 +103,6 @@ fig = plt.figure()
 ax = fig.add_subplot(111, projection = '3d')
 # or
 ax = Axes3D(fig)
-ax.set_xlabel('...'); ax.set_title('...')
 ax.plot_surface(x, y, z) # 2D surface
 ```
 [more on 3D plot](http://www.scipy-lectures.org/packages/3d_plotting/index.html#mayavi-label)
@@ -127,9 +132,10 @@ advanced graphs:
 [seaborn palette options](https://seaborn.pydata.org/generated/seaborn.color_palette.html#seaborn.color_palette)
 
 ```python
-sns.pairplot(X) # pairwise scatter plot + histograms of each feature
-sns.regplot(x = '...', y = '...', data = X, fig_reg = False) # fig_reg default True - regression
-sns.boxplot(x = '...', y = '...', data = X)
+sns.pairplot(X)         # pairwise scatter plot + histograms of each feature
+sns.regplot(x = '...', y = '...', data = X, fig_reg = False)    # fig_reg default True - regression
+sns.distplot(x, y)
+sns.boxplot(x = '...', y = '...', hue='...', data = X, ax=...)          # hue specifies which feature to use for coloring
 ```
 
 ```python
@@ -216,68 +222,71 @@ line edge: #033649
 
 ```python
 import plotly.offline as pyoff
-from plotly.graph_objs import *
+import plotly.graph_objs as pyobj
+import plotly.tools as tls
 ```
 
 `pyoff.init_notebook_mode(connected=True)`: jupyter notebook
 
 #### plot types
 
-note: x & y needs to be 1D arrays / lists
-
+some specifications of the graph objects are in **show** section below
 ```
-data = [Scatter(x = [...], y = [...], name = '...')]        # line plot. name for legend
-data = [Scatter(x = [...], y = [...], mode = 'markers')]    # scatter plot
-data = [Scatter(x = [...], y = [...], mode = 'text', text = [...], textposition = 'bottom']
-data = [Scatter3d(x = [...], y = [...], z = [...], name = '...', mode = '...',
-                  marker = dict(colorscale = 'Viridis', opacity = 0.8))]
-```
-
-```
-data = [Bar(x = ..., y = ...,           # bar plot
-            opacity = 0.6,
-            marker = dict(color = 'rgb(158,202,225)', line = dict(color = 'rgb(8,48,107)', width = 1.5)))]
+trace = pyobj.Scatter(x = [...], y = [...], name = '...')        # line plot. name for legend
+trace = pyobj.Scatter(x = [...], y = [...], mode = 'markers')    # scatter plot
+trace = pyobj.Scatter(x = [...], y = [...], mode = 'text', text = [...], textposition = 'bottom'
+trace = pyobj.Scatter3d(x = [...], y = [...], z = [...], name = '...', mode = '...',
+                        marker = dict(colorscale = 'Viridis', opacity = 0.8))
 ```
 
 ```
-data = [Histogram(x = [...],            # histogram
-                  histnorm = '...')]    # histnorm = 'probability'
+trace = pyobj.Bar(x = ..., y = ..., opacity = 0.6, name='...',
+                  marker = dict(color = 'rgb(158,202,225)', line = dict(color = 'rgb(8,48,107)', width = 1.5)))
 ```
 
 ```
-data = Data([ Contour(z = [[...]]) ])   # contour plot
+trace = pyobj.Histogram(x = [...], histnorm = '...')    # histnorm = 'probability'
 ```
 
 ```
-data = [Heatmap(z = [[...]], x = [...], y = [...], colorscale = '...')]
+trace = pyobj.Contour(z = [[...]])
 ```
 
-`data = [plot1, plot2, ...]`: plot in the same graph
+```
+trace = pyobj.Heatmap(z = [[...]], x = [...], y = [...], colorscale = '...')
+```
+
+`data = [trace1, trace2, ...]`: plot in the same graph
 
 #### style configuration
 
 ```
-layout = Layout(title = '...',
-                autosize = False,
-                width = 700, height = 400,
-                xaxis = dict(range = [min, max], title = '...'), yaxis = dict(range = [min, max]))
-layout = Layout(scene = dict( # 3D plots
-                             xaxis = dict(title = 'xlabel', titlefont = dict(size = N), 
-                                          range = [xmin, xmax], tickvals = [...], tickfont = dict(dict(size = N))),
-                             yaxis = dict(...), zaxis = dict(...)
-                                          ),
-                margin = dict(r = N, b = N, l = N, t = N),
-                showlegend = True, legend = dict(x=posX, y=posY, traceorder='normal', font=dict(size=N)))
+layout = pyobj.Layout(title = '...',
+                      autosize = False, width = 700, height = 400,
+                      xaxis = dict(range = [min, max], title = '...'), yaxis = dict(range = [min, max]))
+layout = pyobj.Layout( # 3D plots
+               scene = dict(
+                            xaxis = dict(title = 'xlabel', titlefont = dict(size = N), 
+                                         range = [xmin, xmax], tickvals = [...], tickfont = dict(dict(size = N))),
+                            yaxis = dict(...), zaxis = dict(...)),
+               margin = dict(r = N, b = N, l = N, t = N),
+               showlegend = True, legend = dict(x=posX, y=posY, traceorder='normal', font=dict(size=N)))
 ```
 
-#### show
+#### show / output
 
-`pyoff.iplot(data)`
+`fig = pyobj.Figure(data = data, layout = layout)`
 
 ```
-fig = Figure(data = data, layout = layout)
+fig = tls.make_subplots(rows=nRow, cols=nCol, shared_xaxes=False, print_grid=False, subplot_titles=listOfTitles)
+fig.append_trace(trace, row=irow, col=jcol)
+```
+
+`fig['layout'].update(barmode='stack', height=..., title='...')`
+
+```
+pyoff.iplot(data)
 pyoff.iplot(fig)
 ```
 
-#### output
 `plot_url = pyoff.plot(fig, filename = '...')`: output a html file
