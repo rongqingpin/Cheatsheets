@@ -185,6 +185,7 @@ sys.argv[i] # i = 1 is x, etc.
 * `%s`: string; `%-s`, `%+s`
 * `%d` or `%i`: integer; `%Nd`, `%-Nd` (left-aligned), `%+Nd` (right-justified), `%0Nd` (fill with 0s)
 * `%f`, `%e` or `%E`: `%.Nf`, `%N1.N2f`
+* `{i}`: i from 0 to N, each corresponds to the values in `(x, y, ...)`, ordered by the sequence that they appear
 
 `print(X, Y, ..., <sep = '...'>, <end = '...'>)`: X, Y automatically converted to string; sep default - blank; end default - new line
 
