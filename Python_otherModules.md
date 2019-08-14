@@ -52,6 +52,12 @@ from scipy import stats
 y2, lamda = stats.boxcox(y) # by default, param lmbda = None, then lamda maximizes the log-likelihood
 (quantiles, y_ordered) = stats.probplot(y, dist = stats.norm, plot = ax)
 
+from scipy.optimize import curve_fit
+def func(x, a, b, ...):
+    y = f(x, a, b, ...)
+    return y
+coefs, covariances = curve_fit(f=func, xdata=..., ydata=..., p0=initialGuesses, bounds=(lowerBounds, upperBounds))
+
 from scipy.spatial import Voronoi, voronoi_plot_2d
 vor = Voronoi(centroids) # visualize spatial partitioning given centroids
 voronoi_plot_2d(vor, ax = ax, show_vertices = False)
