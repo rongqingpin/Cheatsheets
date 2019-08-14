@@ -160,7 +160,7 @@
 
 ```python
 X, Y = [a, b, c], [i, j, k]
-Z = zip(X, Y) # Z = [(a, i), (b, j), (c, k)]; e.g. for i, j in zip(X, Y):
+Z = zip(X, Y) # list(Z) = [(a, i), (b, j), (c, k)]; e.g. for i, j in zip(X, Y):
 X, Y = zip(*Z)
 ```
 
