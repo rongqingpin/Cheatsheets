@@ -9,8 +9,10 @@
 
 options of commands start with `-`; to use more than 1 options: `-xyz`
 
+`^` start of string; `$` end of string  
 `*`: 0 or more characters  
 `?`: 1 character  
+`[a-z]`  
 `'.. ..'`: if file name contains space, enclose by `''`
 
 variables start with `$`  
@@ -31,7 +33,7 @@ default output: screen
 `<program> -V` or `<p> --version`: show the current version  
 [tutorial on software compiling](http://www.ee.surrey.ac.uk/Teaching/Unix/unix7.html)
 
-`man <command>`: manual  
+`man <option> <command>`: manual; option `-k word_to_look_for` shows functions that matches the pattern  
 `whatis <command>`  
 `apropos <keyword>`: show commands that contain keywords  
 [macOS command line](https://ss64.com/osx/)  
@@ -106,6 +108,7 @@ users: `u`, `g` (group), `o` (other than group or owner), `a` (all)
   * `-v`: lines that do not match
   * `-n`: show line with line number
   * `-c`: count number of matches
+  * `-A N`: showing N lines after the one with matched pattern
 
 `wc <option> f`: count
   * `-w`: word count
@@ -114,7 +117,9 @@ users: `u`, `g` (group), `o` (other than group or owner), `a` (all)
 `sort`: input from screen
 * `sort < f1 > f2`
 
-`diff f1 f2`: show the difference
+`diff f1 f2`: show the difference  
+
+`rev f`: reverse each line in f
 
 ---
 
