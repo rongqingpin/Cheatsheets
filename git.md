@@ -21,9 +21,9 @@
     2. `$ git init`
     4. `$ git add <...>`
     5. `$ git commit -m “<explanatory texts about this change>”`
-    6. `$ git remote add <name> <url_of_online_repository>`
+    6. `$ git remote add <remote_name> <url_of_online_repository>`
         * if copied from another online repositories, may need to reset url (see `make changes / rename a repository`)
-    7. `$ git push -u <name> master` (`-u`: git remembers the name and branch; next time can be omitted)
+    7. `$ git push -u <remote_name> <master>` (`-u`: git remembers the name and branch; next time can be omitted. Pushed to master branch on remote)
 
 - generate README file (locally)
     1. `$ echo “# <repository name>” >> README.md`
@@ -39,7 +39,7 @@
 ### make changes
 
 - from remote to local
-    1. `$ git pull origin master`: should be at a local commit that is present in remote; pull combines fetch and merge
+    1. `$ git pull <remote_name> master`: should be at a local commit that is present in remote; pull combines fetch and merge
     2. may need to:
         1. `$ i`
         2. write the merge message
@@ -53,7 +53,7 @@
     2. `$ git commit -m <'...'>`
         * to unstage files: `$ git reset <...>`
     3. `$ git push`: to master branch origin
-        * if want to update to a different branch: `$ git push origin <local_branch>:<remote_branch>`
+        * if want to update to a different branch: `$ git push <remote_name> <local_branch>:<remote_branch>`
 
 - rename a repository
     1. rename online
