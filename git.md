@@ -13,7 +13,7 @@
 
 - **if copying from online**
 
-    2. `$ git clone <url_of_online_repository>`
+    2. `$ git clone <url_of_online_repository> <-branch remote_branch_name>`: default remote branch is master, can be omitted
 
 - **if files existing locally**
 
