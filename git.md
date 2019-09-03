@@ -108,6 +108,9 @@
 
 ### tags
 
-`$ git tag <tag> <location>`: tag cannot be moved / changed
+`$ git tag <tag> <location>`: tag cannot be moved / changed  
+`$ git tag -a <tag> -m "description"`
+
+`$ git show <tag>`
 
 `$ git describe <location>`: compare location with its closest ancestor tag
