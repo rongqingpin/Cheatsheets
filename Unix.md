@@ -84,6 +84,7 @@ users: `u`, `g` (group), `o` (other than group or owner), `a` (all)
 `mkdir <new_directory>`
 
 `rm <file>`  
+`rm -rf <directory>`: remove all contents without prompt  
 `rmdir <directory>`
 
 `cp X <X2>`: copy; if X2 = `.`, keep the same name to the current directory  
