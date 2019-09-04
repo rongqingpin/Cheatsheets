@@ -101,6 +101,7 @@
 * `$ git gui browser <branch>`: view all the files and directories
 
 * `$ git merge <branch>`: currently in master, merge with branch
+    - if have conflict, first use `$ git status` to inspect which file has issue; then re-open the file-in-question through editor and resolve the conflict; finally `git add .` and `git commit ...` and the branch will be merged
 
 * by default, master tracks origin (master in remote); to change this: `$ git branch -u <origin> <branch>`
 
