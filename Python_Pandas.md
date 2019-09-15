@@ -34,7 +34,9 @@ N = X.index.get_loc(ii) # return iloc correpsonding to ii index
 `X[condition_of_y]`: row slicing  
 `X[(condition1) & (cond2)]`, `X[(condition1) | (cond2)]`  
 `X.loc[condition_of_x, condition of y]`  
-`Y.isin([a, b, ...])`: returns a boolean series
+`Y.isin([a, b, ...])`: returns a boolean series  
+`Y.str.contains('pattern_to_match', case=False)`: returns booleans, looking for records containing pattern  
+`Y.str.contains('|'.join(['pattern1', 'pattern2', '...']))`: matching any 1 of the patterns
 
 `X.sample(N)`: random sampling as representative of the whole
 
