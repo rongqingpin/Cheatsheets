@@ -223,6 +223,7 @@ line edge: #033649
 ```python
 import plotly.offline as pyoff
 import plotly.graph_objs as pyobj
+from plotly.subplots import make_subplots
 import plotly.tools as tls
 ```
 
@@ -256,7 +257,7 @@ trace = pyobj.Contour(z = [[...]])
 trace = pyobj.Heatmap(z = [[...]], x = [...], y = [...], colorscale = '...')
 ```
 
-`data = [trace1, trace2, ...]`: plot in the same graph
+`traces = [trace1, trace2, ...]`: plot in the same graph
 
 #### style configuration
 
@@ -275,18 +276,27 @@ layout = pyobj.Layout( # 3D plots
 
 #### show / output
 
-`fig = pyobj.Figure(data = data, layout = layout)`
+`fig = pyobj.Figure(data = traces, layout = layout)`
 
 ```
+# old version
 fig = tls.make_subplots(rows=nRow, cols=nCol, shared_xaxes=False, print_grid=False, subplot_titles=listOfTitles)
 fig.append_trace(trace, row=irow, col=jcol)
+# new version
+fig = make_subplots(rows=nRow, cols=nCol, subplot_titles=['title1', '...', ...])
+fig.add_trace(trace, row=irow, col=icol)
 ```
 
-`fig['layout'].update(barmode='stack', height=..., title='...')`
+```
+fig.update_yaxes(range=[ymin, ymax])
+fig['layout'].update(barmode='stack', height=..., title='...')
+fig.update_layout(showlegend=False, height=..., barmode='')
+```
 
 ```
 pyoff.iplot(data)
 pyoff.iplot(fig)
+fig.show()
 ```
 
 `plot_url = pyoff.plot(fig, filename = '...')`: output a html file
