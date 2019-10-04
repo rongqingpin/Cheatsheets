@@ -9,6 +9,8 @@ sys.exit()
 
 ```python
 import time
+import calendar
+[dayOfWeek, noDays] = calendar.monthrange(YYYY, MM) # returns dayOfWeek (Mon-0) of 1st day of the month & noDays
 t0 = time.time()
 # here goes some codes
 print(time.time() - t0) # execution time
