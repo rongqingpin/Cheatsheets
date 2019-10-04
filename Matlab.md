@@ -84,11 +84,6 @@ options = optimset('Display','iter', ...           % display to command window (
 
 ### plots
 
-```matlab
-surf(<x>, <y>, z)
-mesh(<x>, <y>, z)
-```
-
 `histogram(y,N,'Normalization','cdf');`: N - no. of bins; 'cdf' - cumulative distribution from 0 to 1
 
 ```matlab
@@ -104,6 +99,14 @@ end
 ```
 
 ```matlab
+mesh(<x>, <y>, z)
+[xgrid, ygrid] = meshgrid(linspace(xmin, xmax), linspace(ymin, ymax))
+```
+
+```matlab
+z2 = griddata(x, y, z, xgrid, ygrid, 'linear') # interpolate z values (given at x, y) to xgrid & ygrid
+
+surf(<x>, <y>, z)
 contourf(x, y, z, [-aa, linspace(-a,b,N), bb]); % no white spots
 caxis([-a b]);
 ```
