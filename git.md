@@ -3,7 +3,8 @@
 `$ git status`  
 `$ git log`  
 `$ git diff HEAD`: show the difference with the most recent commit  
-`$ git remote -v`: check which remote directory is connected
+`$ git remote -v`: check which remote directory is connected  
+`$ git remote show <branch>`: get info about remote repository
 
 ---
 
