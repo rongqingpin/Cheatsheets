@@ -18,7 +18,7 @@ for ($i=i1; $i -lt i2; $i++){ # looping from i1 to i2-1
 `a -eq b`; `-ne`; `-lt`; `-le`; `-gt`; `-ge`  
 `$string -like "…*..."`: pattern matching by regular expression, `*` is wildcard; `$str -match / -notmatch …`: substring search  
 `$str.length -gt N`  
-`$array -contains …`: `$array` defined as `…,…,…`
+`$array -contains …`: `$array` defined as `…, …, …`
 
 **Built-in Fuctions**
 
@@ -35,10 +35,18 @@ for ($i=i1; $i -lt i2; $i++){ # looping from i1 to i2-1
 
 `$objects = Get-ChildItem $directory`: get list of files in directory  
 `$N = $objects.Count`  
-`$content = $objects[$i].FullName`: get the name with path of the ith item  
+`$content = $objects[$i].FullName`: get the name with path of the ith item (other properties include `Extension`, `CreationTime`)  
 
 `Start-Process filepath\software.exe filepath\file_to_run -WindowStyle Hidden`: execute the program `file_to_run`  
 `Start-Process filepath\software.exe '"file path\file to run"' -WindowStyle Hidden`: when the path / filename has blanks  
+
+`Write-Host "text to display" -fore green`
+
+**Objects, Events**  
+
+`$fileWater = New-Object IO.FileSystemWatcher $folder, $filter -Property @{IncludeSubdirectories = $true;NotifyFilter = [IO.NotifyFilters]'FileName, LastWrite'}`: watching `$folder` & subdirectories  
+`Register-ObjectEvent $fileWatcher Created -SourceIdentifier FileCreated -Action{...}`: take action if new file created  
+`Unregister-event FileCreated`: terminate the file watcher (FileCreated defined as identifier is the above line)
 
 ---
 
