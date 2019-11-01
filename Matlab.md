@@ -111,6 +111,8 @@ contourf(x, y, z, [-aa, linspace(-a,b,N), bb]); % no white spots
 caxis([-a b]);
 ```
 
+`rectangle('Position', [x, y, width, height], 'Curvature', [f1, f2], 'FaceColor', ...)`: `[x,y]` is left-bottom vertex; `f1=f2=1` gives a circle  
+
 ```matlab
 h = subplot(a,b,i);
 p = get(h,'pos'); % [left, bottom, width, height] in percentage of plot-box size
@@ -174,6 +176,7 @@ fclose(fileID);
 
 ```matlab
 handle = figure;
+h = figure('Renderer', 'painters', 'Position', [Nx Ny Width Height]) % typical pixel is [0, 0, 1800, 900]
 print(handle,'format',filename) % 'format':	'-depsc' (eps color), '-djpeg' (jpeg file)
 % or
 saveas(gcf,name,'epsc'); % no need to put file extension
@@ -185,7 +188,7 @@ for imov = 1:n;
 end
 movie2avi(mov,'fname.avi','fps',m,'compression','None');
 % or
-writerObj = VideoWriter(fname,'MPEG-4'); % fname is the name of the video
+writerObj = VideoWriter(fname,'MPEG-4'); % fname is the name of the video; other format e.g. 'Uncompressed AVI'
 writerObj.FrameRate = 2;
 open(writerObj);
 for i = 1:n;
