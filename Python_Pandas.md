@@ -111,8 +111,15 @@ quantile binning
 `X = pd.DataFrame(Y, columns = ['C1', 'C2', ...], index = [...])`: if only 1 row of data, Y should be `[[..., ...]]`  
 `X = Y.to_frame(name = 'C')`  
 `Y = Y.astype(type)`: type conversion, `type` can be `float`, `int`, `str`, etc.  
-`Y2 = pd.to_datetime(Y1, format = '...')`: format see [link](https://docs.python.org/2/library/datetime.html#strftime-and-strptime-behavior)  
 `X2 = X.values`: to numpy array
+
+#### Datetimes
+`X2 = X.resample('...').agg('...')`: can resample w/ `'Y'`, `'Q', convention='end'` (by quarter); common aggregation method `'mean'`, `'sum'`  
+`X2 = X.groupby(pd.Grouper(freq='M'))`: resample by month  
+`Y2 = pd.to_datetime(Y1, format = '...')`: format see [link](https://docs.python.org/2/library/datetime.html#strftime-and-strptime-behavior)  
+`pd.Period(x, freq='T').quarter`: returns which quarter x is of the year; x is DateTimeIndex  
+`(datetime1 - datetime2).days`: get no. of days between 2 dates  
+`x.strftime('%Y-%m')`: get string from DateTimeIndex
 
 #### Plots
 default plots using `matplotlib.pyplot`
