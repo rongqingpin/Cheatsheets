@@ -278,6 +278,7 @@ layout = pyobj.Layout( # 3D plots
 
 `fig = pyobj.Figure(data = traces, layout = layout)`
 
+To have multiple plots in one frame, e.g., multiple plots w/ shared axis; subplots, etc.:
 ```
 # old version
 fig = tls.make_subplots(rows=nRow, cols=nCol, shared_xaxes=False, print_grid=False, subplot_titles=listOfTitles)
@@ -290,7 +291,7 @@ fig.add_trace(trace, row=irow, col=icol)
 ```
 fig.update_yaxes(range=[ymin, ymax])
 fig['layout'].update(barmode='stack', height=..., title='...')
-fig.update_layout(showlegend=False, height=..., barmode='')
+fig.update_layout(showlegend=False, height=..., barmode='', title='...')
 ```
 
 ```
