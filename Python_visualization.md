@@ -242,6 +242,7 @@ trace = pyobj.Scatter3d(x = [...], y = [...], z = [...], name = '...', mode = '.
 
 ```
 trace = pyobj.Bar(x = ..., y = ..., opacity = 0.6, name='...',
+                  text=..., , textposition='auto', # show text on the bar
                   marker = dict(color = 'rgb(158,202,225)', line = dict(color = 'rgb(8,48,107)', width = 1.5)))
 ```
 
