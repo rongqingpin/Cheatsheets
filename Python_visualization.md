@@ -31,13 +31,16 @@ ax.plot or plt.plot(x, y, <'format'>, <label = '...'>, <properties ...>) # label
 ax.semilogx(x, y)
 pdfs, edges, patches = plt.hist(x, density = True)
 plt.scatter(x, y)
-plt.bar(x, y, <facecolor = '...', edgecolor = '...'>)
+plt.bar(x, y, <facecolor = '...', edgecolor = '...', bottom=y0, label='...'>)
+        # y0 same size with y, stacked bar chart
 plt.axvline(x0) # vertical line at x0
+ax.fillbetween(x, y1, y2, color=..., alpha=...) # fill area between y1 & y2
 
 plt.contourf(x, y, z, <cmap = '...'>) # default no lines; can use x, y = np.meshgrid(x0, y0) for easy grid generation
 plt.contour(x, y, z, <[z0]>) # show lines at z = z0
 plt.imshow(z)
 plt.colormesh(x, y, z) # pseudocolor plot with a non-regular rectangular grid
+ax.hexbin(x, y, C=z, reduce_C_function=np.mean, gridsize=...) # color by mean z value
 
 plt.text(x, y, r'text') # in text, use `$ \symbol $` for latex style notations
         # to interpret text as raw string, use r'text'
@@ -84,7 +87,10 @@ plt.colorbar()
 
 ax.set_xlabel('...')
 ax.set_title('...')
+ax.set_xticks([...])
+ax.set_xticklabels(['...', ...])
 ax.legend()
+fig.colorbar(h, ax=ax) # h as the plot object, e.g., contourf
 ```
 
 to move the locations of the axes:
