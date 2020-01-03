@@ -19,6 +19,13 @@ notation conventions: `X` - dataframe; `Y` - series; `x` / `y` - objects that ca
 `ind = Y.index`, `y = Y.values`  
 `Y2 = Y.value_counts()`: indices are the values, values are the counts
 
+#### Data profiling
+after installing `pandas_profiling`  
+```python
+import pandas_profiling
+data.profile_report()
+```
+
 #### Data Slicing
 ```python
 X.C     # C is the name of a column
