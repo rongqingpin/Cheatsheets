@@ -7,14 +7,21 @@ sys.path.append('otherDirectories') # add other paths to current directory
 sys.exit()
 ```
 
+---
+
+`y.year`, `y.month`, `y.day`: `y` is datetime timestamp  
+
 ```python
 import time
 import calendar
-[dayOfWeek, noDays] = calendar.monthrange(YYYY, MM) # returns dayOfWeek (Mon-0) of 1st day of the month & noDays
+[dayOfWeek, noDays] = calendar.monthrange(YYYY, MM) 
+        # returns dayOfWeek (Mon-0) of 1st day of the month & noDays
 t0 = time.time()
 # here goes some codes
 print(time.time() - t0) # execution time
 ```
+
+---
 
 ```python
 import os
@@ -30,6 +37,8 @@ os.chdir('target_directory') # change working directory
 os.makedirs('new_directory') # create new directory
 os.remove('file_name') # delete. file only
 ```
+
+---
 
 ```python
 import shutil
