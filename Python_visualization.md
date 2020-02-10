@@ -288,8 +288,13 @@ layout = pyobj.Layout( # 3D plots
 To have multiple plots in one frame, e.g., multiple plots w/ shared axis; subplots, etc.:
 ```
 # old version
-fig = tls.make_subplots(rows=nRow, cols=nCol, shared_xaxes=False, print_grid=False, subplot_titles=listOfTitles)
+fig = tls.make_subplots(rows=nRow, cols=nCol, 
+                        shared_xaxes=False, 
+                        specs=[[{"secondary_y": True}]], # shared Y axis
+                        print_grid=False, 
+                        subplot_titles=listOfTitles)
 fig.append_trace(trace, row=irow, col=jcol)
+fig.append_trace(trace, secondary_y=False) # false as left y-axis, true as right y-axis
 # new version
 fig = make_subplots(rows=nRow, cols=nCol, subplot_titles=['title1', '...', ...])
 fig.add_trace(trace, row=irow, col=icol)
