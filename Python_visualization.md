@@ -296,12 +296,20 @@ fig = tls.make_subplots(rows=nRow, cols=nCol,
 fig.append_trace(trace, row=irow, col=jcol)
 fig.append_trace(trace, secondary_y=False) # false as left y-axis, true as right y-axis
 # new version
-fig = make_subplots(rows=nRow, cols=nCol, subplot_titles=['title1', '...', ...])
-fig.add_trace(trace, row=irow, col=icol)
+fig = make_subplots(rows=nRow, cols=nCol, 
+                    column_widths=[0.8, 0.2], # 1x2 canvas
+                    specs=[[{"secondary_y": True}, {"secondary_y": True}]], # 1x2 canvas
+                    subplot_titles=['title1', '...', ...])
+fig.add_trace(trace, 
+              secondary_y=False, # False: use 1st y-axis; True: use 2nd y-axis
+              row=irow, col=icol)
 ```
 
 ```
-fig.update_yaxes(range=[ymin, ymax])
+fig.update_yaxes(
+        range=[ymin, ymax], title_text="y-axis-label", 
+        secondary_y=False, # False: use 1st y-axis; True: use 2nd y-axis
+        )
 fig['layout'].update(barmode='stack', height=..., title='...')
 fig.update_layout(showlegend=False, height=..., barmode='', title='...')
 ```
