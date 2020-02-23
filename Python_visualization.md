@@ -309,7 +309,7 @@ fig.add_trace(trace,
 fig.update_yaxes(
         range=[ymin, ymax], title_text="y-axis-label", 
         secondary_y=False, # False: use 1st y-axis; True: use 2nd y-axis
-        )
+        row=irow, col=icol)
 fig['layout'].update(barmode='stack', height=..., title='...')
 fig.update_layout(showlegend=False, height=..., barmode='', title='...')
 ```
