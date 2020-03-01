@@ -280,6 +280,7 @@ layout = pyobj.Layout( # 3D plots
                margin = dict(r = N, b = N, l = N, t = N),
                showlegend = True, legend = dict(x=posX, y=posY, traceorder='normal', font=dict(size=N)))
 ```
+[color specs](https://community.plot.ly/t/plotly-colours-list/11730/3)
 
 #### show / output
 
