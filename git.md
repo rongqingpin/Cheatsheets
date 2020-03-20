@@ -3,8 +3,6 @@
 `$ git status`  
 `$ git log`  
 `$ git diff HEAD`: show the difference with the most recent commit  
-`$ git remote -v`: check which remote directory is connected  
-`$ git remote show <branch>`: get info about remote repository
 
 ---
 
@@ -34,6 +32,16 @@
     2. `$ touch .gitignore`
     3. `$ open .gitignore`
     4. add the files / directories to be ignored (`directory_in_home_folder/sub_directory/.../`)
+
+---
+
+### more on remote repository
+
+`$ git remote add <remoteRepo> <url>`: can use `https://username:password@location/GIT/repo` to avoid future log-in  
+`$ git remote -v`: check which remote directory is connected  
+`$ git remote show <branch>`: get info about remote repository  
+`$ git push <-u> <remoteRepo> <localRepo>`: `-u` triggers user log-in  
+`$ git remote rm <remoteRepo>`  
 
 ---
 
@@ -114,5 +122,7 @@
 `$ git tag -a <tag> -m "description"`
 
 `$ git show <tag>`
+
+`$ git tag -d <tag>`
 
 `$ git describe <location>`: compare location with its closest ancestor tag
