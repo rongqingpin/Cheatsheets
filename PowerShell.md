@@ -15,6 +15,8 @@ for ($i=i1; $i -lt i2; $i++){ # looping from i1 to i2-1
   …
   continue
 }
+
+$z = FuncName $x $y ...
 ```
 
 **Data Types**  
