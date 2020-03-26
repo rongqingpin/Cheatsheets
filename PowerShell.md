@@ -1,26 +1,40 @@
 ### PowerShell `.ps1` script syntax
 
 ```
+function FuncName([string]$x, [int]$y, ...){
+  return $z
+}
+
 # comments
 
 if (){
-…
+  …
 }
 
 for ($i=i1; $i -lt i2; $i++){ # looping from i1 to i2-1
-…
+  …
+  continue
 }
 ```
 
-**Operators**
+**Data Types**  
+
+`$array = value1, value2, ...`: fixed size  
+`$array = New-Object System.Collections.Generic.List[type]`: not fixed size
+
+**Operators**  
 
 `!(…)`: not …  
 `a -eq b`; `-ne`; `-lt`; `-le`; `-gt`; `-ge`  
 `$string -like "…*..."`: pattern matching by regular expression, `*` is wildcard; `$str -match / -notmatch …`: substring search  
-`$str.length -gt N`  
-`$array -contains …`: `$array` defined as `…, …, …`
+`$array -contains …`: return True / False
 
 **Built-in Fuctions**
+
+`$str.length -gt N`  
+`$str2 = $str1.Replace("pattern1", "pattern2")`  
+`$N = $array.Count`  
+`$array.Add($value)`: must be expandable array
 
 `$date = Get-Date -Format "yy-MM-dd"`   
 `$dateOld = (Get-Date).AddMonths(-N)`: older by N months  
@@ -33,9 +47,9 @@ for ($i=i1; $i -lt i2; $i++){ # looping from i1 to i2-1
 `Copy-Item -Path $target -Destination $name`  
 `Remove-Item -Path $content -options`: options can be `-Recurse` (remove all children in `$content`), `-WhatIf` (show what will happen w/o execution)  
 
-`$objects = Get-ChildItem $directory`: get list of files in directory  
-`$N = $objects.Count`  
-`$content = $objects[$i].FullName`: get the name with path of the ith item (other properties include `Extension`, `CreationTime`)  
+`$object = Get-Item $fileName`  
+`$objects = Get-ChildItem $directory <-Force> <-Recurse>`: get list of files in directory; `-Force` option includes hidden files  
+`$content = $objects[$i].FullName`: get the name with path of the ith item (other properties include `Extension`, `CreationTime`, `LastWriteTime`)  
 
 `Start-Process filepath\software.exe filepath\file_to_run -WindowStyle Hidden`: execute the program `file_to_run`  
 `Start-Process filepath\software.exe '"file path\file to run"' -WindowStyle Hidden`: when the path / filename has blanks  
