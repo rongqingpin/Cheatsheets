@@ -10,3 +10,7 @@ None of the instructions found online about setting trusted sites and certificat
 ---
 
 `pip show <package_name>`: info including version & directory
+
+---
+
+`conda update --all`
