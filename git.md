@@ -121,6 +121,7 @@
 `$ git tag <tag> <location>`: tag cannot be moved / changed  
 `$ git tag -a <tag> -m "description"`
 
+`$ git tag`: list existing tags  
 `$ git show <tag>`
 
 `$ git tag -d <tag>`
