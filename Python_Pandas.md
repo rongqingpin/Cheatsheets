@@ -81,6 +81,7 @@ N = X.index.get_loc(ii) # return iloc correpsonding to ii index
 `X.groupby(['C1', 'C2', ...], as_index = False)`, `Y.groupby([X['C1'], ...])`: return groupby object, can apply most pandas methods, `list()` to view  
 `X.groupby(...).function()`: `.size()` for count, `.mean()`  
 `X.groupby(['C1', 'C2']).mean().unstack()`: displays the statistics in one table, with `C1` as row (index), `C2` as columns  
+`fgroups = XGroupByObj`: returns a dictionary with `[('C1', 'C2', ...), (...), ...]` as keys and row indices that match the key pairs as values  
 
 #### Calculations & Functions
 ```python
