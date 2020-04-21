@@ -64,7 +64,7 @@ list of available properties: [2D lines](https://matplotlib.org/api/_as_gen/matp
 [built-in markers](http://matplotlib.org/api/markers_api.html)  
 [more on text in Latex style](http://matplotlib.org/users/usetex.html#usetex-tutorial)  
 [more on annotation](http://matplotlib.org/users/annotations_guide.html)  
-[built-in colors & names (1D)](http://matplotlib.org/2.0.0b4/examples/color/named_colors.html)  
+[built-in colors & names (1D)](https://matplotlib.org/3.1.0/gallery/color/named_colors.html)  
 [built-in colomaps](https://matplotlib.org/examples/color/colormaps_reference.html), also [link](http://matplotlib.org/users/colormaps.html)  
 * e.g.: `plt.cm.Blues`, `'bwr'`
 * use `cmap = 'cmap_r'` to reverse the color
