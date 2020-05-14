@@ -141,7 +141,14 @@ advanced graphs:
 sns.pairplot(X)         # pairwise scatter plot + histograms of each feature
 sns.regplot(x = '...', y = '...', data = X, fig_reg = False)    # fig_reg default True - regression
 sns.distplot(x, y)
-sns.boxplot(x = '...', y = '...', hue='...', data = X, ax=...)          # hue specifies which feature to use for coloring
+sns.boxplot(x = '...', y = '...', hue='...', data = X, # hue specifies which feature to use for coloring
+            palette = ...,                             # palette = [(R, G, B), (), ...] of size len(data) for personalized coloring
+            ax=...)  
+```
+
+```
+g = sns.plotType()
+g.legend_.remove()
 ```
 
 ```python
