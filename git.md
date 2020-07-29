@@ -41,6 +41,7 @@
 `$ git remote -v`: check which remote directory is connected  
 `$ git remote show <branch>`: get info about remote repository  
 `$ git push <-u> <remoteRepo> <localRepo>`: `-u` triggers user log-in  
+`$ git push <remoteRepo> localBranch<:remoteBranch>`  
 `$ git remote rm <remoteRepo>`  
 
 ---
