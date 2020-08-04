@@ -96,6 +96,9 @@ def funcName(X):
   return ...
 X.apply(funcName)
 ```
+`Y.apply(np.floor)`
+
+`Y.clip(upper=y0)`: return `min([yi, y0])`
 
 #### Feature Mapping
 ```python
