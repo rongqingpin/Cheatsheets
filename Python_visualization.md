@@ -246,7 +246,7 @@ import plotly.tools as tls
 
 some specifications of the graph objects are in **show** section below
 ```
-trace = pyobj.Scatter(x = [...], y = [...], name = '...')        # line plot. name for legend
+trace = pyobj.Scatter(x=[...], y=[...], name='...', line=dict(color=..., dash='dash')) # line plot. name for legend
 trace = pyobj.Scatter(x = [...], y = [...], mode = 'markers')    # scatter plot
 trace = pyobj.Scatter(x = [...], y = [...], mode = 'text', text = [...], textposition = 'bottom'
 trace = pyobj.Scatter3d(x = [...], y = [...], z = [...], name = '...', mode = '...',
@@ -307,11 +307,11 @@ fig.append_trace(trace, secondary_y=False) # false as left y-axis, true as right
 # new version
 fig = make_subplots(rows=nRow, cols=nCol, 
                     column_widths=[0.8, 0.2], # 1x2 canvas
-                    specs=[[{"secondary_y": True}, {"secondary_y": True}]], # 1x2 canvas
-                    subplot_titles=['title1', '...', ...])
+                    specs=[[{"secondary_y": True}, {"secondary_y": True}], [...], ...], # Nx2 canvas
+                    subplot_titles=['title1', '...', ...]) # title goes by row first then by column
 fig.add_trace(trace, 
               secondary_y=False, # False: use 1st y-axis; True: use 2nd y-axis
-              row=irow, col=icol)
+              row=irow, col=icol) # irow & icol starts from 1
 ```
 
 ```
