@@ -8,17 +8,20 @@ from bs4 import BeautifulSoup
 ```
 
 ```
-reqst = urllib.request.urlopen('<url>')
-soup = BeautifulSoup(reqst, 'html5lib')
+reqst = urllib.request.Request('url',
+                               headers={'User-Agent': 'Mozilla/5.0'}) # in case of access denied
+reqst = urllib.request.urlopen(reqst).read()
 ```
 
+`soup = BeautifulSoup(reqst, 'parser')`  
 `soup = BeautifulSoup(open(filename), 'parser')`  
 parsers: 'html.parser', 'html5lib'
 
-```
-X = soup.findall('a')       # all the links, with format
-x = X[i].get('href')        # the link itself
-```
+`X = soup.find_all('component')`  
+`X = soup.findAll('component', {'attribute': 'pattern'})`  
+componets: `'a'` (all the links, with format); `'div', {'class': '...'}` (all div with class name matching the pattern); 'tr', 'td' (table contents)  
+`X[i].get('href')`: get the link itself for links  
+`X[i].text`
 
 [urllib and os modules](https://developers.google.com/edu/python/utilities)
 
