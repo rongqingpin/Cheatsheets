@@ -108,7 +108,8 @@ Y.map( {values[i]: i for i in range(len(values))} ) # texts into numbers
 `Y2 = pd.get_dummies(Y, prefix = '...', drop_first = True)`: 0 and 1 for each value in Y; prefix names the new features as `..._values`; drop first to use dummy instead of one-hot encoding
 
 `X.replace([A, ...], [a, ...])`  
-`X.replace({'C': {A: a}})`
+`X.replace({'C': {A: a}})`  
+`X.replace(r'^pattern$', x2, regex=True)`: replace value by x2 if pattern is matched via regular expression
 
 `Y2, bins = pd.cut(Y, bins, retbins = True)`: bins can be N, or array of size N+1 (edges of the bins)  
 
@@ -128,9 +129,11 @@ quantile binning
 `X2 = X.resample('...').agg('...')`: can resample w/ `'Y'`, `'Q', convention='end'` (by quarter); common aggregation method `'mean'`, `'sum'`  
 `X2 = X.groupby(pd.Grouper(freq='M'))`: resample by month  
 `Y2 = pd.to_datetime(Y1, format = '...')`: format see [link](https://docs.python.org/2/library/datetime.html#strftime-and-strptime-behavior)  
+`x.strftime('%Y-%m')`: get string from DateTimeIndex  
 `pd.Period(x, freq='T').quarter`: returns which quarter x is of the year; x is DateTimeIndex  
+`x2 = x1 + pd.Timedelta(hours=dx)`  
 `(datetime1 - datetime2).days`: get no. of days between 2 dates  
-`x.strftime('%Y-%m')`: get string from DateTimeIndex
+`(datetime1 - datetime2).total_seconds()`  
 
 #### Plots
 default plots using `matplotlib.pyplot`
