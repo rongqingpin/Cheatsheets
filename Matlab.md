@@ -210,7 +210,9 @@ close(writerObj);
 ```matlab
 conn = database('database_name', 'username', 'password', …
                 'Vendor', 'database_type', …        % 'MySQL', 'PostgreSQL', …
-                'Server', 'server_name_or_address')
+                'Server', 'server_name_or_address');
+conn = database('dataSource', ... % first configure 'dataSource' in 'Apps/Database Explorer' and save
+                'username', 'password');
 ...
 close(conn)
 ```
