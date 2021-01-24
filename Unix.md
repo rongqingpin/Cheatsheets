@@ -37,7 +37,10 @@ default output: screen
 `whatis <command>`  
 `apropos <keyword>`: show commands that contain keywords  
 [macOS command line](https://ss64.com/osx/)  
-`<cmd> + <shift> + <.>`: show / hide hidden files. [full list of methods listed here](https://ianlunn.co.uk/articles/quickly-showhide-hidden-files-mac-os-x-mavericks/)
+`<cmd> + <shift> + <.>`: show / hide hidden files. [full list of methods listed here](https://ianlunn.co.uk/articles/quickly-showhide-hidden-files-mac-os-x-mavericks/)  
+
+`sudo su`: superuser `su` / admin / root user  
+`sudo <command>`: temporarily executes as `su`
 
 ---
 
@@ -78,6 +81,8 @@ users: `u`, `g` (group), `o` (other than group or owner), `a` (all)
 * if location as `.`, search current directory & all sub-directories
 * condition: `-name '<pattern>'`; `-size +<?M>`
 * output: `-print` show on screen; `-ls` list
+
+`ln -s <target_directory> <link_name>`: create shortcut for target directory named link, e.g. `ln -s "$(pwd)" ~/link` creates link `link` in home directory for current directory
 
 ---
 
