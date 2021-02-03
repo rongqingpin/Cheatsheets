@@ -148,6 +148,7 @@
 
 `ord('a')`: output the unicode for the letter; e.g. `range(ord('a'), ord('z')+1)`  
 `chr(i)`: output the corresponding letter  
+`'{0:format}'.format(x)`: convert to string w/ format (see `output / print` for details, except skip `%` sign)  
 `int()`, `float()`  
 `isinstance(x, <type>)`: check if `int`, `str`, etc.
 
