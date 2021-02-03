@@ -271,6 +271,13 @@ trace = pyobj.Contour(z = [[...]])
 trace = pyobj.Heatmap(z = [[...]], x = [...], y = [...], colorscale = '...')
 ```
 
+```
+trace = pyobj.Waterfall(orientation='v', measure=['relative', 'relative', ..., 'total'], 
+                        x=[...], y=[dy1, dy2, ..., ytotal], 
+                        text=[str(dy1), ...], textposition='outside',
+                        connector={'line': {'color': 'rgb(63, 63, 63)'}})
+```
+
 `traces = [trace1, trace2, ...]`: plot in the same graph
 
 #### style configuration
