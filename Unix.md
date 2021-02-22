@@ -66,7 +66,7 @@ for jobs in the background / suspended:
 `pwd`: print the whole path of the working directory
 
 `ls <directory> <option>`: show files  
-  * option: `-a`: all including hidden
+  * option: e.g., `-hal` - all including hidden
   * `-l`: show details about files
 
 access rights: `r`, `w`, `x` (execute)  
