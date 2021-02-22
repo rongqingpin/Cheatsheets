@@ -66,8 +66,7 @@ for jobs in the background / suspended:
 `pwd`: print the whole path of the working directory
 
 `ls <directory> <option>`: show files  
-  * option: e.g., `-hal` - all including hidden
-  * `-l`: show details about files
+  * [option](https://ss64.com/bash/ls.html): e.g., `-hal` - `-a` all including hidden files, `-l` long format w/ file details, `-h` size info in human readable format
 
 access rights: `r`, `w`, `x` (execute)  
 `+`: add access; `-`: take away  
