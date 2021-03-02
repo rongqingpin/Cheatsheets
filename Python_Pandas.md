@@ -123,6 +123,7 @@ quantile binning
 `X = pd.DataFrame(Y, columns = ['C1', 'C2', ...], index = [...])`: if only 1 row of data, Y should be `[[..., ...]]`  
 `X = Y.to_frame(name = 'C')`  
 `Y = Y.astype(type)`: type conversion, `type` can be `float`, `int`, `str`, etc.  
+`Y = X[[...]].agg(', '.join, axis=1)`: combine string columns by delimiter `, `   
 `X2 = X.values`: to numpy array
 
 #### Datetimes
