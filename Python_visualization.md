@@ -289,7 +289,8 @@ layout = pyobj.Layout(title = '...',
 layout = pyobj.Layout( # 3D plots
                scene = dict(
                             xaxis = dict(title = 'xlabel', titlefont = dict(size = N), 
-                                         range = [xmin, xmax], tickvals = [...], tickfont = dict(dict(size = N))),
+                                         range = [xmin, xmax], 
+                                         tickvals = [...], tickfont = dict(dict(size = N)), tickangle=-45),
                             yaxis = dict(...), zaxis = dict(...)),
                margin = dict(r = N, b = N, l = N, t = N),
                showlegend = True, legend = dict(x=posX, y=posY, traceorder='normal', font=dict(size=N)))
@@ -326,7 +327,7 @@ fig.update_yaxes(
         range=[ymin, ymax], title_text="y-axis-label", 
         secondary_y=False, # False: use 1st y-axis; True: use 2nd y-axis
         row=irow, col=icol)
-fig['layout'].update(barmode='stack', height=..., title='...')
+fig['layout'].update(barmode='stack', height=..., title='...') # barmode as stack / group
 fig.update_layout(showlegend=False, height=..., barmode='', title='...')
 ```
 
