@@ -234,16 +234,16 @@ data = data.Data;
 ```
 
 To setup connection to [MySQL database](https://www.mathworks.com/help/database/ug/mysql-jdbc-windows.html#bt8knx3-3):  
-Method 1:
-- Download JDBC driver for MySQL
-- Unzip and move the .jar file to matlab folder (`…\MATLAB\R2016b\java\jarext\`)
-- `>> prefdir` in matlab, open the path, close Matlab
-- Create `javaclasspath.txt` file in the preferred path
-- Write the full path of .jar file (with file name), save
-- Restart Matlab
-Method 2:
-- install mysql connector
-- run `javaaddpath 'C:\Program Files (x86)\MySQL\Connector J 5.1\mysql-connector-java-5.1.49.jar'` in Matlab (can be added to `startup.m` for auto setup)
+1. Method 1:
+	- Download JDBC driver for MySQL
+	- Unzip and move the .jar file to matlab folder (`…\MATLAB\R2016b\java\jarext\`)
+	- `>> prefdir` in matlab, open the path, close Matlab
+	- Create `javaclasspath.txt` file in the preferred path
+	- Write the full path of .jar file (with file name), save
+	- Restart Matlab
+2. Method 2:
+	- install mysql connector
+	- run `javaaddpath 'C:\Program Files (x86)\MySQL\Connector J 5.1\mysql-connector-java-5.1.49.jar'` in Matlab (can be added to `startup.m` for auto setup)
 
 
 ---
