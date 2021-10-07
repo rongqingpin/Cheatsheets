@@ -50,10 +50,9 @@ N = X.index.get_loc(ii) # return iloc correpsonding to ii index
 `X2 = X.copy()`: modify X2 won't change X
 
 #### Initial Processing
-`X.columns = ['C1', 'C2', ...]`: change column title  
-`X.index`  
+`X.columns = ['C1', 'C2', ...]`, `X.index.name = 'title'`: change title  
 `Y.sort_index()`: sort by index  
-`X = X.reset_index(drop = True)`  
+`X = X.reset_index(drop = True)`, `X = X.set_index('columnA')`  
 `X = X.rename({oldName: newName}, axis = 'columns')`
 
 `Y.isnull()`: a Series of True/False  
@@ -119,6 +118,7 @@ quantile binning
 
 #### Data Combination & Type Conversion
 `pd.concat([X1, X2], axis = ..., ignore_index = True)`: 1 for column, 0 for row  
+`data = X1.join(X2, how='left', on='columnA', rsuffix='...', lsuffix='...')`: skipping `on` option will join by index, `r/lsuffix` only needed if there are columns with the same title  
 
 `X = pd.DataFrame(Y, columns = ['C1', 'C2', ...], index = [...])`: if only 1 row of data, Y should be `[[..., ...]]`  
 `X = Y.to_frame(name = 'C')`  
