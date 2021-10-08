@@ -48,7 +48,7 @@
   * dictionary  
   `dict( (key, value) for i, <j> in list )`  
   `dict([[i,xi], [j,xj], ...], key1 = val1, key2 = val2, ...)`  
-  `X = dict.fromkeys(keys)`: initialize a dictionary; or simply `X = {}` and use key as index to assign values
+  `X = dict.fromkeys(keys)`: initialize a dictionary; or simply `X = {ikey: ival for ikey in keyList}` and use key as index to assign values
   * set: no duplicates  
   `set(<X>)`: if X omitted, empty set
 
