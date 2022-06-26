@@ -26,6 +26,8 @@ default output: screen (e.g., `echo`)
 * `> f`: output to file; overwrite content
 * `>> f`: append to file
 
+`<command> --help`
+
 `<command1> | <command2>`: use output from 1 as input for 2  
 
 `who`: show logged-on users
@@ -63,7 +65,7 @@ for jobs in the background / suspended:
 
 ---
 
-`df`: summarize free disc space  
+`df -h`: summarize free disc space, in human-readable format  
 `mkfs -t <type> <storage volume>`: type can be `ext2`, `ext3`, etc.  
 `mount <volume> <directory>`
 
