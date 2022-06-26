@@ -22,7 +22,7 @@ default input: keyboard
 * input from keyboard, type **Ctrl + d** to stop
 * `< f`: input from file
 
-default output: screen
+default output: screen (e.g., `echo`)
 * `> f`: output to file; overwrite content
 * `>> f`: append to file
 
@@ -41,6 +41,8 @@ default output: screen
 
 `sudo su`: superuser `su` / admin / root user  
 `sudo <command>`: temporarily executes as `su`
+
+`sh -c "..."`: calls program `sh` to execute command in `"..."`
 
 ---
 
@@ -61,7 +63,9 @@ for jobs in the background / suspended:
 
 ---
 
-`df`: summarize free disc space
+`df`: summarize free disc space  
+`mkfs -t <type> <storage volume>`: type can be `ext2`, `ext3`, etc.  
+`mount <volume> <directory>`
 
 `cd <directory>`
 
@@ -127,6 +131,8 @@ users: `u`, `g` (group), `o` (other than group or owner), `a` (all)
 `diff f1 f2`: show the difference  
 
 `rev f`: reverse each line in f
+ 
+`tee -a <filename>`: read inputs & attach to file. e.g., `echo "commands" | tee -a ...`
 
 ---
 
