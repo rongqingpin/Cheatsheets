@@ -61,6 +61,8 @@ for jobs in the background / suspended:
 
 ---
 
+`df`: summarize free disc space
+
 `cd <directory>`
 
 `pwd`: print the whole path of the working directory
