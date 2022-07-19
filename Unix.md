@@ -122,6 +122,8 @@ users: `u`, `g` (group), `o` (other than group or owner), `a` (all)
   * `-n`: show line with line number
   * `-c`: count number of matches
   * `-A N`: showing N lines after the one with matched pattern
+  * `-r`: recursively through all subdirectories
+ example: `grep -ri "here goes some string" *` searches for the whole string in all folders
 
 `wc <option> f`: count
   * `-w`: word count
