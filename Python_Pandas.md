@@ -52,6 +52,7 @@ N = X.index.get_loc(ii) # return iloc correpsonding to ii index
 #### Initial Processing
 `X.columns = ['C1', 'C2', ...]`, `X.index.name = 'title'`: change title  
 `Y.sort_index()`: sort by index  
+`X.sort_values(by=['col1', '...'])`: sort by columns  
 `X = X.reset_index(drop = True)`, `X = X.set_index('columnA')`  
 `X = X.rename({oldName: newName}, axis = 'columns')`
 
