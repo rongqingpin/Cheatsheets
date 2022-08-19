@@ -43,7 +43,8 @@ N = X.index.get_loc(ii) # return iloc correpsonding to ii index
 `X.loc[condition_of_x, condition of y]`  
 `Y.isin([a, b, ...])`: returns a boolean series  
 `Y.str.contains('pattern_to_match', case=False)`: returns booleans, looking for records containing pattern  
-`Y.str.contains('|'.join(['pattern1', 'pattern2', '...']))`: matching any 1 of the patterns
+`Y.str.contains('|'.join(['pattern1', 'pattern2', '...']))`: matching any 1 of the patterns  
+`Y.str.extract(pat='...(pattern)...')`: extracts pattern by regular expression
 
 `X.sample(N)`: random sampling as representative of the whole
 
