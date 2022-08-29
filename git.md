@@ -131,3 +131,9 @@
 `$ git tag -d <tag>`
 
 `$ git describe <location>`: compare location with its closest ancestor tag
+
+---
+
+### submodules 
+
+`$git submodule add <url_of_repo>`: repo / project within a project; after creation, can go inside the submodule location & update as a regular repo
