@@ -14,6 +14,8 @@ None of the instructions found online about setting trusted sites and certificat
 `pip install <package> --upgrade`  
 `python -m pip install --user <package>`
 
+`pip install -r requirements.txt`: environment migration
+
 ---
 
 `conda update --all`
