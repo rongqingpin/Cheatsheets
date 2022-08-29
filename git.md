@@ -136,4 +136,4 @@
 
 ### submodules 
 
-`$git submodule add <url_of_repo>`: repo / project within a project; after creation, can go inside the submodule location & update as a regular repo
+`$ git submodule add <url_of_repo>`: repo / project within a project; after creation, can go inside the submodule location & update as a regular repo
