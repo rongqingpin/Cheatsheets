@@ -49,8 +49,9 @@
 ### make changes
 
 - from remote to local
-    1. `$ git pull <remote_name> master`: should be at a local commit that is present in remote; pull combines fetch and merge
-    2. may need to:
+    1. `$ git fetch <remote>`
+    2. `$ git pull <remote_name>`: should be at a local commit that is present in remote; pull combines fetch and merge
+    3. may need to:
         1. `$ i`
         2. write the merge message
         3. press **esc**
