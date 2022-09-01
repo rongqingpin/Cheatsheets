@@ -134,6 +134,7 @@ quantile binning
 `x.strftime('%Y-%m')`: get string from DateTimeIndex  
 `pd.Period(x, freq='T').quarter`: returns which quarter x is of the year; x is DateTimeIndex  
 `x2 = x1 + pd.Timedelta(hours=dx)`  
+`Y = (X[datetime2] - X[datetime1]).astype('timedelta64[h]')`  
 `(datetime1 - datetime2).days`: get no. of days between 2 dates  
 `(datetime1 - datetime2).total_seconds()`  
 
