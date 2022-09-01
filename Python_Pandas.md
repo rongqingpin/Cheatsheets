@@ -54,7 +54,7 @@ N = X.index.get_loc(ii) # return iloc correpsonding to ii index
 `Y.sort_index()`: sort by index  
 `X.sort_values(by=['col1', '...'])`: sort by columns  
 `X = X.reset_index(drop = True)`, `X = X.set_index('columnA')`  
-`X = X.rename({oldName: newName}, axis = 'columns')`
+`X.rename({oldName: newName}, axis = 'columns', inplace=True)`
 
 `Y.isnull()`: a Series of True/False  
 `Y.isnull().sum()`: No. of True (NaN)  
