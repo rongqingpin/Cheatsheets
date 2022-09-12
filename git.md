@@ -50,7 +50,7 @@
 
 - from remote to local
     1. `$ git fetch <remote>`: if remote has a new branch that doesn't exist locally, can create & checkout to access it locally
-    2. `$ git pull <remote_name>`: should be at a local commit that is present in remote; pull combines fetch and merge
+    2. `$ git pull <remote_name> <remote_branch>`: should be at a local commit that is present in remote; pull combines fetch and merge
     3. may need to:
         1. `$ i`
         2. write the merge message
