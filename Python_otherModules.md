@@ -182,5 +182,5 @@ X = cursor.fetchall()
 import multiprocessing as mp
 from joblib import Parallel, delayed
 ncore = mp.cpu_count()
-results = Parallel(n_jobs=ncore)(delayed(function)(a1, a2, i, ...) for i in is) # results is a list of outputs, each element for each process
+results = Parallel(n_jobs=ncore)(delayed(function)(a1, a2, i, ...) for i in iis) # results is a list of outputs from each process
 ```
