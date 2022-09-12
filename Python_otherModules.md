@@ -1,4 +1,4 @@
-### System
+### System Utilities
 
 ```python
 import sys
@@ -17,8 +17,10 @@ import calendar
 [dayOfWeek, noDays] = calendar.monthrange(YYYY, MM) 
         # returns dayOfWeek (Mon-0) of 1st day of the month & noDays
 t0 = time.time()
+t1 = time.perf_counter()
 # here goes some codes
 print(time.time() - t0) # execution time
+t2 = time.perf_counter() # t2 - t1 is execution time in seconds
 ```
 
 ---
@@ -45,6 +47,14 @@ import shutil
 shutil.copy2('source', 'destination')
 shutil.move('source', 'destimation')
 shutil.rmtree('directory') # delete directory and its content
+```
+
+---
+
+```python
+import logging 
+logging.basicConfig(filename='...', format='%(asctime)s %(message)s', level=logging.INFO)
+logging.info('here goes some texts') # the datetime will be appended to the front if basicConfig-format is specified
 ```
 
 ### Profiling
@@ -165,4 +175,12 @@ cursor.execute(query_string) # query_string: the gramma of MS Access is very sim
 conn.commit()
 X = cursor.fetchone() # return one line as row objects, can access through X[index] or X.columnName; if no data, None returned
 X = cursor.fetchall()
+```
+
+### Parallel Processing
+```python
+import multiprocessing as mp
+from joblib import Parallel, delayed
+ncore = mp.cpu_count()
+results = Parallel(n_jobs=ncore)(delayed(function)(a1, a2, i, ...) for i in is) # results is a list of outputs, each element for each process
 ```
