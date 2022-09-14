@@ -43,6 +43,14 @@ os.remove('file_name') # delete. file only
 ---
 
 ```python
+import subprocess
+subprocess.call(['...', '...', ...]) # the list are the command components, which are separated by ' ' in terminal
+
+```
+
+---
+
+```python
 import shutil
 shutil.copy2('source', 'destination')
 shutil.move('source', 'destimation')
