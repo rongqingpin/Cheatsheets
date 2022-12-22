@@ -1,7 +1,7 @@
-### UNIX
+## UNIX
 
 
-#### General
+### General
 
 space is interpretted as command argument separator. e.g., `a = "a"` generates error
 
@@ -39,7 +39,7 @@ bash file start with `#! /bin/bash`
 [macOS command line](https://ss64.com/osx/)  
 `<cmd> + <shift> + <.>`: show / hide hidden files. [full list of methods listed here](https://ianlunn.co.uk/articles/quickly-showhide-hidden-files-mac-os-x-mavericks/)  
 
-#### Files & directories
+### Files & directories
 
 `~`: home directory  
 `.`: current directory  
@@ -79,7 +79,7 @@ users: `u`, `g` (group), `o` (other than group or owner), `a` (all)
 `ln -s <target_directory> <link_name>`: create shortcut for target directory named link, e.g. `ln -s "$(pwd)" ~/link` creates link `link` in home directory for current directory
 
 
-#### Strings and File contents
+### Strings and File contents
 
 `^` start of string; `$` end of string  
 `*`: 0 or more characters  
@@ -109,7 +109,7 @@ users: `u`, `g` (group), `o` (other than group or owner), `a` (all)
  example: `grep -ri "here goes some string" *` searches for the whole string in all folders
 
 
-#### Others
+### Others
 
 `clear`: clear the screen  
 `!<pattern>`: recall previous command; pattern as `!` (last), `-N` (Nth most recent), `N` (Nth), or starting with `pattern`
