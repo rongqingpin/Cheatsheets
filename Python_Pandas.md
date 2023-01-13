@@ -119,7 +119,7 @@ quantile binning
 
 #### Data Combination & Type Conversion
 `pd.concat([X1, X2], axis = ..., ignore_index = True)`: 1 for column, 0 for row  
-`data = X1.join(X2, how='left', on='columnA', rsuffix='...', lsuffix='...')`: skipping `on` option will join by index, `r/lsuffix` only needed if there are columns with the same title  
+`data = X1.join(X2, how='left', on='columnA', rsuffix='...', lsuffix='...')`: join X1 and X2 by mapping values in X1 `columnA` and X2 index; skipping `on` option will join by index; `r/lsuffix` only needed if there are columns with the same title  
 
 `X = pd.DataFrame(Y, columns = ['C1', 'C2', ...], index = [...])`: if only 1 row of data, Y should be `[[..., ...]]`  
 `X = Y.to_frame(name = 'C')`  
