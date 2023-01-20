@@ -9,6 +9,7 @@ options of commands start with `-`; to use more than 1 options: `-xyz`
 
 variable reference starts with `$`  
 [environment & shell variables](http://www.ee.surrey.ac.uk/Teaching/Unix/unix8.html)  
+`a=$(command)`: assign command result to variable `a`  
 `declare -a array=("…" "…" …)`
 
 `<command1> | <command2>`: use output from 1 as input for 2  
