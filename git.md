@@ -51,12 +51,14 @@
 - from remote to local
     1. `$ git fetch <remote>`: if remote has a new branch that doesn't exist locally, can create & checkout to access it locally
     2. `$ git pull <remote_name> <remote_branch>`: should be at a local commit that is present in remote; pull combines fetch and merge
-    3. may need to:
-        1. `$ i`
-        2. write the merge message
-        3. press **esc**
-        4. `$ :wq`
-        5. press **enter**
+    3. when there are local changes not existing on remote
+       - to keep (some) local changes:
+            1. `$ i`
+            2. write the merge message
+            3. press **esc**
+            4. `$ :wq`
+            5. press **enter**
+       - to ignore local changes: first `$ git reset --hard`; then pull
         
 - from local to remote
     1. `$ git add <...>`
