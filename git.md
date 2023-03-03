@@ -43,6 +43,7 @@
 `$ git push <-u> <remoteRepo> <localRepo>`: `-u` triggers user log-in  
 `$ git push <remoteRepo> localBranch<:remoteBranch>`  
 `$ git remote rm <remoteRepo>`  
+`$ git remote set-url <remoteRepo> <new_url>`  
 
 ---
 
