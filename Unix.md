@@ -161,6 +161,7 @@ for jobs in the background / suspended:
 `find <location> <condition> <output>`:
 * if location as `.`, search current directory & all sub-directories
 * condition: `-name '<pattern>'`; `-size +<?M>`
+  * condition modifier: `<condition1> -a <condition2>` AND; `-not <condition1>`
 * output: `-print` show on screen; `-ls` list
 
 `wc <option> f`: count
