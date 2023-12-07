@@ -246,11 +246,12 @@ import plotly.tools as tls
 
 some specifications of the graph objects are in **show** section below
 ```
-trace = pyobj.Scatter(x=[...], y=[...], name='...', showlegend=False, line=dict(color=..., dash='dash')) # line plot. name for legend
-trace = pyobj.Scatter(x = [...], y = [...], mode = 'markers')    # scatter plot
+trace = pyobj.Scatter(x=[...], y=[...], name='...', showlegend=False, line=dict(color=..., dash='dash'))  # line plot. name for legend
+trace = pyobj.Scatter(x = [...], y = [...], mode = 'markers')  # scatter plot
 trace = pyobj.Scatter(x = [...], y = [...], mode = 'text', text = [...], textposition = 'bottom'
-trace = pyobj.Scatter3d(x = [...], y = [...], z = [...], name = '...', mode = '...',
-                        marker = dict(colorscale = 'Viridis', opacity = 0.8))
+trace = pyobj.Scatter3d(x = [...], y = [...], z = [...], name = '...', mode = '...',  # x, y, z & c have the same dimension (1D)
+                        marker = dict(color=c, colorscale = 'Viridis', opacity = 0.8),
+                        hovertemplate='%{x}: %{text}', text=[...])  # display formatted texts on hover
 ```
 
 ```
