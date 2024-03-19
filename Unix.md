@@ -10,22 +10,30 @@ options of commands start with `-`; to use more than 1 options: `-xyz`
 variable reference starts with `$`  
 [environment & shell variables](http://www.ee.surrey.ac.uk/Teaching/Unix/unix8.html)  
 `a=$(command)`: assign command result to variable `a`  
-`declare -a array=("…" "…" …)`
+`declare -a array=("…" "…" …)`  
+`((...))` denotes operator as arithmetic operation (e.g., +, -)
 
 `<command1> | <command2>`: use output from 1 as input for 2  
 
 ```
 if (($x == N)); then
-	…
+  ...
 else
-	…
+  ...
 fi
 ```
 
 ```
 for i in "${array[@]}"
 do
-	…
+  ...
+done
+```
+
+```
+while [ $i -lt 10 ];
+do
+  ...
 done
 ```
 
@@ -100,6 +108,12 @@ users: `u`, `g` (group), `o` (other than group or owner), `a` (all)
   * type **/<keyword>** to find and highlight
   * type **n** to find the next
 
+`wc <option> f`: count
+  * `-w`: word count
+  * `-l`: line count
+  	*  `wc -l file`: count no. of lines in file, outputting `n file`
+   	*  `wc -l < file`: count no. of lines, outputting `n`
+
 `grep <option> <'keywords'> f`: print the line containing keywords; default - case sensitive; option as
   * `-i`: ignore upper / lower case
   * `-v`: lines that do not match
@@ -126,8 +140,11 @@ users: `u`, `g` (group), `o` (other than group or owner), `a` (all)
 `sh -c "..."`: calls program `sh` to execute command in `"..."`
 
 `ps`: show running processes (with PID number)  
+`pgrep -f 'filename'`: return PID of program 'filename'  
 `jobs`: job list (with job number)  
 reference jobs: `<command> <PID>` or `<command> %<job_number>`
+
+`sleep nsecond`
 
 ---
 
@@ -163,10 +180,6 @@ for jobs in the background / suspended:
 * condition: `-name '<pattern>'`; `-size +<?M>`
   * condition modifier: `<condition1> -a <condition2>` AND; `-not <condition1>`
 * output: `-print` show on screen; `-ls` list
-
-`wc <option> f`: count
-  * `-w`: word count
-  * `-l`: line count
 
 `sort`: input from screen
 * `sort < f1 > f2`
