@@ -12,7 +12,8 @@ None of the instructions found online about setting trusted sites and certificat
 `pip show <package_name>`: info including version & directory
 
 `pip install <package> --upgrade`  
-`python -m pip install --user <package>`
+`python -m pip install --user <package>`  
+`pip install --force-reinstall -v "package==X.XX.X`: install a specific version  
 
 `pip3 freeze > requirements.txt`
 
