@@ -105,6 +105,7 @@
     * `$ git branch -f <branch> <location>`
     * `$ git checkout <location>`: go to the branch / move HEAD (if location is not branch name, HEAD is detached)
         * `$ git checkout -b <branch>`: create and checkout
+        * `$ git checkout -b <branch> <origin/remote_branch>`: pull remote branch to local, rename and checkout
     * location can be branch name / HEAD / hash (see git log)
         * add `^N` right after to move 1 level up; N specifies which branch to go (1 directly up)
         * add `~N` to move N levels up
