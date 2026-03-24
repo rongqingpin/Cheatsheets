@@ -39,7 +39,7 @@ font<sub>subscript</sub> or<sup>superscript</sup>
 clickable: <user@gmail.com> or <http://homepage.com>
 
 insert image: ![(image name)](link)  
-or: <img src="image_name" alt="figname" width="350px"/>
+or: <img src="image_name" alt="figname" width="350px"/>, where `width="60%"` will change figure size adaptively
 
 math: <math> <mn>1</mn> <mo>+</mo> <mi>a</mi> </math>
 
