@@ -95,7 +95,7 @@
 
 ---
 
-### branches
+### branches and versions
 
 * `$ git branch`: show the local branches
 * `$ git branch <branch_name>`: create new branch
@@ -111,6 +111,12 @@
         * add `~N` to move N levels up
         * these two can combined for multiple times; if N omitted, N = 1
 
+* comparing between branches / versions:
+  * `$ git log --oneline` to get the hash for previous commits
+  * `$ git switch --detach <hash_of_old_version>` to switch to an earlier version
+  * `$ git stash push -u -m "temporary changes"`: do this in the detached earlier version, puts away changes without commiting them
+  * `$ git switch <hash_of_current_version>` to switch back
+
 * `$ git branch -d <branch>`: delete
 
 * `$ git gui browser <branch>`: view all the files and directories
@@ -119,7 +125,6 @@
     - if have conflict, first use `$ git status` to inspect which file has issue
     - then re-open the file-in-question through editor and resolve the conflict: replace `<<<<<<< HEAD:filename master branch content ======= branch content >>>>>>>branch:filename` by the combined contents
     - finally `git add .` and `git commit ...` and the branch will be merged: when inside the commit comment, press `esc` after entering message, then write `:wq` (write & quit) and press `enter`
-
 
 * by default, master tracks origin (master in remote); to change this: `$ git branch -u <origin> <branch>`
 
