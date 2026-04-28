@@ -115,6 +115,7 @@ users: `u`, `g` (group), `o` (other than group or owner), `a` (all)
    	*  `wc -l < file`: count no. of lines, outputting `n`
 
 `grep <option> <'keywords'> f`: print the line containing keywords; default - case sensitive; option as
+  * `-l`: print the file names where keywords are found
   * `-i`: ignore upper / lower case
   * `-v`: lines that do not match
   * `-n`: show line with line number
