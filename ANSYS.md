@@ -11,18 +11,18 @@
 #### Design modeler
 1. select surface
 2. from `sketching`, draw edges, assign constraints & dimensions, click `generate` to complete
-  - to move dimension notations, specify in `dimension`
-	- to create from sketch, click any where in the sketch & click `apply`
+    - to move dimension notations, specify in `dimension`
+	    - to create from sketch, click any where in the sketch & click `apply`
 3. from `concept`, create surfaces & choose fluid / solid, click `generate` to complete
 
 #### SpaceClaim 
-Geometry creation  
-1. Select plain & sketch mode (2D must use XY plane)
-2. Select object & drag & press space; enter dimension & press Tab to enter the next dimension
-3. Select 3D mode to generate surface  
-Pre-processing for simulation  
-- For multi-fluid-zones, check the parts that share interface, `Workbench` - `share` to auto-identify, click checkmark to accept if correct
-- Select the surfaces, Ctrl+G, in `Groups` - `Named selections`, rename the defined group to Fluent keywords, e.g., inlet, outlet, etc.
+- Geometry creation  
+    1. Select plain & sketch mode (2D must use XY plane)
+    2. Select object & drag & press space; enter dimension & press Tab to enter the next dimension
+    3. Select 3D mode to generate surface  
+- Pre-processing for simulation  
+    - For multi-fluid-zones, check the parts that share interface, `Workbench` - `share` to auto-identify, click checkmark to accept if correct
+    - Select the surfaces, Ctrl+G, in `Groups` - `Named selections`, rename the defined group to Fluent keywords, e.g., inlet, outlet, etc.
 
 ---
 
@@ -38,16 +38,16 @@ Pre-processing for simulation
 6. select object & right click -> create `name selection` & provide names (e.g., wall) for referencing later, e.g., assigning BCs
 7. may need to update `mesh` in workbench
 8. Mesh properties:
-  - Defaults - Physics Preference - CFD
-  - Quality - Mesh Metric - Orthogonal quality (>.03)
-  - Elements - less than 1M for laptop work
+    - Defaults - Physics Preference - CFD
+    - Quality - Mesh Metric - Orthogonal quality (>.03)
+    - Elements - less than 1M for laptop work
 
 #### Fluent-Meshing
 - Water tight geometry
 - `Describe geometry`:
-  - Change fluid-fluid boundary from `wall` to `internal` - interfaces
-  - If interfaces have been identified (`share`) in SpaceClaim, do NOT apply share Topolgy
+    - Change fluid-fluid boundary from `wall` to `internal` - interfaces
+    - If interfaces have been identified (`share`) in SpaceClaim, do NOT apply share Topolgy
 - After generating surface mesh, can right-click to add `improve surface mesh` to reduce low quality (e.g., skewness > 0.8) faces
 - `generate volume mesh`:
-  - Polyhedron is usually good as default. Poly-hexcore = hex in core + poly/tet near BL
-  - can right-click to add `improve volume mesh` to reduce low quality (e.g., orthogonality < 0.1) cells
+    - Polyhedron is usually good as default. Poly-hexcore = hex in core + poly/tet near BL
+    - can right-click to add `improve volume mesh` to reduce low quality (e.g., orthogonality < 0.1) cells
