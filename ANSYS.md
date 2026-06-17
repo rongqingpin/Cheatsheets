@@ -3,6 +3,9 @@
 - `$ <directory for ansys_inc>/<version>/fluent/bin/fluent`
 - `$ <directory for ansys_inc>/Shared Files/Licensing/winx64/lmutil lmstat -a -c <license server>` to show license usage
 
+#### Workbench
+- 'Archive' instead of 'Save' to save smaller file w/o solutions / other details
+
 ---
 
 ### Geometry
@@ -29,7 +32,10 @@
 ### Meshing
 - Check mesh quality: Fluent - `Domain` - `Mesh` - `Check` & `Quality`  
 
-#### Workbench Mesh
+#### Workbench
+- right click on `mesh` - `duplicate` for validation case with finer resolution
+
+#### ANSYS Meshing
 1. right click `mesh` - insert `sizing`, click geometry, select the edge & apply, specify the divisions & behavior (hard / soft)
 2. right click `mesh` - insert `face meshing`, select the surface & specify the divisions
 3. `mesh` - `sizing` - `use adaptive sizing`: 'yes' produces orthogonal quadrilaterals
@@ -55,6 +61,11 @@
 --- 
 
 ### Fluent Simulation
+
+#### Workbench
+After updating mesh, can right-click `Fluid Flow` - `update` to get new solution  
+
+#### Fluent
 1. `setup`, always choose 'double precision'
 2. When not starting from scratch, to match zones:
     - `File` - `Recorded Mesh operations` - `match zone names`
@@ -89,6 +100,11 @@ Porous flow:
 
 ### Post-processing
 
+#### Workbench
+- Click & drag solution 1 onto solution 2 (finer mesh) & `update` CFD-post
+    - `report` - `chart` will automatically include 2 solutions
+    - For other plot types, check 'sync camera in displayed views' & de-select 'sync visibility'; click each view in '3D viewer' to enable the graph for each view (solution)
+
 #### Fluent
 - after converging, view `graphics`
     - from `Viewing` - `Display` - `Views`, can flip view about axis-of-symmetry to get whole picture; deselect 'node values' to display cell center values
@@ -109,3 +125,15 @@ Porous flow:
     - `surface integrals`: Check volume flow rate, etc., should match
     - `fluxes`: can check mass conservation (blank value = 0)
 - `File` - `Export` - `Solution Data` to freeze & refer back to
+
+#### CFD-Post
+1. Click to open `results` from workbench
+    - check 'keep current cases loaded' to view multiple solutions in the same graph
+3. Click `contour` / `vector` / `chart` / other plots on toolbar; choose location, variable, range & no. of contour levels
+    - To get a mirror image around axis of symmetry, go to `outline` - `user locations and plots` - `default transform`, deselect 'instancing info from domain', check 'apply rotation' / 'apply reflection' & choose appropriate settings if needed
+    - To change axis scaling (default is axis equal), go to `view` - `apply scale`
+    - To show distribution along certain line, click `location` - `line` on toolbar; then add that location in the created plot (such as 'vector'); use ctrl & select, when multiple locations are needed
+    - Under `chart`, use `export` to save the data used for graph
+4. To inspect specific location, click `probe` from the toolbar, then click on the graph
+5. To view 3D volume: `volume rendering` from the toolbar or toolbar - `location` - `volume`
+    - can select 'isovolume' to view by thresholding
