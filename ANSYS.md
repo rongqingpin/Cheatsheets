@@ -51,3 +51,61 @@
 - `generate volume mesh`:
     - Polyhedron is usually good as default. Poly-hexcore = hex in core + poly/tet near BL
     - can right-click to add `improve volume mesh` to reduce low quality (e.g., orthogonality < 0.1) cells
+
+--- 
+
+### Fluent Simulation
+1. `setup`, always choose 'double precision'
+2. When not starting from scratch, to match zones:
+    - `File` - `Recorded Mesh operations` - `match zone names`
+3. check `general` - `mesh` - `scale` and `display`; check `domain` - `mesh` - `check` - `perform mesh check`
+    - Can use `domain` - `mesh` - `units` to change unit system
+4. go through `setup`: `general`, `model`
+5. add `material` from fluent database (check `material` - `fluid`, `cell zone condition` - `fluid`)
+    - For porous zone: go to `cell zone condition` - `fluid`, select the zone, then select `porous zone`, specify `viscous resistance` & `fluid porosity`
+6. set B.C. (vector direction follows right-hand-rule), right-click & choose the right type
+    - `boundary conditions` - `operating conditions`: specify ref. p; simulation uses gauge p
+    - Axis - cylindrical coordinate; symmetry
+    - `wall` - a shadow wall is created; for actual wall, can use it to assign different BCs for liquids on both sides; for porous media interface, right-click & assign it to internal / merge it
+7. in solution, specify `methods` (`scheme` - 'SIMPLE' for slow flow; 'Coupled' for high flow)
+    - `controls` - `under relaxation factor`, smaller values solves slower but are more stable: e.g., p = 0.2, rho = 1, F = 1, mv = 0.4, Ek = 0.8, ksi = 0.8, mu = 1
+8. `Monitors`
+    - `residual`, e.g., 1e-6
+    - `report definitions` - `new` & choose other parameter to monitor
+        1. Select `zones` - where to calculate; `force vector` - which F direction to calculate (force vector indicates the direction)
+		2. For non-dimensionalized params, set correct ref params in `setup` - `reference values`
+		3. Can report to file &/ console &/ plot. After calculation completion, can find file location at `monitors` - `report files`
+9. `initialization` - `standard initialization` - `initial values`; can view `contours` under `results` - `graphics` to verify
+    - Use `hybrid initialization` for 3D complex geometry
+    - Use `patch` to partially initialize certain variables / zones, while continuing from previous solutions for the rest
+10. `autosave` in `calculation activities`, `no. of iterations` in `run calculations`, then `calculate`
+
+Porous flow:
+- first run w/o adding porous to make sure it converges
+- For faster convergence: start w/ lower vel &/ higher km & use them for initialization
+- Can use 'porous jump' for quick solution w/o adding a volume of porous fluid material
+
+---
+
+### Post-processing
+
+#### Fluent
+- after converging, view `graphics`
+    - from `Viewing` - `Display` - `Views`, can flip view about axis-of-symmetry to get whole picture; deselect 'node values' to display cell center values
+        - `graphics` - `colormap` can change log scale
+        - `Graphics` - `Compose`: selecting 'overlays' can put figures on the same plot
+- `Vectors` - scale changes length of arrow
+- Add `iso-surface` & select 'mesh' as 'surface of constant' to view results on selected plane
+- `pathlines`: specify 'path skip', mode 'single' / 'continuous', 'release from', to show how particles would have traveled along flow paths
+    - Can color pathlines by 'time' to sample residence time
+- XY plot
+    - to show reference values: `Setting up physics` - `reference values` - specify - choose corresponding variables in plot 'axis function' dropdowns
+    - in 'axes', adjust axis ranges & grids
+    - to plot y-axis as position: check 'position on y axis', change 'plot direction' to x=0, y=1
+    - to compare against reference data, use 'load file'
+    - use 'new surface' to create new locations at which to view the data
+- `file` - `save picture`
+- `Results` - `reports`:
+    - `surface integrals`: Check volume flow rate, etc., should match
+    - `fluxes`: can check mass conservation (blank value = 0)
+- `File` - `Export` - `Solution Data` to freeze & refer back to
