@@ -26,7 +26,9 @@
 - Geometry manipulation
   	- press `x` & `d` to toggle cross-section view & full view
   	  	- in cross-section view, select `design` - `move`, then use `options - move` - `move grid` to rotate the cut plane
-- Pre-processing for simulation  
+	- `repair` - `adjust` - `small faces` to delete tiny faces & make later processing easier
+- Pre-processing for simulation
+	- `prepare` - `analysis` - `volume extract`: select the I/O faces or edges, then pick seed face shared by flow volume, to get flow volume from solid parts
     - For multi-fluid-zones, check the parts that share interface, `Workbench` - `share` to auto-identify, click checkmark to accept if correct
     - Select the surfaces, Ctrl+G, in `Groups` - `Named selections`, rename the defined group to Fluent keywords, e.g., inlet, outlet, etc.
 
