@@ -22,7 +22,10 @@
 - Geometry creation  
     1. Select plain & sketch mode (2D must use XY plane)
     2. Select object & drag & press space; enter dimension & press Tab to enter the next dimension
-    3. Select 3D mode to generate surface  
+    3. Select 3D mode to generate surface
+- Geometry manipulation
+  	- press `x` & `d` to toggle cross-section view & full view
+  	  	- in cross-section view, select `design` - `move`, then use `options - move` - `move grid` to rotate the cut plane
 - Pre-processing for simulation  
     - For multi-fluid-zones, check the parts that share interface, `Workbench` - `share` to auto-identify, click checkmark to accept if correct
     - Select the surfaces, Ctrl+G, in `Groups` - `Named selections`, rename the defined group to Fluent keywords, e.g., inlet, outlet, etc.
