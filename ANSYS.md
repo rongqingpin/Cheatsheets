@@ -69,6 +69,7 @@
 
 #### Workbench
 After updating mesh, can right-click `Fluid Flow` - `update` to get new solution  
+Remember to change to parallel settings appropriate to the hardware  
 
 #### Fluent
 1. `setup`, always choose 'double precision'
@@ -87,19 +88,20 @@ After updating mesh, can right-click `Fluid Flow` - `update` to get new solution
     - Axis - cylindrical coordinate; symmetry
     - `wall` - a shadow wall is created; for actual wall, can use it to assign different BCs for liquids on both sides; for porous media interface, right-click & assign it to internal / merge it
     - For mean age-of-fluid, velocity inlet & pressure outlet need UDS as `specified value` 0; wall needs UDS as `specified flux` 0.
-7. in solution, specify `methods` (`scheme` - 'SIMPLE' for slow flow; 'Coupled' for high flow)
+7. in solution, specify `methods`
+    - `scheme` - 'SIMPLE' for slow flow (try SIMPLEC with body-force-weighted pressure to improve continuity residual); 'Coupled' for high flow
     - `controls` - `under relaxation factor`, smaller values solves slower but are more stable: e.g., p = 0.2, rho = 1, F = 1, mv = 0.4, Ek = 0.8, ksi = 0.8, mu = 1
     - For mean age-of-fluid, first order upwind is good starting point. Can keep only USD in `Controls` - `Equations` to freeze flow field.
-8. `Monitors`
+9. `Monitors`
     - `residual`, e.g., 1e-6
     - `report definitions` - `new` & choose other parameter to monitor
         1. Select `zones` - where to calculate; `force vector` - which F direction to calculate (force vector indicates the direction)
 		2. For non-dimensionalized params, set correct ref params in `setup` - `reference values`
 		3. Can report to file &/ console &/ plot. After calculation completion, can find file location at `monitors` - `report files`
-9. `initialization` - `standard initialization` - `initial values`; can view `contours` under `results` - `graphics` to verify
+10. `initialization` - `standard initialization` - `initial values`; can view `contours` under `results` - `graphics` to verify
     - Use `hybrid initialization` for 3D complex geometry
     - Use `patch` to partially initialize certain variables / zones, while continuing from previous solutions for the rest
-10. `autosave` in `calculation activities`, `no. of iterations` in `run calculations`, then `calculate`
+11. `autosave` in `calculation activities`, `no. of iterations` in `run calculations`, then `calculate`
 
 Porous flow:
 - first run w/o adding porous to make sure it converges
