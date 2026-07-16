@@ -122,6 +122,7 @@ Porous flow:
     - from `Viewing` - `Display` - `Views`, can flip view about axis-of-symmetry to get whole picture; deselect 'node values' to display cell center values
         - `graphics` - `colormap` can change log scale
         - `Graphics` - `Compose`: selecting 'overlays' can put figures on the same plot
+        - `Colormap` to change color scheme or other specs, which applies to new graphics
 - `Vectors` - scale changes length of arrow
 - Add `iso-surface` & select 'mesh' as 'surface of constant' to view results on selected plane
 - `pathlines`: specify 'path skip', mode 'single' / 'continuous', 'release from', to show how particles would have traveled along flow paths
