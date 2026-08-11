@@ -142,6 +142,7 @@ Porous flow:
 #### CFD-Post
 1. Click to open `results` from workbench
     - check 'keep current cases loaded' to view multiple solutions in the same graph
+2. If a new variable is needed, define it in `expression` (right-click to select & insert existing variables) and insert the new `variable`
 3. Click `contour` / `vector` / `chart` / other plots on toolbar; choose location, variable, range & no. of contour levels
     - To get a mirror image around axis of symmetry, go to `outline` - `user locations and plots` - `default transform`, deselect 'instancing info from domain', check 'apply rotation' / 'apply reflection' & choose appropriate settings if needed
     - To change axis scaling (default is axis equal), go to `view` - `apply scale`
@@ -150,3 +151,5 @@ Porous flow:
 4. To inspect specific location, click `probe` from the toolbar, then click on the graph
 5. To view 3D volume: `volume rendering` from the toolbar or toolbar - `location` - `volume`
     - can select 'isovolume' to view by thresholding
+6. Use `.flprj` file to load & view data from different time steps
+    - can choose `animation` and export movies
