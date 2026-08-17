@@ -79,15 +79,18 @@ Remember to change to parallel settings appropriate to the hardware
     - Can use `domain` - `mesh` - `units` to change unit system
 4. `User-defined` - `Scalars`
     - for mean age-of-fluid, uncheck 'inlet diffusion', select 'all fluid zones' & 'mass flow rate'
+    - for media capacity, uncheck 'inlet diffusion', select relevant fluid zone & turn off flux function
 4. go through `setup`: `general`, `model`
 5. add `material` from fluent database (check `material` - `fluid`, `cell zone condition` - `fluid`)
     - For porous zone: go to `cell zone condition` - `fluid`, select the zone, then select `porous zone`, specify `viscous resistance` & `fluid porosity`
     - For mean age-of-fluid, set `UDS diffusivity` - `defined-per-uds` as 'constant' & 0 (or very small number such as 1e-9 to avoid instability). Each fluid zone needs to enable `source terms` - `user scalar` - `1 source`, and equal to fluid density.
+    - For media capacity, set `UDS diffusivity` - `defined-per-uds` as 'constant' & 0. For media zone, enable 2 source terms, 1 to track local concentration (USD0) - removal at the media, 1 for accumulated concentration in media (USD1). For easier reference, can use 'named expressions': possibility of capture as a function of USD1 within `[0, 1]` with smoothing; capture rate as a function of UDS0, with dimension of `kg/m^3/s`.
 6. set B.C. (vector direction follows right-hand-rule), right-click & choose the right type
     - `boundary conditions` - `operating conditions`: specify ref. p; simulation uses gauge p
     - Axis - cylindrical coordinate; symmetry
     - `wall` - a shadow wall is created; for actual wall, can use it to assign different BCs for liquids on both sides; for porous media interface, right-click & assign it to internal / merge it
     - For mean age-of-fluid, velocity inlet & pressure outlet need UDS as `specified value` 0; wall needs UDS as `specified flux` 0.
+    - For media capacity, specify UDS0 at inlet; wall & pressure outlet as `specified flux` 0 for both UDS0&1.
 7. in solution, specify `methods`
     - `scheme` - 'SIMPLE' for slow flow (try SIMPLEC with body-force-weighted pressure to improve continuity residual); 'Coupled' for high flow
     - `controls` - `under relaxation factor`, smaller values solves slower but are more stable: e.g., p = 0.2, rho = 1, F = 1, mv = 0.4, Ek = 0.8, ksi = 0.8, mu = 1
