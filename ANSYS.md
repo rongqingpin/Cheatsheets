@@ -26,7 +26,10 @@
 - Geometry manipulation
   	- press `x` & `d` to toggle cross-section view & full view
   	  	- in cross-section view, select `design` - `move`, then use `options - move` - `move grid` to rotate the cut plane
-	- `repair` - `adjust` - `small faces` to delete tiny faces & make later processing easier
+	- when pulling an object, Ctrl+ select to add the edge which defines the rule to pull into (e.g., pulling a face on a cone as into a cylinder instead of extending the cone)
+	- `repair` - `adjust` - `extra edges`, `small faces`, `simplify`, `inexact edges`, etc.: to make later processing easier
+ 	- `measure` - `deviation` to highlight small differences in parts
+  		- can use `clip with plane` - `extract geometry` to first expose the interior if needed
 - Pre-processing for simulation
 	- `prepare` - `analysis` - `volume extract`: select the I/O faces or edges, then pick seed face shared by flow volume, to get flow volume from solid parts
     - For multi-fluid-zones, check the parts that share interface, `Workbench` - `share` to auto-identify, click checkmark to accept if correct
